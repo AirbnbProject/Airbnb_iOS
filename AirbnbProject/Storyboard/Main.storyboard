@@ -13,7 +13,7 @@
         <!--Item-->
         <scene sceneID="AuB-cN-hmN">
             <objects>
-                <viewController id="TSc-Nd-cjZ" sceneMemberID="viewController">
+                <viewController id="TSc-Nd-cjZ" customClass="ExploringViewController" customModule="AirbnbProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GL3-U4-zFS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
