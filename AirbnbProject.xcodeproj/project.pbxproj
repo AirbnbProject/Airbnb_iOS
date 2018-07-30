@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06D8EF2899F203BA8ADBD254 /* Pods_AirbnbProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F552965419A8DFCC187B4A /* Pods_AirbnbProject.framework */; };
 		15662865210ED4AD003B0338 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15662864210ED4AD003B0338 /* AppDelegate.swift */; };
 		1566286C210ED4AE003B0338 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1566286B210ED4AE003B0338 /* Assets.xcassets */; };
 		1566286F210ED4AE003B0338 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1566286D210ED4AE003B0338 /* LaunchScreen.storyboard */; };
@@ -24,6 +25,9 @@
 		1566287E210EE41B003B0338 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		15662880210EE4CF003B0338 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		15662882210EE5CF003B0338 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		38310991B84D0E2221F076C0 /* Pods-AirbnbProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject.release.xcconfig"; sourceTree = "<group>"; };
+		66F552965419A8DFCC187B4A /* Pods_AirbnbProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirbnbProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4AD846C3DE3FD1CF06D4F37 /* Pods-AirbnbProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06D8EF2899F203BA8ADBD254 /* Pods_AirbnbProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				15662863210ED4AD003B0338 /* AirbnbProject */,
 				15662862210ED4AD003B0338 /* Products */,
+				BC9DFE7A4F6242E0A213120F /* Pods */,
+				4783672EC0ADDB9B518A9E15 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +138,23 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4783672EC0ADDB9B518A9E15 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66F552965419A8DFCC187B4A /* Pods_AirbnbProject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC9DFE7A4F6242E0A213120F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B4AD846C3DE3FD1CF06D4F37 /* Pods-AirbnbProject.debug.xcconfig */,
+				38310991B84D0E2221F076C0 /* Pods-AirbnbProject.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +162,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 15662873210ED4AE003B0338 /* Build configuration list for PBXNativeTarget "AirbnbProject" */;
 			buildPhases = (
+				96F95E19BAB9E421A6DA5C83 /* [CP] Check Pods Manifest.lock */,
 				1566285D210ED4AD003B0338 /* Sources */,
 				1566285E210ED4AD003B0338 /* Frameworks */,
 				1566285F210ED4AD003B0338 /* Resources */,
+				99C1D8B81C3A56EAED18C80A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -197,6 +223,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		96F95E19BAB9E421A6DA5C83 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AirbnbProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99C1D8B81C3A56EAED18C80A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1566285D210ED4AD003B0338 /* Sources */ = {
@@ -338,6 +405,7 @@
 		};
 		15662874210ED4AE003B0338 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4AD846C3DE3FD1CF06D4F37 /* Pods-AirbnbProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -357,6 +425,7 @@
 		};
 		15662875210ED4AE003B0338 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38310991B84D0E2221F076C0 /* Pods-AirbnbProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
