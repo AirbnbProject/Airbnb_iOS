@@ -14,6 +14,7 @@
 		1566287F210EE41B003B0338 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1566287E210EE41B003B0338 /* Login.storyboard */; };
 		15662881210EE4CF003B0338 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15662880210EE4CF003B0338 /* Main.storyboard */; };
 		15662883210EE5CF003B0338 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15662882210EE5CF003B0338 /* EntryViewController.swift */; };
+		8739D84C210EECCC001998F5 /* ExploringDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8739D84B210EECCC001998F5 /* ExploringDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		15662882210EE5CF003B0338 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		38310991B84D0E2221F076C0 /* Pods-AirbnbProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject.release.xcconfig"; sourceTree = "<group>"; };
 		66F552965419A8DFCC187B4A /* Pods_AirbnbProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirbnbProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8739D84B210EECCC001998F5 /* ExploringDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploringDetailViewController.swift; sourceTree = "<group>"; };
 		B4AD846C3DE3FD1CF06D4F37 /* Pods-AirbnbProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				15662882210EE5CF003B0338 /* EntryViewController.swift */,
+				8739D84B210EECCC001998F5 /* ExploringDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15662865210ED4AD003B0338 /* AppDelegate.swift in Sources */,
+				8739D84C210EECCC001998F5 /* ExploringDetailViewController.swift in Sources */,
 				15662883210EE5CF003B0338 /* EntryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,7 +413,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CNMQE42DQF;
+				DEVELOPMENT_TEAM = 9UT8US6W3V;
 				INFOPLIST_FILE = "$(SRCROOT)/AirbnbProject/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -429,7 +433,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CNMQE42DQF;
+				DEVELOPMENT_TEAM = 9UT8US6W3V;
 				INFOPLIST_FILE = "$(SRCROOT)/AirbnbProject/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

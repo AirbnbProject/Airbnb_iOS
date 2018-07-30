@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="881" y="18"/>
         </scene>
-        <!--View Controller-->
+        <!--Exploring Detail View Controller-->
         <scene sceneID="EDW-qw-o4C">
             <objects>
-                <viewController id="i14-Le-MEm" sceneMemberID="viewController">
+                <viewController id="i14-Le-MEm" customClass="ExploringDetailViewController" customModule="AirbnbProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9PJ-W7-EBw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdU-wP-rsv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2273" y="30"/>
+            <point key="canvasLocation" x="1922" y="18"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VYk-HU-6ue">
@@ -47,6 +47,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7i0-DL-EGc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kUJ-bm-CvY">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
