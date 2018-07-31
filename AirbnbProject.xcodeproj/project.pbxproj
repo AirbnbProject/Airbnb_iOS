@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		06D8EF2899F203BA8ADBD254 /* Pods_AirbnbProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F552965419A8DFCC187B4A /* Pods_AirbnbProject.framework */; };
+		152D788A210EFA530060BF9B /* MoreOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D7889210EFA530060BF9B /* MoreOptionsViewController.swift */; };
+		152D788C210F054C0060BF9B /* SignUpNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D788B210F054C0060BF9B /* SignUpNameViewController.swift */; };
+		152D7890210F64340060BF9B /* SignUpEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D788F210F64340060BF9B /* SignUpEmailViewController.swift */; };
 		15662865210ED4AD003B0338 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15662864210ED4AD003B0338 /* AppDelegate.swift */; };
 		1566286C210ED4AE003B0338 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1566286B210ED4AE003B0338 /* Assets.xcassets */; };
 		1566286F210ED4AE003B0338 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1566286D210ED4AE003B0338 /* LaunchScreen.storyboard */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		152D7889210EFA530060BF9B /* MoreOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOptionsViewController.swift; sourceTree = "<group>"; };
+		152D788B210F054C0060BF9B /* SignUpNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNameViewController.swift; sourceTree = "<group>"; };
+		152D788F210F64340060BF9B /* SignUpEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailViewController.swift; sourceTree = "<group>"; };
 		15662861210ED4AD003B0338 /* AirbnbProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirbnbProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15662864210ED4AD003B0338 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1566286B210ED4AE003B0338 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,6 +48,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		152D7888210EFA3C0060BF9B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				15662882210EE5CF003B0338 /* EntryViewController.swift */,
+				152D7889210EFA530060BF9B /* MoreOptionsViewController.swift */,
+				152D788B210F054C0060BF9B /* SignUpNameViewController.swift */,
+				152D788F210F64340060BF9B /* SignUpEmailViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		15662858210ED4AC003B0338 = {
 			isa = PBXGroup;
 			children = (
@@ -117,7 +134,7 @@
 		1566287B210EE385003B0338 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				15662882210EE5CF003B0338 /* EntryViewController.swift */,
+				152D7888210EFA3C0060BF9B /* Login */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -270,8 +287,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				152D788A210EFA530060BF9B /* MoreOptionsViewController.swift in Sources */,
+				152D7890210F64340060BF9B /* SignUpEmailViewController.swift in Sources */,
 				15662865210ED4AD003B0338 /* AppDelegate.swift in Sources */,
 				15662883210EE5CF003B0338 /* EntryViewController.swift in Sources */,
+				152D788C210F054C0060BF9B /* SignUpNameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

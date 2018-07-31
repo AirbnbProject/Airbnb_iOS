@@ -1,14 +1,14 @@
 //
-//  EntryViewController.swift
+//  SignUpEmailViewController.swift
 //  AirbnbProject
 //
-//  Created by 김승진 on 2018. 7. 30..
+//  Created by 김승진 on 2018. 7. 31..
 //  Copyright © 2018년 김승진. All rights reserved.
 //
 
 import UIKit
 
-class EntryViewController: UIViewController {
+class SignUpEmailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
