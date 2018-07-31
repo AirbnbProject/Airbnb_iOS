@@ -26,21 +26,38 @@ class SignUpNameViewController: UIViewController {
     @IBOutlet weak var errorContentView: UIView!
     @IBOutlet weak var errorContents: UILabel!
     
-    @IBOutlet weak var backBtnTopConstraint: NSLayoutConstraint!
-    @IBOutlet weak var nextBtnViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var backBtnTop: NSLayoutConstraint!
+    @IBOutlet weak var nextBtnViewBottom: NSLayoutConstraint!
     
-    
-    
+
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupInitialize()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        setupInitialize()
+        // presentingViewController 체크
+        if self.isMovingToParentViewController == false { self.progressView.progress = 0.25 }
+        
+        
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        firstNameTextField.becomeFirstResponder()
+
+        // ProgressBar 애니메이션
+        self.progressView.progress = 0.0
+        UIView.animate(withDuration: 0.7, animations: {
+            self.progressView.layoutIfNeeded()
+        }, completion: nil)
+    }
+
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -64,6 +81,10 @@ class SignUpNameViewController: UIViewController {
         self.navigationController?.pushViewController(signupEmailVC, animated: true)
     }
     
+    @IBAction func errorCloseButton(_ sender: UIButton) {
+        self.errorContentView.isHidden = true
+    }
+    
     @IBAction func textFieldDidChange(_ sender: UITextField) {
 
         if sender == firstNameTextField {
@@ -79,7 +100,6 @@ class SignUpNameViewController: UIViewController {
                 self.errorContents.text = "이름을 입력하셔야 합니다."
                 firstNameInvalidChecked.image = UIImage(named: "exclamationMark")
             }
-            
         } else {
             lastNameInvalidChecked.isHidden = false
             
@@ -101,18 +121,12 @@ class SignUpNameViewController: UIViewController {
     
     //MARK: - Method
     private func setupInitialize() {
-        firstNameTextField.becomeFirstResponder()
         
         nextBtn.isEnabled = false
         nextBtn.isHighlighted = true
         errorContentView.isHidden = true
         firstNameInvalidChecked.isHidden = true
         lastNameInvalidChecked.isHidden = true
-        
-        self.progressView.progress = 0.02
-        UIView.animate(withDuration: 1) {
-            self.progressView.layoutIfNeeded()
-        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(noti:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(noti:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -138,15 +152,15 @@ class SignUpNameViewController: UIViewController {
         let keyboardFrame = notiInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect
         let keyboardHeight = keyboardFrame.size.height
         
-        self.nextBtnViewBottomConstraint.constant = keyboardHeight
+        self.nextBtnViewBottom.constant = keyboardHeight
         
         // 키보드에 화면이 가려질 경우.
         if keyboardFrame.origin.y < self.lastNameTextField.frame.maxY {
-            self.backBtnTopConstraint.constant = -(self.lastNameTextField.frame.maxY - keyboardHeight + self.lastNameTextField.frame.height)
-
-            UIView.animate(withDuration: notiInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval) {
-                self.view.layoutIfNeeded()
-            }
+            self.backBtnTop.constant = -(self.lastNameTextField.frame.maxY - keyboardHeight + self.lastNameTextField.frame.height)
+        }
+        
+        UIView.animate(withDuration: notiInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval) {
+            self.view.layoutIfNeeded()
         }
     }
     
@@ -154,8 +168,8 @@ class SignUpNameViewController: UIViewController {
         
         let notiInfo = noti.userInfo! as Dictionary
         
-        self.backBtnTopConstraint.constant = Constraint.originBackBtnTop
-        self.nextBtnViewBottomConstraint.constant = Constraint.originNextBtnBottom
+        self.backBtnTop.constant = Constraint.originBackBtnTop
+        self.nextBtnViewBottom.constant = Constraint.originNextBtnBottom
         
         UIView.animate(withDuration: notiInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval) {
             self.view.layoutIfNeeded()

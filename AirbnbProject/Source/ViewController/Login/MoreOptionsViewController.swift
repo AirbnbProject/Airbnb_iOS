@@ -11,7 +11,7 @@ import UIKit
 class MoreOptionsViewController: UIViewController {
 
     //MARK: - Property
-    
+    var rootVC = UINavigationController()
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -26,9 +26,11 @@ class MoreOptionsViewController: UIViewController {
     
     //MoreOptions -> EntryVC
     @IBAction func CloseButton(_ sender: UIButton) {
+
         dismiss(animated: true) {
             print("EntryVC로 이동 성공")
         }
+        
     }
     
     
