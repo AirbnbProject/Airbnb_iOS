@@ -17,6 +17,7 @@
 		1566287F210EE41B003B0338 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1566287E210EE41B003B0338 /* Login.storyboard */; };
 		15662881210EE4CF003B0338 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15662880210EE4CF003B0338 /* Main.storyboard */; };
 		15662883210EE5CF003B0338 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15662882210EE5CF003B0338 /* EntryViewController.swift */; };
+		1568A4DD2110912900FA1223 /* SignUpPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568A4DC2110912900FA1223 /* SignUpPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		1566287E210EE41B003B0338 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		15662880210EE4CF003B0338 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		15662882210EE5CF003B0338 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		1568A4DC2110912900FA1223 /* SignUpPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordViewController.swift; sourceTree = "<group>"; };
 		38310991B84D0E2221F076C0 /* Pods-AirbnbProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject.release.xcconfig"; sourceTree = "<group>"; };
 		66F552965419A8DFCC187B4A /* Pods_AirbnbProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirbnbProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4AD846C3DE3FD1CF06D4F37 /* Pods-AirbnbProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 				152D7889210EFA530060BF9B /* MoreOptionsViewController.swift */,
 				152D788B210F054C0060BF9B /* SignUpNameViewController.swift */,
 				152D788F210F64340060BF9B /* SignUpEmailViewController.swift */,
+				1568A4DC2110912900FA1223 /* SignUpPasswordViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				152D788A210EFA530060BF9B /* MoreOptionsViewController.swift in Sources */,
 				152D7890210F64340060BF9B /* SignUpEmailViewController.swift in Sources */,
 				15662865210ED4AD003B0338 /* AppDelegate.swift in Sources */,
+				1568A4DD2110912900FA1223 /* SignUpPasswordViewController.swift in Sources */,
 				15662883210EE5CF003B0338 /* EntryViewController.swift in Sources */,
 				152D788C210F054C0060BF9B /* SignUpNameViewController.swift in Sources */,
 			);
