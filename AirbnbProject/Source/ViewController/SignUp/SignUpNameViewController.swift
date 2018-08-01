@@ -31,6 +31,7 @@ class SignUpNameViewController: UIViewController {
     
 
     //MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,8 +42,9 @@ class SignUpNameViewController: UIViewController {
         super.viewWillAppear(animated)
         
         // presentingViewController 체크
-        if self.isMovingToParentViewController == false { self.progressView.progress = 0.25 }
-        
+        if self.isMovingToParentViewController == false {
+            self.progressView.progress = 0.25
+        }
         
     }
 

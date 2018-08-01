@@ -32,9 +32,17 @@ class EntryViewController: UIViewController {
         }
     }
     
-    @IBAction func SignUp(_ sender: UIButton) {
+    @IBAction func signUp(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
         let moreOptionsVC = storyboard.instantiateViewController(withIdentifier: "SignUpNameVC")
+//        let moreOptionsVC = storyboard.instantiateViewController(withIdentifier: "SignUpDateOfBirthVC")
         navigationController?.pushViewController(moreOptionsVC, animated: true)
     }
+    
+    @IBAction func signIn(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let signInVC = storyboard.instantiateViewController(withIdentifier: "SignInVC")
+        navigationController?.pushViewController(signInVC, animated: true)
+    }
+    
 }

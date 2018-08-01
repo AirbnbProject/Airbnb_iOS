@@ -1,5 +1,5 @@
 //
-//  SignUpPasswordViewController.swift
+//  SignUpEmailViewController.swift
 //  AirbnbProject
 //
 //  Created by 김승진 on 2018. 7. 31..
@@ -13,33 +13,40 @@ private enum Constraint {
     static let originNextBtnBottom: CGFloat = 0
 }
 
-class SignUpPasswordViewController: UIViewController {
+class SignUpEmailViewController: UIViewController {
+    
+    //TODO:- 이메일이 존재하는지 확인해야됨
 
     //MARK: - Property
     @IBOutlet weak var progressView: UIProgressView!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var passwordInvalidChecked: UIImageView!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailInvalidChecked: UIImageView!
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var errorContentView: UIView!
     
     @IBOutlet weak var nextBtnViewBottom: NSLayoutConstraint!
     
+    //MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupInitialize()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.progressView.progress = 0.25
+        // presentingViewController 체크
+        if self.isMovingToParentViewController == false { self.progressView.progress = 0.5 }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.progressView.progress = 0.5
+        emailTextField.becomeFirstResponder()
+        
+        self.progressView.progress = 0.25
         UIView.animate(withDuration: 0.7) {
             self.progressView.layoutIfNeeded()
         }
@@ -47,62 +54,55 @@ class SignUpPasswordViewController: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
-        print("SignUpPasswordViewController Deinit")
+        print("SignUpEmailViewController Deinit")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
+
     //MARK: - Action
     
-    //SignUpNameVC -> MoreOptions
+    //SignUpEmailVC -> SignUpNameVC
     @IBAction func backButton(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func nextButton(_ sender: UIButton) {
-        guard (self.passwordTextField.text?.count)! > 7 else { return }
-        
-        //특수 문자를 포함한 8자 이상 체크
-        if validatePassword(password: self.passwordTextField.text!) {
-//            let storyboard = UIStoryboard(name: "Login", bundle: nil)
-//            let signUpPasswordVC = storyboard.instantiateViewController(withIdentifier: "SignUpPasswordVC")
-//            self.navigationController?.pushViewController(signUpPasswordVC, animated: true)
-        } else {
-            self.nextBtn.isEnabled = false
-            self.nextBtn.isHighlighted = true
-            self.errorContentView.isHidden = false
-        }
-    }
-    
-    @IBAction func toggleSecureText(_ sender: UIButton) {
-        passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
+    @IBAction func errorCloseButton(_ sender: UIButton) {
+        self.errorContentView.isHidden = true
     }
     
     @IBAction func textFieldDidChange(_ sender: UITextField) {
-        
-        if sender == passwordTextField {
 
-            if (passwordTextField.text?.count)! > 0 {
+        if sender == emailTextField {
+            emailInvalidChecked.isHidden = false
+            
+            if (emailTextField.text?.count)! > 0 {
                 self.errorContentView.isHidden = true
-                
-                if let pw = self.passwordTextField.text {
-                    if validatePassword(password: pw) {
-                        self.passwordInvalidChecked.image = UIImage(named: "check")
-                    }
-                }
             } else {
                 self.nextBtn.isHighlighted = true
                 self.errorContentView.isHidden = false
+                emailInvalidChecked.image = UIImage(named: "exclamationMark")
             }
         }
-
+        
         self.nextBtn.isEnabled = isEnabledNextBtn()
         self.nextBtn.isHighlighted = isHighlightedNextBtn()
     }
     
+    @IBAction func nextButton(_ sender: UIButton) {
+        guard (self.emailTextField.text?.count)! > 0 else { return }
+        
+        if validateEmail(email: self.emailTextField.text!) {
+            print("validate")
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
+            let signUpPasswordVC = storyboard.instantiateViewController(withIdentifier: "SignUpPasswordVC")
+            self.navigationController?.pushViewController(signUpPasswordVC, animated: true)
+        } else {
+            self.emailInvalidChecked.image = UIImage(named: "exclamationMark")
+            self.errorContentView.isHidden = false
+        }
+    }
     
     //MARK: - Method
     private func setupInitialize() {
@@ -113,6 +113,20 @@ class SignUpPasswordViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(noti:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(noti:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    private func isEnabledNextBtn() -> Bool {
+        if (self.emailTextField.text?.count)! > 0 {
+            return true
+        }
+        return false
+    }
+    
+    private func isHighlightedNextBtn() -> Bool {
+        if (self.emailTextField.text?.count)! > 0 {
+            return false
+        }
+        return true
     }
     
     @objc private func keyboardWillShow(noti: Notification) {
@@ -130,7 +144,7 @@ class SignUpPasswordViewController: UIViewController {
     @objc private func keyboardWillHide(noti: Notification) {
         
         let notiInfo = noti.userInfo! as Dictionary
-        
+
         self.nextBtnViewBottom.constant = Constraint.originNextBtnBottom
         
         UIView.animate(withDuration: notiInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval) {
@@ -138,30 +152,15 @@ class SignUpPasswordViewController: UIViewController {
         }
     }
     
-    private func isEnabledNextBtn() -> Bool {
-        if (self.passwordTextField.text?.count)! > 0 {
-            return true
-        }
-        return false
-    }
-    
-    private func isHighlightedNextBtn() -> Bool {
-        if (self.passwordTextField.text?.count)! > 0 {
-            return false
-        }
-        return true
-    }
-    
-    func validatePassword(password: String) -> Bool {
-        let passwordRegEx = "^(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])(?=.*[0-9]).{8,50}$"
+    //Email 정규식
+    private func validateEmail(email: String) -> Bool {
+        let emailRegEx = "^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$"
         
-        let predicate = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
-        return predicate.evaluate(with: password)
+        let predicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return predicate.evaluate(with: email)
     }
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
 }
