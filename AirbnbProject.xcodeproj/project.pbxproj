@@ -20,6 +20,7 @@
 		1568A4DD2110912900FA1223 /* SignUpPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568A4DC2110912900FA1223 /* SignUpPasswordViewController.swift */; };
 		1568A4DF211188E600FA1223 /* SignUpDateOfBirthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568A4DE211188E600FA1223 /* SignUpDateOfBirthViewController.swift */; };
 		1568A4E22111DA7800FA1223 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568A4E12111DA7800FA1223 /* SignInViewController.swift */; };
+		1568A4E42112087B00FA1223 /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568A4E32112087B00FA1223 /* FindPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		1568A4DC2110912900FA1223 /* SignUpPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordViewController.swift; sourceTree = "<group>"; };
 		1568A4DE211188E600FA1223 /* SignUpDateOfBirthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDateOfBirthViewController.swift; sourceTree = "<group>"; };
 		1568A4E12111DA7800FA1223 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		1568A4E32112087B00FA1223 /* FindPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
 		38310991B84D0E2221F076C0 /* Pods-AirbnbProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject.release.xcconfig"; sourceTree = "<group>"; };
 		66F552965419A8DFCC187B4A /* Pods_AirbnbProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirbnbProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4AD846C3DE3FD1CF06D4F37 /* Pods-AirbnbProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				1568A4E12111DA7800FA1223 /* SignInViewController.swift */,
+				1568A4E32112087B00FA1223 /* FindPasswordViewController.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				1568A4E22111DA7800FA1223 /* SignInViewController.swift in Sources */,
 				1568A4DD2110912900FA1223 /* SignUpPasswordViewController.swift in Sources */,
 				15662883210EE5CF003B0338 /* EntryViewController.swift in Sources */,
+				1568A4E42112087B00FA1223 /* FindPasswordViewController.swift in Sources */,
 				152D788C210F054C0060BF9B /* SignUpNameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

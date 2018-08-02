@@ -1,8 +1,8 @@
 //
-//  SignInViewController.swift
+//  FindPasswordViewController.swift
 //  AirbnbProject
 //
-//  Created by 김승진 on 2018. 8. 1..
+//  Created by 김승진 on 2018. 8. 2..
 //  Copyright © 2018년 김승진. All rights reserved.
 //
 
@@ -13,21 +13,17 @@ private enum Constraint {
     static let originNextBtnBottom: CGFloat = 0
 }
 
-class SignInViewController: UIViewController {
+class FindPasswordViewController: UIViewController {
 
-    //MARK: - Property
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailInvalidChecked: UIImageView!
-    @IBOutlet weak var passwordInvalidChecked: UIImageView!
-    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var errorContentView: UIView!
     @IBOutlet weak var errorContents: UILabel!
     
-    @IBOutlet weak var backBtnTop: NSLayoutConstraint!
-    @IBOutlet weak var loginBtnViewBottom: NSLayoutConstraint!
+    @IBOutlet weak var nextBtnViewBottom: NSLayoutConstraint!
     
-    //MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,19 +36,20 @@ class SignInViewController: UIViewController {
         
         emailTextField.becomeFirstResponder()
     }
-
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
-        print("SignInViewController Deinit")
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        print("FindPasswordViewController Deinit")
     }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     //MARK: - Action
     
-    //SignInVC -> EntryVC
+    //FindPasswordVC -> SignInVC
     @IBAction func backButton(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -61,21 +58,7 @@ class SignInViewController: UIViewController {
         self.errorContentView.isHidden = true
     }
     
-    @IBAction func textFieldDidChange(_ sender: UITextField) {
-        if (emailTextField.text?.count)! > 0 && (passwordTextField.text?.count)! > 0 {
-            loginBtn.isEnabled = true
-            loginBtn.isHighlighted = false
-        }
-        
-        if let email = emailTextField.text {
-            if validateEmail(email: email) {
-                emailInvalidChecked.image = UIImage(named: "check")
-                errorContentView.isHidden = true
-            }
-        }
-    }
-    
-    @IBAction func loginButton(_ sender: UIButton) {
+    @IBAction func nextButton(_ sender: UIButton) {
         guard (self.emailTextField.text?.count)! > 0 else { return }
         
         if validateEmail(email: self.emailTextField.text!) {
@@ -83,31 +66,47 @@ class SignInViewController: UIViewController {
             //TODO:- 유저 통신 로직 추가
             print("로그인 성공")
             
+            let alertController = UIAlertController(title: "이메일을 확인해보세요", message: "\(self.emailTextField.text!)(으)로 이메일을 보내드렸습니다. 이메일에 포함된 링크를 탭하여 비밀번호를 다시 설정하세요.", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.default) { (alert)in
+                //SignInVC로 이동.
+                self.navigationController?.popViewController(animated: true)
+            }
+            
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true) {
+                print("OK")
+            }
+            
         } else {
             self.emailInvalidChecked.image = UIImage(named: "exclamationMark")
             self.errorContentView.isHidden = false
             self.errorContents.text = "유효한 이메일 주소를 입력하세요."
         }
+        
     }
     
-    @IBAction func findPasswordButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Login", bundle: nil)
-        let findPasswordVC = storyboard.instantiateViewController(withIdentifier: "FindPasswordVC")
-        self.navigationController?.pushViewController(findPasswordVC, animated: true)
+    @IBAction func textFieldDidChange(_ sender: UITextField) {
+        if (emailTextField.text?.count)! > 0 {
+            
+            if let email = emailTextField.text {
+                if validateEmail(email: email) {
+                    emailInvalidChecked.image = UIImage(named: "check")
+                    errorContentView.isHidden = true
+                }
+            }
+        }
+        
+        nextBtn.isEnabled = isEnabledNextBtn()
+        nextBtn.isHighlighted = isHighlightedNextBtn()
+
     }
-    
-    
-    @IBAction func toggleSecureText(_ sender: UIButton) {
-        passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
-    }
-    
     
     //MARK: - Method
-    
     private func setupInitialize() {
         
-        loginBtn.isEnabled = false
-        loginBtn.isHighlighted = true
+        nextBtn.isEnabled = false
+        nextBtn.isHighlighted = true
         errorContentView.isHidden = true
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(noti:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -120,7 +119,7 @@ class SignInViewController: UIViewController {
         let keyboardFrame = notiInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect
         let keyboardHeight = keyboardFrame.size.height
         
-        self.loginBtnViewBottom.constant = keyboardHeight
+        self.nextBtnViewBottom.constant = keyboardHeight
         UIView.animate(withDuration: notiInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval) {
             self.view.layoutIfNeeded()
         }
@@ -130,7 +129,7 @@ class SignInViewController: UIViewController {
         
         let notiInfo = noti.userInfo! as Dictionary
         
-        self.loginBtnViewBottom.constant = Constraint.originNextBtnBottom
+        self.nextBtnViewBottom.constant = Constraint.originNextBtnBottom
         
         UIView.animate(withDuration: notiInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval) {
             self.view.layoutIfNeeded()
@@ -143,6 +142,20 @@ class SignInViewController: UIViewController {
         
         let predicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return predicate.evaluate(with: email)
+    }
+    
+    private func isEnabledNextBtn() -> Bool {
+        if (self.emailTextField.text?.count)! > 0 {
+            return true
+        }
+        return false
+    }
+    
+    private func isHighlightedNextBtn() -> Bool {
+        if (self.emailTextField.text?.count)! > 0 {
+            return false
+        }
+        return true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
