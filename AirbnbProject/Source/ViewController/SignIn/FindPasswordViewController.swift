@@ -10,6 +10,7 @@ import UIKit
 
 //UI Constraint
 private enum Constraint {
+    static let originBackBtnTop: CGFloat = 10
     static let originNextBtnBottom: CGFloat = 0
 }
 
@@ -21,6 +22,7 @@ class FindPasswordViewController: UIViewController {
     @IBOutlet weak var errorContentView: UIView!
     @IBOutlet weak var errorContents: UILabel!
     
+    @IBOutlet weak var backBtnTop: NSLayoutConstraint!
     @IBOutlet weak var nextBtnViewBottom: NSLayoutConstraint!
     
     
@@ -120,6 +122,12 @@ class FindPasswordViewController: UIViewController {
         let keyboardHeight = keyboardFrame.size.height
         
         self.nextBtnViewBottom.constant = keyboardHeight
+        
+        // 키보드에 화면이 가려질 경우.
+        if keyboardFrame.origin.y < self.emailTextField.frame.maxY {
+            self.backBtnTop.constant = -(self.emailTextField.frame.maxY - keyboardHeight + self.emailTextField.frame.height)
+        }
+        
         UIView.animate(withDuration: notiInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval) {
             self.view.layoutIfNeeded()
         }
@@ -129,6 +137,7 @@ class FindPasswordViewController: UIViewController {
         
         let notiInfo = noti.userInfo! as Dictionary
         
+        self.backBtnTop.constant = Constraint.originBackBtnTop
         self.nextBtnViewBottom.constant = Constraint.originNextBtnBottom
         
         UIView.animate(withDuration: notiInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval) {

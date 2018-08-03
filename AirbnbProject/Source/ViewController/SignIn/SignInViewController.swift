@@ -10,6 +10,7 @@ import UIKit
 
 //UI Constraint
 private enum Constraint {
+    static let originBackBtnTop: CGFloat = 10
     static let originNextBtnBottom: CGFloat = 0
 }
 
@@ -121,6 +122,12 @@ class SignInViewController: UIViewController {
         let keyboardHeight = keyboardFrame.size.height
         
         self.loginBtnViewBottom.constant = keyboardHeight
+        
+        // 키보드에 화면이 가려질 경우.
+        if keyboardFrame.origin.y < self.passwordTextField.frame.maxY {
+            self.backBtnTop.constant = -(self.passwordTextField.frame.maxY - keyboardHeight + self.passwordTextField.frame.height)
+        }
+
         UIView.animate(withDuration: notiInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval) {
             self.view.layoutIfNeeded()
         }
@@ -130,6 +137,7 @@ class SignInViewController: UIViewController {
         
         let notiInfo = noti.userInfo! as Dictionary
         
+        self.backBtnTop.constant = Constraint.originBackBtnTop
         self.loginBtnViewBottom.constant = Constraint.originNextBtnBottom
         
         UIView.animate(withDuration: notiInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval) {

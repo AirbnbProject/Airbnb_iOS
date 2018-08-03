@@ -89,9 +89,10 @@ class SignUpDateOfBirthViewController: UIViewController {
             self.progressView.layoutIfNeeded()
         }
         
-        let storyboard = UIStoryboard(name: "Login", bundle: nil)
-        let signupEmailVC = storyboard.instantiateViewController(withIdentifier: "SignUpEmailVC")
-        self.navigationController?.pushViewController(signupEmailVC, animated: true)
+        //TODO: - 홈으로 이동
+//        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+//        let signupEmailVC = storyboard.instantiateViewController(withIdentifier: "SignUpEmailVC")
+//        self.navigationController?.pushViewController(signupEmailVC, animated: true)
     }
     
     @IBAction func errorCloseButton(_ sender: UIButton) {

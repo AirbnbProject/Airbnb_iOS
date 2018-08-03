@@ -36,6 +36,7 @@ class SignUpNameViewController: UIViewController {
         super.viewDidLoad()
         
         setupInitialize()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -21,6 +21,13 @@
 		1568A4DF211188E600FA1223 /* SignUpDateOfBirthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568A4DE211188E600FA1223 /* SignUpDateOfBirthViewController.swift */; };
 		1568A4E22111DA7800FA1223 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568A4E12111DA7800FA1223 /* SignInViewController.swift */; };
 		1568A4E42112087B00FA1223 /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568A4E32112087B00FA1223 /* FindPasswordViewController.swift */; };
+		1568A4E72112F60200FA1223 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568A4E62112F60200FA1223 /* ProfileViewController.swift */; };
+		1589C4312113F2B5003F224D /* ProfileUpdateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C4302113F2B5003F224D /* ProfileUpdateCell.swift */; };
+		1589C43321140366003F224D /* UserInfoEnrollmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C43221140366003F224D /* UserInfoEnrollmentCell.swift */; };
+		1589C436211422E9003F224D /* DefaultOneLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C434211422E9003F224D /* DefaultOneLineCell.swift */; };
+		1589C437211422E9003F224D /* DefaultOneLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1589C435211422E9003F224D /* DefaultOneLineCell.xib */; };
+		1589C43A21142300003F224D /* DefaultTwoLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C43821142300003F224D /* DefaultTwoLineCell.swift */; };
+		1589C43B21142300003F224D /* DefaultTwoLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1589C43921142300003F224D /* DefaultTwoLineCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +46,13 @@
 		1568A4DE211188E600FA1223 /* SignUpDateOfBirthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDateOfBirthViewController.swift; sourceTree = "<group>"; };
 		1568A4E12111DA7800FA1223 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		1568A4E32112087B00FA1223 /* FindPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
+		1568A4E62112F60200FA1223 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1589C4302113F2B5003F224D /* ProfileUpdateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateCell.swift; sourceTree = "<group>"; };
+		1589C43221140366003F224D /* UserInfoEnrollmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoEnrollmentCell.swift; sourceTree = "<group>"; };
+		1589C434211422E9003F224D /* DefaultOneLineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultOneLineCell.swift; sourceTree = "<group>"; };
+		1589C435211422E9003F224D /* DefaultOneLineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultOneLineCell.xib; sourceTree = "<group>"; };
+		1589C43821142300003F224D /* DefaultTwoLineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTwoLineCell.swift; sourceTree = "<group>"; };
+		1589C43921142300003F224D /* DefaultTwoLineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultTwoLineCell.xib; sourceTree = "<group>"; };
 		38310991B84D0E2221F076C0 /* Pods-AirbnbProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject.release.xcconfig"; sourceTree = "<group>"; };
 		66F552965419A8DFCC187B4A /* Pods_AirbnbProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirbnbProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4AD846C3DE3FD1CF06D4F37 /* Pods-AirbnbProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +158,7 @@
 		1566287B210EE385003B0338 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1568A4E52112F5EA00FA1223 /* Profile */,
 				1568A4E02111DA4300FA1223 /* SignIn */,
 				152D7888210EFA3C0060BF9B /* SignUp */,
 			);
@@ -173,6 +188,28 @@
 				1568A4E32112087B00FA1223 /* FindPasswordViewController.swift */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		1568A4E52112F5EA00FA1223 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				1568A4E62112F60200FA1223 /* ProfileViewController.swift */,
+				1568A4E82112F61800FA1223 /* SubCell */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		1568A4E82112F61800FA1223 /* SubCell */ = {
+			isa = PBXGroup;
+			children = (
+				1589C4302113F2B5003F224D /* ProfileUpdateCell.swift */,
+				1589C43221140366003F224D /* UserInfoEnrollmentCell.swift */,
+				1589C434211422E9003F224D /* DefaultOneLineCell.swift */,
+				1589C435211422E9003F224D /* DefaultOneLineCell.xib */,
+				1589C43821142300003F224D /* DefaultTwoLineCell.swift */,
+				1589C43921142300003F224D /* DefaultTwoLineCell.xib */,
+			);
+			path = SubCell;
 			sourceTree = "<group>";
 		};
 		4783672EC0ADDB9B518A9E15 /* Frameworks */ = {
@@ -254,7 +291,9 @@
 			files = (
 				1566287F210EE41B003B0338 /* Login.storyboard in Resources */,
 				1566286F210ED4AE003B0338 /* LaunchScreen.storyboard in Resources */,
+				1589C437211422E9003F224D /* DefaultOneLineCell.xib in Resources */,
 				1566286C210ED4AE003B0338 /* Assets.xcassets in Resources */,
+				1589C43B21142300003F224D /* DefaultTwoLineCell.xib in Resources */,
 				15662881210EE4CF003B0338 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,8 +348,13 @@
 			files = (
 				152D788A210EFA530060BF9B /* MoreOptionsViewController.swift in Sources */,
 				152D7890210F64340060BF9B /* SignUpEmailViewController.swift in Sources */,
+				1589C43321140366003F224D /* UserInfoEnrollmentCell.swift in Sources */,
+				1568A4E72112F60200FA1223 /* ProfileViewController.swift in Sources */,
 				15662865210ED4AD003B0338 /* AppDelegate.swift in Sources */,
 				1568A4DF211188E600FA1223 /* SignUpDateOfBirthViewController.swift in Sources */,
+				1589C43A21142300003F224D /* DefaultTwoLineCell.swift in Sources */,
+				1589C436211422E9003F224D /* DefaultOneLineCell.swift in Sources */,
+				1589C4312113F2B5003F224D /* ProfileUpdateCell.swift in Sources */,
 				1568A4E22111DA7800FA1223 /* SignInViewController.swift in Sources */,
 				1568A4DD2110912900FA1223 /* SignUpPasswordViewController.swift in Sources */,
 				15662883210EE5CF003B0338 /* EntryViewController.swift in Sources */,
