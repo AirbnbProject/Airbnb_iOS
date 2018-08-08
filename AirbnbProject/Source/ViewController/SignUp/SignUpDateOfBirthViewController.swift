@@ -24,6 +24,7 @@ class SignUpDateOfBirthViewController: UIViewController {
     @IBOutlet weak var nextBtnViewBottom: NSLayoutConstraint!
     
     private let datePicker = UIDatePicker()
+    private let authService: AuthServiceType = AuthService()
     
     //MARK: - Life Cycle
     
@@ -31,7 +32,6 @@ class SignUpDateOfBirthViewController: UIViewController {
         super.viewDidLoad()
 
         setupInitialize()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,17 +82,33 @@ class SignUpDateOfBirthViewController: UIViewController {
             return
         }
         
-        //TODO:- 통신
+        UserDefaults.standard.set(dateOfBirthTextField.text!, forKey: "birthday")
         
         self.progressView.progress = 1.0
         UIView.animate(withDuration: 0.7) {
             self.progressView.layoutIfNeeded()
         }
+
+        let name = UserDefaults.standard.object(forKey: "name")! as! String
+        let email = UserDefaults.standard.object(forKey: "email")! as! String
+        let birthday = UserDefaults.standard.object(forKey: "birthday")! as! String
+        let password = UserDefaults.standard.object(forKey: "password")! as! String
         
-        //TODO: - 홈으로 이동
-//        let storyboard = UIStoryboard(name: "Login", bundle: nil)
-//        let signupEmailVC = storyboard.instantiateViewController(withIdentifier: "SignUpEmailVC")
-//        self.navigationController?.pushViewController(signupEmailVC, animated: true)
+        //TODO:- 통신
+        authService.singUp(userName: name, email: email, birthday: birthday, password: password, completion: { result in
+            switch result {
+            case .success(let userInfo):
+                print("회원가입 성공")
+                print("UserInfo", userInfo)
+                self.navigationController?.popToRootViewController(animated: true)
+            case .failure(let error):
+                print(error.response!)
+            }
+        })
+        
+        //TODO: - 홈으로 이동(로그인창 말고 메인페이지로 바로 이동됨)
+//        let signInVC = MoveStoryboard.toVC(storybardName: "Login", identifier: "SignInVC")
+//        navigationController?.pushViewController(signInVC, animated: true)
     }
     
     @IBAction func errorCloseButton(_ sender: UIButton) {

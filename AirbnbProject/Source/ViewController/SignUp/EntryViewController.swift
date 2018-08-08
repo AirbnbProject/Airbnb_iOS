@@ -25,23 +25,19 @@ class EntryViewController: UIViewController {
 
     //MARK: - Action
     @IBAction func moreOptions(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Login", bundle: nil)
-        let moreOptionsVC = storyboard.instantiateViewController(withIdentifier: "MoreOptionsVC")
+        let moreOptionsVC = MoveStoryboard.toVC(storybardName: "Login", identifier: "MoreOptionsVC")
         present(moreOptionsVC, animated: true) {
             print("옵션 더 보기 이동 성공")
         }
     }
     
     @IBAction func signUp(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Login", bundle: nil)
-        let moreOptionsVC = storyboard.instantiateViewController(withIdentifier: "SignUpNameVC")
-//        let moreOptionsVC = storyboard.instantiateViewController(withIdentifier: "SignUpDateOfBirthVC")
-        navigationController?.pushViewController(moreOptionsVC, animated: true)
+        let signUpVC = MoveStoryboard.toVC(storybardName: "Login", identifier: "SignUpNameVC")
+        navigationController?.pushViewController(signUpVC, animated: true)
     }
     
     @IBAction func signIn(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Login", bundle: nil)
-        let signInVC = storyboard.instantiateViewController(withIdentifier: "SignInVC")
+        let signInVC = MoveStoryboard.toVC(storybardName: "Login", identifier: "SignInVC")
         navigationController?.pushViewController(signInVC, animated: true)
     }
     

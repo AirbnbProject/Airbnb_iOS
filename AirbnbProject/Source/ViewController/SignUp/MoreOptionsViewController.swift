@@ -26,7 +26,6 @@ class MoreOptionsViewController: UIViewController {
     
     //MoreOptions -> EntryVC
     @IBAction func CloseButton(_ sender: UIButton) {
-
         dismiss(animated: true) {
             print("EntryVC로 이동 성공")
         }

@@ -28,6 +28,11 @@
 		1589C437211422E9003F224D /* DefaultOneLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1589C435211422E9003F224D /* DefaultOneLineCell.xib */; };
 		1589C43A21142300003F224D /* DefaultTwoLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C43821142300003F224D /* DefaultTwoLineCell.swift */; };
 		1589C43B21142300003F224D /* DefaultTwoLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1589C43921142300003F224D /* DefaultTwoLineCell.xib */; };
+		1589C47E2119B83E003F224D /* ServiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C47D2119B83E003F224D /* ServiceResult.swift */; };
+		1589C4812119BEEF003F224D /* DefineConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C4802119BEEF003F224D /* DefineConstants.swift */; };
+		1589C4832119C095003F224D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C4822119C095003F224D /* AuthService.swift */; };
+		1589C4852119CEDC003F224D /* MoveToStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C4842119CEDC003F224D /* MoveToStoryboard.swift */; };
+		1589C4872119FA10003F224D /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C4862119FA10003F224D /* UserAuth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +58,11 @@
 		1589C435211422E9003F224D /* DefaultOneLineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultOneLineCell.xib; sourceTree = "<group>"; };
 		1589C43821142300003F224D /* DefaultTwoLineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTwoLineCell.swift; sourceTree = "<group>"; };
 		1589C43921142300003F224D /* DefaultTwoLineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultTwoLineCell.xib; sourceTree = "<group>"; };
+		1589C47D2119B83E003F224D /* ServiceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResult.swift; sourceTree = "<group>"; };
+		1589C4802119BEEF003F224D /* DefineConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineConstants.swift; sourceTree = "<group>"; };
+		1589C4822119C095003F224D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		1589C4842119CEDC003F224D /* MoveToStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveToStoryboard.swift; sourceTree = "<group>"; };
+		1589C4862119FA10003F224D /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 		38310991B84D0E2221F076C0 /* Pods-AirbnbProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject.release.xcconfig"; sourceTree = "<group>"; };
 		66F552965419A8DFCC187B4A /* Pods_AirbnbProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirbnbProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4AD846C3DE3FD1CF06D4F37 /* Pods-AirbnbProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +127,9 @@
 			children = (
 				15662864210ED4AD003B0338 /* AppDelegate.swift */,
 				1566287C210EE38D003B0338 /* Utility */,
+				1589C4762119B529003F224D /* Model */,
+				1589C47A2119B667003F224D /* Service */,
+				1589C47F2119BD5F003F224D /* Utility */,
 				1566287B210EE385003B0338 /* ViewController */,
 				1566287A210EE381003B0338 /* View */,
 				15662879210EE37C003B0338 /* Model */,
@@ -210,6 +223,32 @@
 				1589C43921142300003F224D /* DefaultTwoLineCell.xib */,
 			);
 			path = SubCell;
+			sourceTree = "<group>";
+		};
+		1589C4762119B529003F224D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1589C4862119FA10003F224D /* UserAuth.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1589C47A2119B667003F224D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1589C47D2119B83E003F224D /* ServiceResult.swift */,
+				1589C4822119C095003F224D /* AuthService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		1589C47F2119BD5F003F224D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				1589C4802119BEEF003F224D /* DefineConstants.swift */,
+				1589C4842119CEDC003F224D /* MoveToStoryboard.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		4783672EC0ADDB9B518A9E15 /* Frameworks */ = {
@@ -351,12 +390,17 @@
 				1589C43321140366003F224D /* UserInfoEnrollmentCell.swift in Sources */,
 				1568A4E72112F60200FA1223 /* ProfileViewController.swift in Sources */,
 				15662865210ED4AD003B0338 /* AppDelegate.swift in Sources */,
+				1589C4832119C095003F224D /* AuthService.swift in Sources */,
 				1568A4DF211188E600FA1223 /* SignUpDateOfBirthViewController.swift in Sources */,
 				1589C43A21142300003F224D /* DefaultTwoLineCell.swift in Sources */,
 				1589C436211422E9003F224D /* DefaultOneLineCell.swift in Sources */,
+				1589C4872119FA10003F224D /* UserAuth.swift in Sources */,
+				1589C4812119BEEF003F224D /* DefineConstants.swift in Sources */,
 				1589C4312113F2B5003F224D /* ProfileUpdateCell.swift in Sources */,
+				1589C4852119CEDC003F224D /* MoveToStoryboard.swift in Sources */,
 				1568A4E22111DA7800FA1223 /* SignInViewController.swift in Sources */,
 				1568A4DD2110912900FA1223 /* SignUpPasswordViewController.swift in Sources */,
+				1589C47E2119B83E003F224D /* ServiceResult.swift in Sources */,
 				15662883210EE5CF003B0338 /* EntryViewController.swift in Sources */,
 				1568A4E42112087B00FA1223 /* FindPasswordViewController.swift in Sources */,
 				152D788C210F054C0060BF9B /* SignUpNameViewController.swift in Sources */,

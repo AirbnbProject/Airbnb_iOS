@@ -79,6 +79,9 @@ class SignUpEmailViewController: UIViewController {
             
             if (emailTextField.text?.count)! > 0 {
                 self.errorContentView.isHidden = true
+                if validateEmail(email: emailTextField.text!) {
+                    emailInvalidChecked.image = UIImage(named: "check")
+                }
             } else {
                 self.nextBtn.isHighlighted = true
                 self.errorContentView.isHidden = false
@@ -94,9 +97,9 @@ class SignUpEmailViewController: UIViewController {
         guard (self.emailTextField.text?.count)! > 0 else { return }
         
         if validateEmail(email: self.emailTextField.text!) {
-            print("validate")
-            let storyboard = UIStoryboard(name: "Login", bundle: nil)
-            let signUpPasswordVC = storyboard.instantiateViewController(withIdentifier: "SignUpPasswordVC")
+            UserDefaults.standard.set(emailTextField.text!, forKey: "email")
+            
+            let signUpPasswordVC = MoveStoryboard.toVC(storybardName: "Login", identifier: "SignUpPasswordVC")
             self.navigationController?.pushViewController(signUpPasswordVC, animated: true)
         } else {
             self.emailInvalidChecked.image = UIImage(named: "exclamationMark")

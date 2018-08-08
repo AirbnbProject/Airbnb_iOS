@@ -76,9 +76,10 @@ class SignUpPasswordViewController: UIViewController {
         
         //특수 문자를 포함한 8자 이상 체크
         if validatePassword(password: self.passwordTextField.text!) {
-            let storyboard = UIStoryboard(name: "Login", bundle: nil)
-            let signUpPasswordVC = storyboard.instantiateViewController(withIdentifier: "SignUpDateOfBirthVC")
-            self.navigationController?.pushViewController(signUpPasswordVC, animated: true)
+            UserDefaults.standard.set(passwordTextField.text!, forKey: "password")
+            
+            let signUpDateOfBirthVC = MoveStoryboard.toVC(storybardName: "Login", identifier: "SignUpDateOfBirthVC")
+            self.navigationController?.pushViewController(signUpDateOfBirthVC, animated: true)
         } else {
             self.nextBtn.isEnabled = false
             self.nextBtn.isHighlighted = true
@@ -167,7 +168,6 @@ class SignUpPasswordViewController: UIViewController {
         let predicate = NSPredicate(format:"SELF MATCHES %@", passwordRegEx)
         return predicate.evaluate(with: password)
     }
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
