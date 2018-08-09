@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PerfectPaymentCell" id="gTV-IL-0wX" customClass="PerfectPaymentCell" customModule="AirbnbProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="369" height="88"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="369" height="88"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shield" translatesAutoresizingMaskIntoConstraints="NO" id="TLV-Ji-Qe9">
+                        <rect key="frame" x="303" y="23" width="46" height="42"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안전한 결제를 위해 에어비앤비 웹사이트나 앱 외부에서 송금하거나 대화를 나누지 마세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NJ-UL-RSR">
+                        <rect key="frame" x="10" y="25" width="275" height="39"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="275" id="XDv-t4-C1N"/>
+                            <constraint firstAttribute="height" constant="39" id="pzW-de-w2W"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="TLV-Ji-Qe9" secondAttribute="trailing" constant="20" id="8Bp-CG-dER"/>
+                <constraint firstItem="TLV-Ji-Qe9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="23" id="DQw-dx-0MK"/>
+                <constraint firstItem="TLV-Ji-Qe9" firstAttribute="leading" secondItem="2NJ-UL-RSR" secondAttribute="trailing" constant="18" id="Ir4-LX-aBd"/>
+                <constraint firstItem="2NJ-UL-RSR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="S7D-No-qPW"/>
+                <constraint firstAttribute="bottom" secondItem="TLV-Ji-Qe9" secondAttribute="bottom" constant="23" id="VCV-5Z-FPH"/>
+                <constraint firstItem="2NJ-UL-RSR" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="XGz-yr-ARx"/>
+                <constraint firstItem="TLV-Ji-Qe9" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="yrr-r1-Jfw"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="369" height="88"/>
+            <point key="canvasLocation" x="-31.5" y="-15"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="shield" width="16" height="16"/>
+    </resources>
+</document>
