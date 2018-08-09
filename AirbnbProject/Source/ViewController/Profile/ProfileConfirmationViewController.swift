@@ -1,14 +1,14 @@
 //
-//  EntryViewController.swift
+//  ProfileConfirmationViewController.swift
 //  AirbnbProject
 //
-//  Created by 김승진 on 2018. 7. 30..
+//  Created by 김승진 on 2018. 8. 9..
 //  Copyright © 2018년 김승진. All rights reserved.
 //
 
 import UIKit
 
-class EntryViewController: UIViewController {
+class ProfileConfirmationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
