@@ -100,6 +100,12 @@ class SignUpDateOfBirthViewController: UIViewController {
             case .success(let userInfo):
                 print("회원가입 성공")
                 print("UserInfo", userInfo)
+                
+                //UserDefault내용 전체 삭제
+                if let appDomain = Bundle.main.bundleIdentifier {
+                    UserDefaults.standard.removePersistentDomain(forName: appDomain)
+                }
+                
                 self.navigationController?.popToRootViewController(animated: true)
             case .failure(let error):
                 print(error.response!)

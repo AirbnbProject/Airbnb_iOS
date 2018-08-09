@@ -25,6 +25,7 @@ class SignUpEmailViewController: UIViewController {
     @IBOutlet weak var errorContentView: UIView!
     
     @IBOutlet weak var nextBtnViewBottom: NSLayoutConstraint!
+    private let authService: AuthServiceType = AuthService()
     
     //MARK: - Life Cycle
     
@@ -97,14 +98,32 @@ class SignUpEmailViewController: UIViewController {
         guard (self.emailTextField.text?.count)! > 0 else { return }
         
         if validateEmail(email: self.emailTextField.text!) {
-            UserDefaults.standard.set(emailTextField.text!, forKey: "email")
             
-            let signUpPasswordVC = MoveStoryboard.toVC(storybardName: "Login", identifier: "SignUpPasswordVC")
-            self.navigationController?.pushViewController(signUpPasswordVC, animated: true)
+            authService.emailCheck(email: self.emailTextField.text!) { (result) in
+                switch result {
+                case .success(_):
+                    print("email 중복 없음")
+                    UserDefaults.standard.set(self.emailTextField.text!, forKey: "email")
+                    
+                    let signUpPasswordVC = MoveStoryboard.toVC(storybardName: "Login", identifier: "SignUpPasswordVC")
+                    self.navigationController?.pushViewController(signUpPasswordVC, animated: true)
+                case .failure(response: let response, error: let error):
+//                    print(response)
+                    print(error)
+                    
+                }
+                
+            }
         } else {
             self.emailInvalidChecked.image = UIImage(named: "exclamationMark")
             self.errorContentView.isHidden = false
         }
+        
+        
+        
+        
+        
+        
     }
     
     //MARK: - Method

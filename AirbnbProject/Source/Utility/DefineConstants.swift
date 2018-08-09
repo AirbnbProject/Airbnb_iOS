@@ -15,6 +15,7 @@ enum API {
         static let signUp = API.baseURL + "/members/signup/"
         static let login = API.baseURL + "/members/login/"
         static let loginOut = API.baseURL + "/members/logout"
+        static let emailCheck = API.baseURL + "/members/emailcheck/"
     }
 }
 

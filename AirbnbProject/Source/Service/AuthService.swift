@@ -11,6 +11,7 @@ import Alamofire
 
 protocol AuthServiceType {
     func singUp(userName: String, email: String, birthday: String, password: String, completion: @escaping (Result<UserSignUp>) -> ())
+    func emailCheck(email: String, completion: @escaping (Result<EmailCheck>) -> ())
 }
 
 struct AuthService: AuthServiceType {
@@ -18,6 +19,51 @@ struct AuthService: AuthServiceType {
     func singUp(userName: String, email: String, birthday: String, password: String, completion: @escaping (Result<UserSignUp>) -> ()) {
         print("\n-------- [ signupPost ] --------\n")
         requestService(url: API.Auth.signUp, username: userName, email: email, birthday: birthday, password: password, completion: completion)
+    }
+    
+    func emailCheck(email: String, completion: @escaping (Result<EmailCheck>) -> ()) {
+        guard validateEmail(email: email) else { return completion(Result.failure(response: nil, error: AuthError.invalidEmail)) }
+        
+        let parameter: Parameters = [ "email" : email ]
+        
+        Alamofire
+            .request(API.Auth.emailCheck, method: .post, parameters: parameter)
+            .validate()
+            .responseData { (response) in
+                switch response.result {
+                case .success(let value):
+                    do {
+                        let decodeValue = try JSONDecoder().decode(EmailCheck.self, from: value)
+                        completion(Result.success(decodeValue))
+                    } catch {
+                        completion(Result.failure(response: nil, error: error))
+                    }
+                case .failure(let error):
+                    print(error)
+                    
+                    if let data = response.data {
+                        if let json = try? JSONSerialization.jsonObject(with: data, options: []) as! [String : Any] {
+                            completion(.failure(response: json, error: error))
+                        }
+                    }
+                }
+        }
+                
+//        Alamofire
+//            .request(, method: .post, parameters: parameter)
+//            .validate()
+//            .responseData(completionHandler: { (response) in
+//                switch response.result {
+//                case .success(let value):
+//                    do {
+//                        let decodeValue = try JSONDecoder().decode(EmailCheck.self, from: value)
+//                        completion(Result.success(decodeValue))
+//                    }
+//                    
+//                }
+//            })
+                
+        
     }
     
     func requestService(url: String, username: String, email: String, birthday: String, password: String, completion: @escaping (Result<UserSignUp>) -> ()) {
@@ -48,8 +94,8 @@ struct AuthService: AuthServiceType {
                     }
                 case .failure(let error):
                     if let data = response.data {
-                        if let json = try? JSONSerialization.jsonObject(with: data, options: []) as! [String : Any] {
-                            completion(.failure(response: json, error: error))
+                        if let json = try? JSONSerialization.jsonObject(with: data, options: []) {
+                            completion(.failure(response: json as! [String : Any], error: error))
                         }
                     }
                 }

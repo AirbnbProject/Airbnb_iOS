@@ -9,8 +9,8 @@
 import UIKit
 
 private enum Constraint {
-    static let profileUpdateHeight: CGFloat = 150.0
-    static let userInfoEnrollment: CGFloat = 200.0
+    static let profileUpdateHeight: CGFloat = 100.0
+    static let userInfoEnrollment: CGFloat = 225.0
     static let defaultOneLineCell: CGFloat = 80.0
 }
 
@@ -21,14 +21,10 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var testView: UIView!
-    var lastContentOffset: CGPoint?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupInitialize()
-        testView.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +33,11 @@ class ProfileViewController: UIViewController {
     }
 
     private func setupInitialize() {
+        
+        //네비게이션 Bottom Line Hidden
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -62,9 +63,6 @@ extension ProfileViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
-        
         switch indexPath.section {
         case 0:
             switch indexPath.row {
@@ -96,6 +94,7 @@ extension ProfileViewController: UITableViewDataSource {
 }
 
 extension ProfileViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         switch indexPath.section {
@@ -120,52 +119,26 @@ extension ProfileViewController: UITableViewDelegate {
         }
     }
     
-//    - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-//    _lastContentOffset = scrollView.contentOffset;
-//    }
-    
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        self.lastContentOffset = scrollView.contentOffset
-        
-        
-    }
-    
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        print(scrollView)
-        
-        
-    }
-    
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        print("애니메이션")
-    }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        
-        print(decelerate)
-        
-        
-        if (lastContentOffset?.y)! < scrollView.contentOffset.y
-        {
-            print("다운")
-            if decelerate == true {
-                self.testView.isHidden = true
-                UIView.animate(withDuration: 1.0) {
-                    self.testView.layoutIfNeeded()
-                }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0:
+                print("수정")
+            default:
+                print("section1")
             }
-            
-        }
-        else if (lastContentOffset?.y)! > scrollView.contentOffset.y
-        {
-            print("위")
-            if decelerate == true {
-                self.testView.isHidden = false
-                UIView.animate(withDuration: 1.0) {
-                    self.testView.layoutIfNeeded()
-                }
+        case 1:
+            switch indexPath.row {
+            case 0..<oneLineData.count:
+                print("asdl;kfadf")
+            default:
+                print("asd;flkja;ldkf")
             }
+        default:
+            print("default")
         }
+
     }
     
 
