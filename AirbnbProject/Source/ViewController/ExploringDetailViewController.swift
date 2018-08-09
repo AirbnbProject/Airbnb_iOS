@@ -1,14 +1,14 @@
 //
-//  EntryViewController.swift
+//  ExploringDetailViewController.swift
 //  AirbnbProject
 //
-//  Created by 김승진 on 2018. 7. 30..
+//  Created by 엄태형 on 2018. 7. 30..
 //  Copyright © 2018년 김승진. All rights reserved.
 //
 
 import UIKit
 
-class EntryViewController: UIViewController {
+class ExploringDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

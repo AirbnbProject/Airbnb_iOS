@@ -425,10 +425,10 @@
             </objects>
             <point key="canvasLocation" x="1672.8" y="757.87106446776613"/>
         </scene>
-        <!--View Controller-->
+        <!--Exploring Detail View Controller-->
         <scene sceneID="EDW-qw-o4C">
             <objects>
-                <viewController id="i14-Le-MEm" sceneMemberID="viewController">
+                <viewController id="i14-Le-MEm" customClass="ExploringDetailViewController" customModule="AirbnbProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9PJ-W7-EBw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -439,6 +439,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdU-wP-rsv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3212" y="29.23538230884558"/>
+
+            <point key="canvasLocation" x="1922" y="18"/>
+
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="VYk-HU-6ue">
