@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BedRoomInfoCollecionViewCell" id="gTV-IL-0wX" customClass="BedRoomInfoCollecionViewCell" customModule="AirbnbProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="185" height="129"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="185" height="129"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bed" translatesAutoresizingMaskIntoConstraints="NO" id="kjl-eJ-be5">
+                        <rect key="frame" x="0.0" y="1" width="62" height="52"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="52" id="3pg-jL-hzP"/>
+                            <constraint firstAttribute="width" constant="62" id="jpB-TR-E1r"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9Q-Ia-yAs">
+                        <rect key="frame" x="0.0" y="60" width="48" height="24"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pmt-MZ-OYL">
+                        <rect key="frame" x="0.0" y="85" width="37.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Pmt-MZ-OYL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1iA-rQ-OMI"/>
+                <constraint firstItem="P9Q-Ia-yAs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7Qd-WN-jo4"/>
+                <constraint firstItem="P9Q-Ia-yAs" firstAttribute="top" secondItem="kjl-eJ-be5" secondAttribute="bottom" constant="7" id="B6E-1l-D52"/>
+                <constraint firstItem="kjl-eJ-be5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Djb-xx-Y1F"/>
+                <constraint firstItem="Pmt-MZ-OYL" firstAttribute="top" secondItem="P9Q-Ia-yAs" secondAttribute="bottom" constant="1" id="WQo-Qn-3bV"/>
+                <constraint firstItem="kjl-eJ-be5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="ZIH-Zd-QuP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="185" height="129"/>
+            <connections>
+                <outlet property="bedRoomInfo" destination="Pmt-MZ-OYL" id="XZc-0T-ff1"/>
+                <outlet property="bedRoomName" destination="P9Q-Ia-yAs" id="RvC-Pf-vkb"/>
+            </connections>
+            <point key="canvasLocation" x="-45.5" y="-3.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="bed" width="16" height="16"/>
+    </resources>
+</document>

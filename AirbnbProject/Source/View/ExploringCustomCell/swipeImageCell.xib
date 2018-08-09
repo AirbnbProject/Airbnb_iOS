@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="swipeImageCell" id="gTV-IL-0wX" customClass="swipeImageCell" customModule="AirbnbProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGi-pa-BPF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="205"/>
+                    </scrollView>
+                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="ntP-jN-9lW">
+                        <rect key="frame" x="168" y="203" width="39" height="37"/>
+                        <color key="pageIndicatorTintColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="currentPageIndicatorTintColor" red="1" green="0.29516069420000002" blue="0.23970242729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </pageControl>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="aGi-pa-BPF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="IyQ-mY-1ni"/>
+                <constraint firstAttribute="trailing" secondItem="aGi-pa-BPF" secondAttribute="trailing" id="RqX-LP-eiv"/>
+                <constraint firstAttribute="bottom" secondItem="aGi-pa-BPF" secondAttribute="bottom" constant="35" id="Sqc-2J-LC0"/>
+                <constraint firstAttribute="bottom" secondItem="ntP-jN-9lW" secondAttribute="bottom" id="e4D-dt-pMF"/>
+                <constraint firstItem="ntP-jN-9lW" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="neA-T5-hhd"/>
+                <constraint firstItem="aGi-pa-BPF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xen-aH-rCU"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="375" height="240"/>
+            <connections>
+                <outlet property="pageControl" destination="ntP-jN-9lW" id="rrY-fc-yz1"/>
+                <outlet property="scrollView" destination="aGi-pa-BPF" id="lJe-Mv-beA"/>
+            </connections>
+            <point key="canvasLocation" x="-0.5" y="-17"/>
+        </collectionViewCell>
+    </objects>
+</document>
