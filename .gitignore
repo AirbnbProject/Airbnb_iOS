@@ -17,6 +17,14 @@ DerivedData/
 !default.perspectivev3
 xcuserdata/
 
+#####
+# OS X temporary files that should never be committed
+
+.DS_Store
+*.swp
+*.lock
+profile
+
 ## Other
 *.moved-aside
 *.xccheckout
