@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HouseListCell" id="gTV-IL-0wX" customClass="HouseListCollectionCell" customModule="AirbnbProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="196" height="185"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="196" height="185"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type + City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHc-Mi-b3H">
+                        <rect key="frame" x="0.0" y="105" width="57.5" height="14.5"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                        <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price($, 원..) /박 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9U-br-80H">
+                        <rect key="frame" x="0.0" y="147.5" width="81.5" height="14.5"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                        <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="House Title(Maximum 2 Line)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y75-pg-SKZ">
+                        <rect key="frame" x="0.0" y="124.5" width="196" height="18"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house" translatesAutoresizingMaskIntoConstraints="NO" id="HO4-mO-Zqb">
+                        <rect key="frame" x="0.0" y="0.0" width="196" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="mlD-jK-K1s"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평점 별" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77O-Pm-3FT">
+                        <rect key="frame" x="0.0" y="167" width="29" height="12"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="참여 인원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXV-c2-Wv9">
+                        <rect key="frame" x="34" y="167" width="38" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="슈퍼호스트(O)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPS-Qf-PR8">
+                        <rect key="frame" x="77" y="167" width="59" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4kg-J8-X72">
+                        <rect key="frame" x="0.0" y="0.0" width="196" height="100"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UM-R4-Am5">
+                        <rect key="frame" x="171" y="5" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="8y3-gD-Mkh"/>
+                            <constraint firstAttribute="height" constant="20" id="vok-VY-NE9"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="loveIconDefault"/>
+                        <connections>
+                            <action selector="favoriteCheckBtnDidTap:" destination="gTV-IL-0wX" eventType="touchUpInside" id="fIh-5F-5jU"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="HO4-mO-Zqb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="00A-Mj-j4c"/>
+                <constraint firstItem="PHc-Mi-b3H" firstAttribute="leading" secondItem="HO4-mO-Zqb" secondAttribute="leading" id="1fn-56-qE8"/>
+                <constraint firstItem="4kg-J8-X72" firstAttribute="trailing" secondItem="HO4-mO-Zqb" secondAttribute="trailing" id="7jD-Q9-cpY"/>
+                <constraint firstItem="77O-Pm-3FT" firstAttribute="leading" secondItem="HO4-mO-Zqb" secondAttribute="leading" id="BLt-jB-GSH"/>
+                <constraint firstItem="4kg-J8-X72" firstAttribute="leading" secondItem="HO4-mO-Zqb" secondAttribute="leading" id="CMc-Or-4hS"/>
+                <constraint firstItem="kXV-c2-Wv9" firstAttribute="centerY" secondItem="77O-Pm-3FT" secondAttribute="centerY" id="CSk-a0-5iL"/>
+                <constraint firstItem="HO4-mO-Zqb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ETb-se-SPw"/>
+                <constraint firstItem="L9U-br-80H" firstAttribute="leading" secondItem="HO4-mO-Zqb" secondAttribute="leading" id="F3c-vR-iyY"/>
+                <constraint firstItem="4kg-J8-X72" firstAttribute="bottom" secondItem="HO4-mO-Zqb" secondAttribute="bottom" id="HFW-6E-6TH"/>
+                <constraint firstItem="kXV-c2-Wv9" firstAttribute="leading" secondItem="77O-Pm-3FT" secondAttribute="trailing" constant="5" id="JmF-o9-GHr"/>
+                <constraint firstItem="PHc-Mi-b3H" firstAttribute="top" secondItem="HO4-mO-Zqb" secondAttribute="bottom" constant="5" id="YS0-Hi-8y5"/>
+                <constraint firstItem="4kg-J8-X72" firstAttribute="top" secondItem="HO4-mO-Zqb" secondAttribute="top" id="ZdB-uE-0cg"/>
+                <constraint firstItem="Y75-pg-SKZ" firstAttribute="leading" secondItem="HO4-mO-Zqb" secondAttribute="leading" id="byZ-Pl-lHH"/>
+                <constraint firstItem="L9U-br-80H" firstAttribute="top" secondItem="Y75-pg-SKZ" secondAttribute="bottom" constant="5" id="dqp-2d-c1K"/>
+                <constraint firstAttribute="trailing" secondItem="4UM-R4-Am5" secondAttribute="trailing" constant="5" id="fMu-I5-iqj"/>
+                <constraint firstItem="LPS-Qf-PR8" firstAttribute="centerY" secondItem="77O-Pm-3FT" secondAttribute="centerY" id="mEO-6h-Lje"/>
+                <constraint firstItem="Y75-pg-SKZ" firstAttribute="top" secondItem="PHc-Mi-b3H" secondAttribute="bottom" constant="5" id="mOO-6L-PqB"/>
+                <constraint firstAttribute="trailing" secondItem="HO4-mO-Zqb" secondAttribute="trailing" id="nbu-Ob-E3E"/>
+                <constraint firstAttribute="trailing" secondItem="Y75-pg-SKZ" secondAttribute="trailing" id="nsd-VN-87A"/>
+                <constraint firstItem="4UM-R4-Am5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="oPq-pD-TC4"/>
+                <constraint firstItem="LPS-Qf-PR8" firstAttribute="leading" secondItem="kXV-c2-Wv9" secondAttribute="trailing" constant="5" id="pWs-Lp-gYm"/>
+                <constraint firstItem="77O-Pm-3FT" firstAttribute="top" secondItem="L9U-br-80H" secondAttribute="bottom" constant="5" id="yaS-HK-iNT"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="182" height="133"/>
+            <connections>
+                <outlet property="favoriteCheckBtn" destination="4UM-R4-Am5" id="m2j-uC-0lG"/>
+                <outlet property="houseImageView" destination="4kg-J8-X72" id="LAy-OA-Lc0"/>
+            </connections>
+            <point key="canvasLocation" x="-27" y="-63.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="house" width="512" height="341"/>
+        <image name="loveIconDefault" width="128" height="128"/>
+    </resources>
+</document>
