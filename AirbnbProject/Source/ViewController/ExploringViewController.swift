@@ -50,7 +50,7 @@ class ExploringViewController: UIViewController {
         super.viewDidLoad()
         
         // SET TEXTFILED DESIGN
-        
+    
         self.enterSearchBarTextField.layer.borderWidth = 0.2
         self.enterSearchBarTextField.layer.borderColor = UIColor.gray.cgColor
         self.enterSearchBarTextField.layer.cornerRadius = 2.0
@@ -117,6 +117,7 @@ extension ExploringViewController: UICollectionViewDataSource, UICollectionViewD
         
         return 1
     }
+    
     
     // MARK:- SET EACH CELL IN SECTION
     
@@ -247,7 +248,16 @@ extension ExploringViewController: UICollectionViewDataSource, UICollectionViewD
             return CGSize(width: 0, height: 0)
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            print("에어비앤비 플러스를 만나보세요 !")
+        }
+    }
+    
+    
 }
+
 
 // MARK:- SET UITEXTFIELD DELEGATE
 
