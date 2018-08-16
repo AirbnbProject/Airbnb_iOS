@@ -10,21 +10,50 @@ import Foundation
 import Alamofire
 
 protocol AuthServiceType {
-    func singUp(userName: String, email: String, birthday: String, password: String, completion: @escaping (Result<UserSignUp>) -> ())
+    func signIn(email: String, password: String, completion: @escaping (Result<UserLogin>) -> ())
+    func signUp(firstName: String, lastName: String, email: String, birthday: String, password: String, completion: @escaping (Result<UserSignUp>) -> ())
+    func facebookSignIn(email: String, id: String, firstName: String, lastName: String, url: String, completion: @escaping (Result<UserLogin>) -> ())
     func emailCheck(email: String, completion: @escaping (Result<EmailCheck>) -> ())
+    func findPassword(email: String, completion: @escaping (Result<FindPassword>) -> ())
 }
 
 struct AuthService: AuthServiceType {
     
-    func singUp(userName: String, email: String, birthday: String, password: String, completion: @escaping (Result<UserSignUp>) -> ()) {
+    func signIn(email: String, password: String, completion: @escaping (Result<UserLogin>) -> ()) {
+        print("\n-------- [ signIn ] --------\n")
+        
+        let parameter: Parameters = [ "username" : email,
+                                      "password": password ]
+        
+        Alamofire.request(API.Auth.login, method: .post, parameters: parameter)
+            .validate()
+            .responseData { (response) in
+                switch response.result {
+                case .success(let value):
+                    do {
+                        let decodableValue = try JSONDecoder().decode(UserLogin.self, from: value)
+                        completion(Result.success(decodableValue))
+                    } catch {
+                        completion(Result.failure(nil, error))
+                    }
+                case .failure(let error):
+                    do {
+                        completion(.failure(response.data!, error))
+                    }
+                    
+                }
+            }
+        }
+
+    func signUp(firstName: String, lastName: String, email: String, birthday: String, password: String, completion: @escaping (Result<UserSignUp>) -> ()) {
         print("\n-------- [ signupPost ] --------\n")
-        requestService(url: API.Auth.signUp, username: userName, email: email, birthday: birthday, password: password, completion: completion)
+        requestService(url: API.Auth.signUp, firstName: firstName, lastName: lastName, email: email, birthday: birthday, password: password, completion: completion)
     }
     
     func emailCheck(email: String, completion: @escaping (Result<EmailCheck>) -> ()) {
-        guard validateEmail(email: email) else { return completion(Result.failure(response: nil, error: AuthError.invalidEmail)) }
+        guard validateEmail(email: email) else { return completion(Result.failure(nil, AuthError.invalidEmail)) }
         
-        let parameter: Parameters = [ "email" : email ]
+        let parameter: Parameters = [ "username" : email ]
         
         Alamofire
             .request(API.Auth.emailCheck, method: .post, parameters: parameter)
@@ -36,46 +65,51 @@ struct AuthService: AuthServiceType {
                         let decodeValue = try JSONDecoder().decode(EmailCheck.self, from: value)
                         completion(Result.success(decodeValue))
                     } catch {
-                        completion(Result.failure(response: nil, error: error))
+                        completion(Result.failure(nil, error))
                     }
                 case .failure(let error):
-                    print(error)
-                    
-                    if let data = response.data {
-                        if let json = try? JSONSerialization.jsonObject(with: data, options: []) as! [String : Any] {
-                            completion(.failure(response: json, error: error))
-                        }
-                    }
+                    completion(.failure(response.data!, error))
                 }
         }
-                
-//        Alamofire
-//            .request(, method: .post, parameters: parameter)
-//            .validate()
-//            .responseData(completionHandler: { (response) in
-//                switch response.result {
-//                case .success(let value):
-//                    do {
-//                        let decodeValue = try JSONDecoder().decode(EmailCheck.self, from: value)
-//                        completion(Result.success(decodeValue))
-//                    }
-//                    
-//                }
-//            })
-                
+    }
+
+    func facebookSignIn(email: String, id: String, firstName: String, lastName: String, url: String, completion: @escaping (Result<UserLogin>) -> ()) {
         
+        let parameter: Parameters = [ "email" : email,
+                                      "id" :  id,
+                                      "first_name" : firstName,
+                                      "last_name" : lastName,
+                                      "url" : url ]
+        
+        Alamofire
+            .request(API.Auth.facebookLogin, method: .post, parameters: parameter)
+            .validate()
+            .responseData { (response) in
+                switch response.result {
+                case .success(let value):
+                    do {
+                        let decodeValue = try JSONDecoder().decode(UserLogin.self, from: value)
+                        completion(Result.success(decodeValue))
+                    } catch {
+                        completion(Result.failure(nil, error))
+                    }
+                case .failure(let error):
+                    completion(.failure(response.data!, error))
+                }
+        }
     }
     
-    func requestService(url: String, username: String, email: String, birthday: String, password: String, completion: @escaping (Result<UserSignUp>) -> ()) {
+    func requestService(url: String, firstName: String, lastName: String, email: String, birthday: String, password: String, completion: @escaping (Result<UserSignUp>) -> ()) {
         
-        guard validUserName(username: username) else { return completion(Result.failure(response: nil, error: AuthError.invalidUsername)) }
-        guard validateEmail(email: email) else { return completion(Result.failure(response: nil, error: AuthError.invalidEmail)) }
-        guard validateAdult(birthDay: birthday) else { return completion(Result.failure(response: nil, error: AuthError.invalidBirthDay)) }
-        guard validatePassword(password: password) else { return completion(Result.failure(response: nil, error: AuthError.invalidPassword)) }
+        guard validUserName(firstName: firstName, lastName: lastName) else { return completion(Result.failure(nil, AuthError.invalidUsername)) }
+        guard validateEmail(email: email) else { return completion(Result.failure(nil, AuthError.invalidEmail)) }
+        guard validateAdult(birthDay: birthday) else { return completion(Result.failure(nil, AuthError.invalidBirthDay)) }
+        guard validatePassword(password: password) else { return completion(Result.failure(nil, AuthError.invalidPassword)) }
 
         let parameter: Parameters = [
-            "username" : username,
-            "email" : email,
+            "first_name" : firstName,
+            "last_name" : lastName,
+            "username" : email,
             "birthday" : birthday,
             "password" : password
         ]
@@ -88,22 +122,40 @@ struct AuthService: AuthServiceType {
                 case .success(let value):
                     do {
                         let decodeValue = try JSONDecoder().decode(UserSignUp.self, from: value)
+                        print("Decodable:",decodeValue)
                         completion(.success(decodeValue))
                     } catch {
-                        completion(Result.failure(response: nil, error: error))
+                        completion(Result.failure(nil, error))
                     }
                 case .failure(let error):
-                    if let data = response.data {
-                        if let json = try? JSONSerialization.jsonObject(with: data, options: []) {
-                            completion(.failure(response: json as! [String : Any], error: error))
-                        }
-                    }
+                    print(error)
                 }
         }
     }
     
-    func validUserName(username: String) -> Bool {
-        guard username.count > 0 else { return false }
+    func findPassword(email: String, completion: @escaping (Result<FindPassword>) -> ()) {
+        Alamofire
+            .request(API.Auth.findPassword)
+            .validate()
+            .responseData { (response) in
+                switch response.result {
+                case .success(let value):
+                    do {
+                        let decodeValue = try JSONDecoder().decode(FindPassword.self, from: value)
+                        print("Decodable:",decodeValue)
+                        completion(.success(decodeValue))
+                    } catch {
+                        completion(Result.failure(nil, error))
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+        }
+    }
+    
+    func validUserName(firstName: String, lastName: String) -> Bool {
+        guard firstName.count > 0 else { return false }
+        guard lastName.count > 0 else { return false }
         return true
     }
     
@@ -124,8 +176,6 @@ struct AuthService: AuthServiceType {
         
         let inputYear = birthDay.split(separator: ".")[0]
         let age = Int(nowYear)! - Int(inputYear)! + 1
-        
-        print(Int(nowYear)! - Int(inputYear)! + 1)
         
         if age >= 18 { return true }
         

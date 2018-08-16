@@ -25,6 +25,7 @@ class FindPasswordViewController: UIViewController {
     @IBOutlet weak var backBtnTop: NSLayoutConstraint!
     @IBOutlet weak var nextBtnViewBottom: NSLayoutConstraint!
     
+    private let authService: AuthServiceType = AuthService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,10 +65,7 @@ class FindPasswordViewController: UIViewController {
         guard (self.emailTextField.text?.count)! > 0 else { return }
         
         if validateEmail(email: self.emailTextField.text!) {
-            
-            //TODO:- 유저 통신 로직 추가
-            print("로그인 성공")
-            
+
             let alertController = UIAlertController(title: "이메일을 확인해보세요", message: "\(self.emailTextField.text!)(으)로 이메일을 보내드렸습니다. 이메일에 포함된 링크를 탭하여 비밀번호를 다시 설정하세요.", preferredStyle: UIAlertControllerStyle.alert)
             
             let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.default) { (alert)in

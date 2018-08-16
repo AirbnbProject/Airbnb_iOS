@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 //UI Constraint
 private enum Constraint {
     static let originNextBtnBottom: CGFloat = 0
 }
 
-class SignUpEmailViewController: UIViewController {
+class SignUpEmailViewController: UIViewController, NVActivityIndicatorViewable {
     
     //TODO:- 이메일이 존재하는지 확인해야됨
 
@@ -23,14 +24,17 @@ class SignUpEmailViewController: UIViewController {
     @IBOutlet weak var emailInvalidChecked: UIImageView!
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var errorContentView: UIView!
-    
+    @IBOutlet weak var errorContents: UILabel!
     @IBOutlet weak var nextBtnViewBottom: NSLayoutConstraint!
+    
     private let authService: AuthServiceType = AuthService()
+    private var activityView: NVActivityIndicatorView!
     
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         setupInitialize()
     }
@@ -86,6 +90,7 @@ class SignUpEmailViewController: UIViewController {
             } else {
                 self.nextBtn.isHighlighted = true
                 self.errorContentView.isHidden = false
+                self.errorContents.text = "유효한 이메일 주소를 입력해주세요."
                 emailInvalidChecked.image = UIImage(named: "exclamationMark")
             }
         }
@@ -97,33 +102,41 @@ class SignUpEmailViewController: UIViewController {
     @IBAction func nextButton(_ sender: UIButton) {
         guard (self.emailTextField.text?.count)! > 0 else { return }
         
+        activityView.startAnimating()
+        
         if validateEmail(email: self.emailTextField.text!) {
             
             authService.emailCheck(email: self.emailTextField.text!) { (result) in
                 switch result {
                 case .success(_):
                     print("email 중복 없음")
+                    self.activityView.stopAnimating()
+                    
                     UserDefaults.standard.set(self.emailTextField.text!, forKey: "email")
                     
                     let signUpPasswordVC = MoveStoryboard.toVC(storybardName: "Login", identifier: "SignUpPasswordVC")
                     self.navigationController?.pushViewController(signUpPasswordVC, animated: true)
-                case .failure(response: let response, error: let error):
-//                    print(response)
+                case .failure(let response, let error):
+                    self.activityView.stopAnimating()
                     print(error)
-                    
+                    if let data = response {
+                        if let json = try? JSONSerialization.jsonObject(with: data, options: []) {
+                            if let dictionary = json as? [String : AnyObject] {
+                                let errorContent = dictionary["username"] as! [String]
+                                    self.errorContents.text = errorContent[0]
+                            }
+                        }
+                    }
+                    self.emailInvalidChecked.image = UIImage(named: "exclamationMark")
+                    self.errorContentView.isHidden = false
                 }
-                
             }
         } else {
+            self.activityView.stopAnimating()
             self.emailInvalidChecked.image = UIImage(named: "exclamationMark")
             self.errorContentView.isHidden = false
+            self.errorContents.text = "유효한 이메일 주소를 입력해주세요."
         }
-        
-        
-        
-        
-        
-        
     }
     
     //MARK: - Method
@@ -133,8 +146,19 @@ class SignUpEmailViewController: UIViewController {
         nextBtn.isHighlighted = true
         errorContentView.isHidden = true
         
+        setupActivityIndicator()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(noti:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(noti:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func setupActivityIndicator() {
+        
+        activityView = NVActivityIndicatorView(frame: CGRect(x: self.view.center.x - 50, y: self.view.center.y - 50, width: 100, height: 100), type: NVActivityIndicatorType.ballBeat, color: UIColor(red: 0/255.0, green: 132/255.0, blue: 137/255.0, alpha: 1), padding: 25)
+        
+        activityView.backgroundColor = .white
+        activityView.layer.cornerRadius = 10
+        self.view.addSubview(activityView)
     }
     
     private func isEnabledNextBtn() -> Bool {
@@ -186,3 +210,4 @@ class SignUpEmailViewController: UIViewController {
         self.view.endEditing(true)
     }
 }
+
