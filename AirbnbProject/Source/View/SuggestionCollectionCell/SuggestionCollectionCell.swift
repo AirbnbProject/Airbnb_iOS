@@ -51,4 +51,15 @@ extension SuggestionCollectionCell: UICollectionViewDataSource, UICollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            print("숙소")
+        } else if indexPath.row == 1 {
+            print("트립")
+        } else if indexPath.row == 2 {
+            print("레스토랑")
+        }
+    }
+    
 }
