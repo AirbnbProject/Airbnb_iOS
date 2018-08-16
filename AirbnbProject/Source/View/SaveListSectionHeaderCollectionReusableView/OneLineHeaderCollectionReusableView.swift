@@ -8,8 +8,9 @@
 
 import UIKit
 
-class SaveListOneLineHeaderCollectionReusableView: UICollectionReusableView {
-
+class OneLineHeaderCollectionReusableView: UICollectionReusableView {
+    @IBOutlet weak var saveListOneLineHeaderTitle: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

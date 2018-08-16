@@ -10,9 +10,19 @@ import UIKit
 
 class SaveListCollectionCell: UICollectionViewCell {
 
+    @IBOutlet weak var saveListImageView: UIImageView!
+    @IBOutlet weak var saveListCityNameTitle: UILabel!
+    @IBOutlet weak var saveListHouseNumberTitle: UILabel!
+    
+    var saveListBasicCityNameArray: Array<String> = ["Malibu", "Los Angeles", "Cape Town", "Rotterdam", "London", "Lecce", "Vesteroy", "Vesteroy", "Santorini"]
+    var saveListBasicImageNameArray: Array<String> = [
+        "saveList_Basic", "saveList_Basic", "saveList_Basic", "saveList_Basic", "saveList_Basic", "saveList_Basic", "saveList_Basic", "saveList_Basic", "saveList_Basic"
+    ]
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+
     }
 
 }

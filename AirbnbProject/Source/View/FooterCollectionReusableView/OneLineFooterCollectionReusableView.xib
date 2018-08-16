@@ -22,6 +22,9 @@
                     <state key="normal" title="모두 보기(숙소 총 개수)">
                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="clickFooterBtn:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="u4P-OZ-LrH"/>
+                    </connections>
                 </button>
             </subviews>
             <constraints>
