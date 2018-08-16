@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="G6E-Rf-751">
+            <objects>
+                <viewController id="tmJ-7c-gUV" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3tV-8p-ybv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메시지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toP-BD-QOy">
+                                <rect key="frame" x="16" y="70" width="78" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메시지를 모두 읽으셨습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZo-T4-alZ">
+                                <rect key="frame" x="16" y="114" width="202" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="toP-BD-QOy" firstAttribute="top" secondItem="0B4-9E-9Z3" secondAttribute="top" constant="50" id="8h2-t2-Pka"/>
+                            <constraint firstItem="toP-BD-QOy" firstAttribute="leading" secondItem="0B4-9E-9Z3" secondAttribute="leading" constant="16" id="c4x-zH-N8G"/>
+                            <constraint firstItem="TZo-T4-alZ" firstAttribute="leading" secondItem="toP-BD-QOy" secondAttribute="leading" id="edx-hC-qeh"/>
+                            <constraint firstItem="TZo-T4-alZ" firstAttribute="top" secondItem="toP-BD-QOy" secondAttribute="bottom" constant="8" id="pev-KL-Sji"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0B4-9E-9Z3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gzZ-mL-lhl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aVX-QW-tFG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="959.20000000000005" y="169.56521739130437"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="al6-mw-n7A">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="eBJ-86-T2r" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="p42-3H-jVm">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tmJ-7c-gUV" kind="relationship" relationship="rootViewController" id="Ulr-OB-Vtm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zbn-Gw-PZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="169.56521739130437"/>
+        </scene>
+    </scenes>
+</document>
