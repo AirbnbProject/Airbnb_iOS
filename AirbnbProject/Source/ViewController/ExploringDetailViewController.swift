@@ -36,6 +36,7 @@ class ExploringDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //
 //        let border = CALayer()
 //        let width = CGFloat(2.0)
 //        border.borderColor = UIColor.gray.cgColor
@@ -521,8 +522,6 @@ extension ExploringDetailViewController: FooterDelegate {
         moreTrip = true
         let indexSet = IndexSet(integer: 5)
         self.collectionView.reloadSections(indexSet)
-        
-        print("ssibal")
     }
 }
 extension UIView {

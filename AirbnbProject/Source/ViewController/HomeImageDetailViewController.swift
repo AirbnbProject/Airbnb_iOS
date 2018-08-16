@@ -26,7 +26,8 @@ class HomeImageDetailViewController: UIViewController {
             frame.origin.x = scrollView.frame.size.width * CGFloat(i)
             frame.size = scrollView.frame.size
             imageView = UIImageView(frame: frame)
-            imageView.image = UIImage(named: homeImage[i])
+            let url = URL(string: homeImage[i])
+            imageView.kf.setImage(with: url)
             self.scrollView.addSubview(imageView)
         }
         scrollView.alwaysBounceVertical = false

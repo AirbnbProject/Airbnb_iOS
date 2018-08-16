@@ -11,6 +11,7 @@ import UIKit
 class FacilitiesDetailViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    var facilitiesList = ["주방", "무선 인터넷", "건조기", "헤어드라이어", "옷걸이", "필수품목"]
     override func viewDidLoad() {
         super.viewDidLoad()
         //register xib
@@ -60,7 +61,7 @@ extension FacilitiesDetailViewController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
         ) -> Int {
-        return 24
+        return facilitiesList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -84,119 +85,8 @@ extension FacilitiesDetailViewController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
         ) -> UICollectionViewCell {
-        switch indexPath.row {
-        case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesBoldLabelCell", for: indexPath) as! FacilitiesBoldLabelCell
-            cell.boldLabel.text = "기본 편의시설"
-            return cell
-        case 1:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesTwoLineCell", for: indexPath) as! FacilitiesTwoLineCell
-            cell.oneLabel.text = "무선 인터넷"
-            cell.twoLabel.text = "숙소 내에서 끊김없이 연결"
-            return cell
-        case 2:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesOneLineCell", for: indexPath) as! FacilitiesOneLineCell
-            cell.oneLabel.text = "실내 벽난로"
-            return cell
-        case 3:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesTwoLineCell", for: indexPath) as! FacilitiesTwoLineCell
-            cell.oneLabel.text = "노트북 작업공간"
-            cell.twoLabel.text = "노트북을 놓을 수 있는 책상이나 테이블과 편하게 앉아 일할 수 있는 의자"
-            return cell
-        case 4:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesTwoLineCell", for: indexPath) as! FacilitiesTwoLineCell
-            cell.oneLabel.text = "필수품목"
-            cell.twoLabel.text = "수건, 침대시트, 비누, 화장지"
-            return cell
-        case 5:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesTwoLineCell", for: indexPath) as! FacilitiesTwoLineCell
-            cell.oneLabel.text = "난방"
-            cell.twoLabel.text = "중앙 난방 또는 숙소 내 히터 비치"
-            return cell
-        case 6:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesOneLineCell", for: indexPath) as! FacilitiesOneLineCell
-            cell.oneLabel.text = "온수"
-            return cell
-        case 7:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesOneLineCell", for: indexPath) as! FacilitiesOneLineCell
-            cell.oneLabel.text = "다리미"
-            return cell
-        case 8:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesBoldLabelCell", for: indexPath) as! FacilitiesBoldLabelCell
-            cell.boldLabel.text = "가족용 시설"
-            return cell
-        case 9:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesOneLineCell", for: indexPath) as! FacilitiesOneLineCell
-            cell.oneLabel.text = "어린이용 책과 장난감"
-            return cell
-        case 10:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesOneLineCell", for: indexPath) as! FacilitiesOneLineCell
-            cell.oneLabel.text = "다기능/여행용 아기 침대"
-            return cell
-        case 11:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesBoldLabelCell", for: indexPath) as! FacilitiesBoldLabelCell
-            cell.boldLabel.text = "시설"
-            return cell
-        case 12:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesOneLineCell", for: indexPath) as! FacilitiesOneLineCell
-            cell.oneLabel.text = "건물 내 무료 주차"
-            return cell
-        case 13:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesBoldLabelCell", for: indexPath) as! FacilitiesBoldLabelCell
-            cell.boldLabel.text = "조리 시설"
-            return cell
-        case 14:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesTwoLineCell", for: indexPath) as! FacilitiesTwoLineCell
-            cell.oneLabel.text = "주방"
-            cell.twoLabel.text = "게스트가 요리를 할 수 있는 공간"
-            return cell
-        case 15:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesTwoLineCell", for: indexPath) as! FacilitiesTwoLineCell
-            cell.oneLabel.text = "아침식사"
-            cell.twoLabel.text = "아침식사 제공"
-            return cell
-        case 16:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesOneLineCell", for: indexPath) as! FacilitiesOneLineCell
-            cell.oneLabel.text = "커피메이커"
-            return cell
-        case 17:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesTwoLineCell", for: indexPath) as! FacilitiesTwoLineCell
-            cell.oneLabel.text = "기본 조리 도구"
-            cell.twoLabel.text = "냄비, 후라이팬, 기름, 소금, 후추"
-            return cell
-        case 18:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesOneLineCell", for: indexPath) as! FacilitiesOneLineCell
-            cell.oneLabel.text = "식기류"
-            return cell
-        case 19:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesOneLineCell", for: indexPath) as! FacilitiesOneLineCell
-            cell.oneLabel.text = "냉장고"
-            return cell
-        case 20:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesBoldLabelCell", for: indexPath) as! FacilitiesBoldLabelCell
-            cell.boldLabel.text = "숙소에 없는 시설"
-            return cell
-        case 21:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesOneLineCell", for: indexPath) as! FacilitiesOneLineCell
-            cell.oneLabel.text = "에어컨"
-            cell.oneLabel.textColor = .gray
-            return cell
-        case 22:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesOneLineCell", for: indexPath) as! FacilitiesOneLineCell
-            cell.oneLabel.text = "TV"
-            cell.oneLabel.textColor = .gray
-            return cell
-        case 23:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesTwoLineCell", for: indexPath) as! FacilitiesTwoLineCell
-            cell.oneLabel.text = "세탁기"
-            cell.twoLabel.text = "건물 내, 유료 혹은 무료 이용 가능"
-            cell.oneLabel.textColor = .gray
-            cell.twoLabel.textColor = .gray
-            return cell
-        default:
-            break
-        }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "swipeImageCell", for: indexPath) as! swipeImageCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesOneLineCell", for: indexPath) as! FacilitiesOneLineCell
+        cell.oneLabel.text = facilitiesList[indexPath.row]
         return cell
     }
     

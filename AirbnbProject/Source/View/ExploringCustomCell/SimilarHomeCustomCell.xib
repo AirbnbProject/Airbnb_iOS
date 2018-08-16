@@ -32,7 +32,7 @@
                             <constraint firstAttribute="width" constant="130" id="iMf-W1-IQY"/>
                             <constraint firstAttribute="height" constant="21" id="siM-Bn-Jwz"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -70,6 +70,7 @@
                 <constraint firstAttribute="trailing" secondItem="LCD-PV-pV0" secondAttribute="trailing" id="Oqb-Hq-xkL"/>
                 <constraint firstItem="Tcx-8U-GNR" firstAttribute="top" secondItem="LCD-PV-pV0" secondAttribute="bottom" id="bmo-16-MFn"/>
                 <constraint firstItem="7Q7-2Z-ea0" firstAttribute="top" secondItem="nBd-Im-Zc7" secondAttribute="bottom" id="ix3-dy-Jj7"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Tcx-8U-GNR" secondAttribute="trailing" constant="1" id="uUx-ZR-Z4T"/>
                 <constraint firstItem="1hy-74-xFw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xsA-fP-nqM"/>
                 <constraint firstItem="1hy-74-xFw" firstAttribute="top" secondItem="Tcx-8U-GNR" secondAttribute="bottom" id="yoi-XO-mKb"/>
             </constraints>

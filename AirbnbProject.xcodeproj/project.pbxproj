@@ -11,31 +11,10 @@
 		152D788A210EFA530060BF9B /* MoreOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D7889210EFA530060BF9B /* MoreOptionsViewController.swift */; };
 		152D788C210F054C0060BF9B /* SignUpNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D788B210F054C0060BF9B /* SignUpNameViewController.swift */; };
 		152D7890210F64340060BF9B /* SignUpEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D788F210F64340060BF9B /* SignUpEmailViewController.swift */; };
-		15662865210ED4AD003B0338 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15662864210ED4AD003B0338 /* AppDelegate.swift */; };
 		1566286C210ED4AE003B0338 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1566286B210ED4AE003B0338 /* Assets.xcassets */; };
 		1566286F210ED4AE003B0338 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1566286D210ED4AE003B0338 /* LaunchScreen.storyboard */; };
 		1566287F210EE41B003B0338 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1566287E210EE41B003B0338 /* Login.storyboard */; };
 		15662881210EE4CF003B0338 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15662880210EE4CF003B0338 /* Main.storyboard */; };
-		15662883210EE5CF003B0338 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15662882210EE5CF003B0338 /* EntryViewController.swift */; };
-		F90BA798211068F00030926A /* TwoLineHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BA796211068F00030926A /* TwoLineHeaderCollectionReusableView.swift */; };
-		F90BA799211068F00030926A /* TwoLineHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F90BA797211068F00030926A /* TwoLineHeaderCollectionReusableView.xib */; };
-		F90BA79E2110A2EC0030926A /* HouseListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BA79C2110A2EC0030926A /* HouseListCollectionCell.swift */; };
-		F90BA79F2110A2EC0030926A /* HouseListCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F90BA79D2110A2EC0030926A /* HouseListCollectionCell.xib */; };
-		F924BE01210EEDA000627A4A /* ExploringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F924BE00210EEDA000627A4A /* ExploringViewController.swift */; };
-		F924BE04210F2DB100627A4A /* AirbnbPlusCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F924BE02210F2DB100627A4A /* AirbnbPlusCollectionCell.swift */; };
-		F924BE05210F2DB100627A4A /* AirbnbPlusCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F924BE03210F2DB100627A4A /* AirbnbPlusCollectionCell.xib */; };
-		F924BE0A2110215800627A4A /* SuggestionCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F924BE082110215800627A4A /* SuggestionCollectionCell.swift */; };
-		F924BE0B2110215800627A4A /* SuggestionCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F924BE092110215800627A4A /* SuggestionCollectionCell.xib */; };
-		F924BE0F2110333700627A4A /* NestedSuggestionCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F924BE0D2110333700627A4A /* NestedSuggestionCollectionCell.swift */; };
-		F924BE102110333700627A4A /* NestedSuggestionCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F924BE0E2110333700627A4A /* NestedSuggestionCollectionCell.xib */; };
-		F937FEB521143D06004FD8CB /* SelectingNumberOfPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F937FEB421143D06004FD8CB /* SelectingNumberOfPeopleViewController.swift */; };
-		F937FEB721158E1B004FD8CB /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F937FEB621158E1B004FD8CB /* SearchBarViewController.swift */; };
-		F9D8AE3C2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8AE3A2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.swift */; };
-		F9D8AE3D2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D8AE3B2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.xib */; };
-		F9D8AE412111DCAE00AF9AD5 /* HorizontalStyleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8AE3F2111DCAE00AF9AD5 /* HorizontalStyleCollectionCell.swift */; };
-		F9D8AE422111DCAE00AF9AD5 /* HorizontalStyleCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D8AE402111DCAE00AF9AD5 /* HorizontalStyleCollectionCell.xib */; };
-		F9D8AE472111DE1800AF9AD5 /* NestedHorizontalStyleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8AE452111DE1800AF9AD5 /* NestedHorizontalStyleCollectionCell.swift */; };
-		F9D8AE482111DE1800AF9AD5 /* NestedHorizontalStyleCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D8AE462111DE1800AF9AD5 /* NestedHorizontalStyleCollectionCell.xib */; };
 		1568A4DD2110912900FA1223 /* SignUpPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568A4DC2110912900FA1223 /* SignUpPasswordViewController.swift */; };
 		1568A4DF211188E600FA1223 /* SignUpDateOfBirthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568A4DE211188E600FA1223 /* SignUpDateOfBirthViewController.swift */; };
 		1568A4E22111DA7800FA1223 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568A4E12111DA7800FA1223 /* SignInViewController.swift */; };
@@ -53,9 +32,32 @@
 		1589C4852119CEDC003F224D /* MoveToStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C4842119CEDC003F224D /* MoveToStoryboard.swift */; };
 		1589C4872119FA10003F224D /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C4862119FA10003F224D /* UserAuth.swift */; };
 		1589C489211C040F003F224D /* ProfileConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C488211C040E003F224D /* ProfileConfirmationViewController.swift */; };
-		F924BE01210EEDA000627A4A /* ExploringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F924BE00210EEDA000627A4A /* ExploringViewController.swift */; };
-		8739D84C210EECCC001998F5 /* ExploringDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8739D84B210EECCC001998F5 /* ExploringDetailViewController.swift */; };
-
+		871AEA61211C24F80055FA9C /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEA60211C24F80055FA9C /* EntryViewController.swift */; };
+		871AEA62211C2E820055FA9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15662864210ED4AD003B0338 /* AppDelegate.swift */; };
+		871AEA69211C72050055FA9C /* ReviewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEA67211C72050055FA9C /* ReviewListCell.swift */; };
+		871AEA6A211C72050055FA9C /* ReviewListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 871AEA68211C72050055FA9C /* ReviewListCell.xib */; };
+		871AEA6D211D24430055FA9C /* ExploringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEA6B211D24420055FA9C /* ExploringViewController.swift */; };
+		871AEA6E211D24430055FA9C /* ExploringDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEA6C211D24430055FA9C /* ExploringDetailViewController.swift */; };
+		871AEA70211D30840055FA9C /* RefundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEA6F211D30840055FA9C /* RefundViewController.swift */; };
+		871AEA74211D31B00055FA9C /* RefundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEA72211D31B00055FA9C /* RefundCell.swift */; };
+		871AEA75211D31B00055FA9C /* RefundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 871AEA73211D31B00055FA9C /* RefundCell.xib */; };
+		871AEA77211D35F20055FA9C /* AddFeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEA76211D35F20055FA9C /* AddFeeViewController.swift */; };
+		871AEA7B211D381C0055FA9C /* AddFeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEA79211D381C0055FA9C /* AddFeeCell.swift */; };
+		871AEA7C211D381C0055FA9C /* AddFeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 871AEA7A211D381C0055FA9C /* AddFeeCell.xib */; };
+		871AEA7F211D38F50055FA9C /* AddFeeTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEA7D211D38F50055FA9C /* AddFeeTitle.swift */; };
+		871AEA80211D38F50055FA9C /* AddFeeTitle.xib in Resources */ = {isa = PBXBuildFile; fileRef = 871AEA7E211D38F50055FA9C /* AddFeeTitle.xib */; };
+		871AEA82211D68A20055FA9C /* HomeRuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEA81211D68A20055FA9C /* HomeRuleViewController.swift */; };
+		871AEA86211D69E20055FA9C /* HomeRuleBoldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEA84211D69E20055FA9C /* HomeRuleBoldCell.swift */; };
+		871AEA87211D69E20055FA9C /* HomeRuleBoldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 871AEA85211D69E20055FA9C /* HomeRuleBoldCell.xib */; };
+		871AEA8A211D69F40055FA9C /* HomeRuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEA88211D69F40055FA9C /* HomeRuleCell.swift */; };
+		871AEA8B211D69F40055FA9C /* HomeRuleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 871AEA89211D69F40055FA9C /* HomeRuleCell.xib */; };
+		871AEAAB21215F190055FA9C /* HomeReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEAAA21215F190055FA9C /* HomeReportViewController.swift */; };
+		871AEAAF21215FE60055FA9C /* ReportBoldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEAAD21215FE60055FA9C /* ReportBoldCell.swift */; };
+		871AEAB021215FE60055FA9C /* ReportBoldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 871AEAAE21215FE60055FA9C /* ReportBoldCell.xib */; };
+		871AEAB321215FFB0055FA9C /* ReportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEAB121215FFB0055FA9C /* ReportCell.swift */; };
+		871AEAB421215FFB0055FA9C /* ReportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 871AEAB221215FFB0055FA9C /* ReportCell.xib */; };
+		871AEAB721217BD80055FA9C /* ReportNextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEAB521217BD80055FA9C /* ReportNextCell.swift */; };
+		871AEAB821217BD80055FA9C /* ReportNextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 871AEAB621217BD80055FA9C /* ReportNextCell.xib */; };
 		8739D8B62117E449001998F5 /* swipeImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8739D8B42117E449001998F5 /* swipeImageCell.swift */; };
 		8739D8B72117E449001998F5 /* swipeImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8739D8B52117E449001998F5 /* swipeImageCell.xib */; };
 		8739D8BA2117ECAE001998F5 /* HomeInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8739D8B82117ECAE001998F5 /* HomeInfoCell.swift */; };
@@ -114,9 +116,24 @@
 		8739D932211BFA0F001998F5 /* HomeReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8739D931211BFA0F001998F5 /* HomeReviewViewController.swift */; };
 		8739D936211C051F001998F5 /* ReviewGradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8739D934211C051F001998F5 /* ReviewGradeCell.swift */; };
 		8739D937211C051F001998F5 /* ReviewGradeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8739D935211C051F001998F5 /* ReviewGradeCell.xib */; };
-
-
-
+		F90BA798211068F00030926A /* TwoLineHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BA796211068F00030926A /* TwoLineHeaderCollectionReusableView.swift */; };
+		F90BA799211068F00030926A /* TwoLineHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F90BA797211068F00030926A /* TwoLineHeaderCollectionReusableView.xib */; };
+		F90BA79E2110A2EC0030926A /* HouseListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BA79C2110A2EC0030926A /* HouseListCollectionCell.swift */; };
+		F90BA79F2110A2EC0030926A /* HouseListCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F90BA79D2110A2EC0030926A /* HouseListCollectionCell.xib */; };
+		F924BE04210F2DB100627A4A /* AirbnbPlusCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F924BE02210F2DB100627A4A /* AirbnbPlusCollectionCell.swift */; };
+		F924BE05210F2DB100627A4A /* AirbnbPlusCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F924BE03210F2DB100627A4A /* AirbnbPlusCollectionCell.xib */; };
+		F924BE0A2110215800627A4A /* SuggestionCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F924BE082110215800627A4A /* SuggestionCollectionCell.swift */; };
+		F924BE0B2110215800627A4A /* SuggestionCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F924BE092110215800627A4A /* SuggestionCollectionCell.xib */; };
+		F924BE0F2110333700627A4A /* NestedSuggestionCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F924BE0D2110333700627A4A /* NestedSuggestionCollectionCell.swift */; };
+		F924BE102110333700627A4A /* NestedSuggestionCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F924BE0E2110333700627A4A /* NestedSuggestionCollectionCell.xib */; };
+		F937FEB521143D06004FD8CB /* SelectingNumberOfPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F937FEB421143D06004FD8CB /* SelectingNumberOfPeopleViewController.swift */; };
+		F937FEB721158E1B004FD8CB /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F937FEB621158E1B004FD8CB /* SearchBarViewController.swift */; };
+		F9D8AE3C2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8AE3A2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.swift */; };
+		F9D8AE3D2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D8AE3B2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.xib */; };
+		F9D8AE412111DCAE00AF9AD5 /* HorizontalStyleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8AE3F2111DCAE00AF9AD5 /* HorizontalStyleCollectionCell.swift */; };
+		F9D8AE422111DCAE00AF9AD5 /* HorizontalStyleCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D8AE402111DCAE00AF9AD5 /* HorizontalStyleCollectionCell.xib */; };
+		F9D8AE472111DE1800AF9AD5 /* NestedHorizontalStyleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8AE452111DE1800AF9AD5 /* NestedHorizontalStyleCollectionCell.swift */; };
+		F9D8AE482111DE1800AF9AD5 /* NestedHorizontalStyleCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D8AE462111DE1800AF9AD5 /* NestedHorizontalStyleCollectionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,7 +147,6 @@
 		15662870210ED4AE003B0338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1566287E210EE41B003B0338 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		15662880210EE4CF003B0338 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		15662882210EE5CF003B0338 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		1568A4DC2110912900FA1223 /* SignUpPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPasswordViewController.swift; sourceTree = "<group>"; };
 		1568A4DE211188E600FA1223 /* SignUpDateOfBirthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDateOfBirthViewController.swift; sourceTree = "<group>"; };
 		1568A4E12111DA7800FA1223 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -150,7 +166,31 @@
 		1589C488211C040E003F224D /* ProfileConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfirmationViewController.swift; sourceTree = "<group>"; };
 		38310991B84D0E2221F076C0 /* Pods-AirbnbProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject.release.xcconfig"; sourceTree = "<group>"; };
 		66F552965419A8DFCC187B4A /* Pods_AirbnbProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirbnbProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8739D84B210EECCC001998F5 /* ExploringDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploringDetailViewController.swift; sourceTree = "<group>"; };
+		871AEA60211C24F80055FA9C /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		871AEA67211C72050055FA9C /* ReviewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListCell.swift; sourceTree = "<group>"; };
+		871AEA68211C72050055FA9C /* ReviewListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewListCell.xib; sourceTree = "<group>"; };
+		871AEA6B211D24420055FA9C /* ExploringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExploringViewController.swift; path = ../../../ExploringViewController.swift; sourceTree = "<group>"; };
+		871AEA6C211D24430055FA9C /* ExploringDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExploringDetailViewController.swift; path = ../../../ExploringDetailViewController.swift; sourceTree = "<group>"; };
+		871AEA6F211D30840055FA9C /* RefundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefundViewController.swift; sourceTree = "<group>"; };
+		871AEA72211D31B00055FA9C /* RefundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefundCell.swift; sourceTree = "<group>"; };
+		871AEA73211D31B00055FA9C /* RefundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RefundCell.xib; sourceTree = "<group>"; };
+		871AEA76211D35F20055FA9C /* AddFeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeeViewController.swift; sourceTree = "<group>"; };
+		871AEA79211D381C0055FA9C /* AddFeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeeCell.swift; sourceTree = "<group>"; };
+		871AEA7A211D381C0055FA9C /* AddFeeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFeeCell.xib; sourceTree = "<group>"; };
+		871AEA7D211D38F50055FA9C /* AddFeeTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFeeTitle.swift; sourceTree = "<group>"; };
+		871AEA7E211D38F50055FA9C /* AddFeeTitle.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddFeeTitle.xib; sourceTree = "<group>"; };
+		871AEA81211D68A20055FA9C /* HomeRuleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRuleViewController.swift; sourceTree = "<group>"; };
+		871AEA84211D69E20055FA9C /* HomeRuleBoldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRuleBoldCell.swift; sourceTree = "<group>"; };
+		871AEA85211D69E20055FA9C /* HomeRuleBoldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRuleBoldCell.xib; sourceTree = "<group>"; };
+		871AEA88211D69F40055FA9C /* HomeRuleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRuleCell.swift; sourceTree = "<group>"; };
+		871AEA89211D69F40055FA9C /* HomeRuleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRuleCell.xib; sourceTree = "<group>"; };
+		871AEAAA21215F190055FA9C /* HomeReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReportViewController.swift; sourceTree = "<group>"; };
+		871AEAAD21215FE60055FA9C /* ReportBoldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportBoldCell.swift; sourceTree = "<group>"; };
+		871AEAAE21215FE60055FA9C /* ReportBoldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportBoldCell.xib; sourceTree = "<group>"; };
+		871AEAB121215FFB0055FA9C /* ReportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCell.swift; sourceTree = "<group>"; };
+		871AEAB221215FFB0055FA9C /* ReportCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportCell.xib; sourceTree = "<group>"; };
+		871AEAB521217BD80055FA9C /* ReportNextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportNextCell.swift; sourceTree = "<group>"; };
+		871AEAB621217BD80055FA9C /* ReportNextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportNextCell.xib; sourceTree = "<group>"; };
 		8739D8B42117E449001998F5 /* swipeImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swipeImageCell.swift; sourceTree = "<group>"; };
 		8739D8B52117E449001998F5 /* swipeImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = swipeImageCell.xib; sourceTree = "<group>"; };
 		8739D8B82117ECAE001998F5 /* HomeInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoCell.swift; sourceTree = "<group>"; };
@@ -214,7 +254,6 @@
 		F90BA797211068F00030926A /* TwoLineHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwoLineHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		F90BA79C2110A2EC0030926A /* HouseListCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseListCollectionCell.swift; sourceTree = "<group>"; };
 		F90BA79D2110A2EC0030926A /* HouseListCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HouseListCollectionCell.xib; sourceTree = "<group>"; };
-		F924BE00210EEDA000627A4A /* ExploringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploringViewController.swift; sourceTree = "<group>"; };
 		F924BE02210F2DB100627A4A /* AirbnbPlusCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AirbnbPlusCollectionCell.swift; path = AirbnbProject/Source/View/AirbnbPlusCollectionCell/AirbnbPlusCollectionCell.swift; sourceTree = SOURCE_ROOT; };
 		F924BE03210F2DB100627A4A /* AirbnbPlusCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AirbnbPlusCollectionCell.xib; path = AirbnbProject/Source/View/AirbnbPlusCollectionCell/AirbnbPlusCollectionCell.xib; sourceTree = SOURCE_ROOT; };
 		F924BE082110215800627A4A /* SuggestionCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SuggestionCollectionCell.swift; path = AirbnbProject/Source/View/SuggestionCollectionCell/SuggestionCollectionCell.swift; sourceTree = SOURCE_ROOT; };
@@ -246,12 +285,12 @@
 		152D7888210EFA3C0060BF9B /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				15662882210EE5CF003B0338 /* EntryViewController.swift */,
 				152D7889210EFA530060BF9B /* MoreOptionsViewController.swift */,
 				152D788B210F054C0060BF9B /* SignUpNameViewController.swift */,
 				152D788F210F64340060BF9B /* SignUpEmailViewController.swift */,
 				1568A4DC2110912900FA1223 /* SignUpPasswordViewController.swift */,
 				1568A4DE211188E600FA1223 /* SignUpDateOfBirthViewController.swift */,
+				871AEA60211C24F80055FA9C /* EntryViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -326,18 +365,19 @@
 		1566287A210EE381003B0338 /* View */ = {
 			isa = PBXGroup;
 			children = (
-
+				871AEAAC21215FC00055FA9C /* ReportCell */,
+				871AEA83211D69B80055FA9C /* HomeRuleCell */,
+				871AEA78211D38040055FA9C /* AddFeeCell */,
+				871AEA71211D31900055FA9C /* RefundCell */,
 				8739D933211C03EF001998F5 /* ReviewCell */,
 				8739D910211ACA40001998F5 /* FacilitiesDetail */,
 				8739D8B32117E21C001998F5 /* ExploringCustomCell */,
-
 				F9D8AE3E2111DBE500AF9AD5 /* ProposeOfTravelCollectionCell */,
 				F90BA7912110666D0030926A /* HeaderCollectionReusableView */,
 				F9D8AE392111BF0F00AF9AD5 /* FooterCollectionReusableView */,
 				F924BE0C2110330300627A4A /* SuggestionCollectionCell */,
 				F90BA79A21106B700030926A /* AirbnbPlusCollectionCell */,
 				F90BA79B2110A19E0030926A /* HouseListCollectionCell */,
-
 			);
 			name = View;
 			path = ../View;
@@ -346,29 +386,22 @@
 		1566287B210EE385003B0338 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-
+				871AEA6C211D24430055FA9C /* ExploringDetailViewController.swift */,
+				871AEA6B211D24420055FA9C /* ExploringViewController.swift */,
 				1568A4E52112F5EA00FA1223 /* Profile */,
 				1568A4E02111DA4300FA1223 /* SignIn */,
 				152D7888210EFA3C0060BF9B /* SignUp */,
-
-				15662882210EE5CF003B0338 /* EntryViewController.swift */,
-
 				F937FEB621158E1B004FD8CB /* SearchBarViewController.swift */,
-				F924BE00210EEDA000627A4A /* ExploringViewController.swift */,
 				F937FEB421143D06004FD8CB /* SelectingNumberOfPeopleViewController.swift */,
 				1566287A210EE381003B0338 /* View */,
-
-				F924BE00210EEDA000627A4A /* ExploringViewController.swift */,
-
-				8739D84B210EECCC001998F5 /* ExploringDetailViewController.swift */,
-
 				8739D90E211A899B001998F5 /* HomeImageDetailViewController.swift */,
 				8739D911211ACAD2001998F5 /* FacilitiesDetailViewController.swift */,
 				8739D92F211B2D7A001998F5 /* HomeLocationViewController.swift */,
 				8739D931211BFA0F001998F5 /* HomeReviewViewController.swift */,
-
-
-
+				871AEA6F211D30840055FA9C /* RefundViewController.swift */,
+				871AEA76211D35F20055FA9C /* AddFeeViewController.swift */,
+				871AEA81211D68A20055FA9C /* HomeRuleViewController.swift */,
+				871AEAAA21215F190055FA9C /* HomeReportViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -455,6 +488,50 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		871AEA71211D31900055FA9C /* RefundCell */ = {
+			isa = PBXGroup;
+			children = (
+				871AEA72211D31B00055FA9C /* RefundCell.swift */,
+				871AEA73211D31B00055FA9C /* RefundCell.xib */,
+			);
+			path = RefundCell;
+			sourceTree = "<group>";
+		};
+		871AEA78211D38040055FA9C /* AddFeeCell */ = {
+			isa = PBXGroup;
+			children = (
+				871AEA79211D381C0055FA9C /* AddFeeCell.swift */,
+				871AEA7A211D381C0055FA9C /* AddFeeCell.xib */,
+				871AEA7D211D38F50055FA9C /* AddFeeTitle.swift */,
+				871AEA7E211D38F50055FA9C /* AddFeeTitle.xib */,
+			);
+			path = AddFeeCell;
+			sourceTree = "<group>";
+		};
+		871AEA83211D69B80055FA9C /* HomeRuleCell */ = {
+			isa = PBXGroup;
+			children = (
+				871AEA84211D69E20055FA9C /* HomeRuleBoldCell.swift */,
+				871AEA85211D69E20055FA9C /* HomeRuleBoldCell.xib */,
+				871AEA88211D69F40055FA9C /* HomeRuleCell.swift */,
+				871AEA89211D69F40055FA9C /* HomeRuleCell.xib */,
+			);
+			path = HomeRuleCell;
+			sourceTree = "<group>";
+		};
+		871AEAAC21215FC00055FA9C /* ReportCell */ = {
+			isa = PBXGroup;
+			children = (
+				871AEAAD21215FE60055FA9C /* ReportBoldCell.swift */,
+				871AEAAE21215FE60055FA9C /* ReportBoldCell.xib */,
+				871AEAB121215FFB0055FA9C /* ReportCell.swift */,
+				871AEAB221215FFB0055FA9C /* ReportCell.xib */,
+				871AEAB521217BD80055FA9C /* ReportNextCell.swift */,
+				871AEAB621217BD80055FA9C /* ReportNextCell.xib */,
+			);
+			path = ReportCell;
+			sourceTree = "<group>";
+		};
 		8739D8B32117E21C001998F5 /* ExploringCustomCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -526,6 +603,8 @@
 			children = (
 				8739D934211C051F001998F5 /* ReviewGradeCell.swift */,
 				8739D935211C051F001998F5 /* ReviewGradeCell.xib */,
+				871AEA67211C72050055FA9C /* ReviewListCell.swift */,
+				871AEA68211C72050055FA9C /* ReviewListCell.xib */,
 			);
 			path = ReviewCell;
 			sourceTree = "<group>";
@@ -657,20 +736,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
+				871AEAB021215FE60055FA9C /* ReportBoldCell.xib in Resources */,
 				8739D8F92119391B001998F5 /* SimilarHome.xib in Resources */,
 				8739D8DD21181EBD001998F5 /* FacilitiesCell.xib in Resources */,
 				8739D8E92118326B001998F5 /* ReviewCell.xib in Resources */,
 				8739D8BB2117ECAE001998F5 /* HomeInfoCell.xib in Resources */,
 				8739D8D1211815F4001998F5 /* BedRoomInfoCollecionViewCell.xib in Resources */,
-
 				F924BE05210F2DB100627A4A /* AirbnbPlusCollectionCell.xib in Resources */,
 				F9D8AE3D2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.xib in Resources */,
+				871AEA87211D69E20055FA9C /* HomeRuleBoldCell.xib in Resources */,
 				F90BA799211068F00030926A /* TwoLineHeaderCollectionReusableView.xib in Resources */,
 				F924BE0B2110215800627A4A /* SuggestionCollectionCell.xib in Resources */,
+				871AEA6A211C72050055FA9C /* ReviewListCell.xib in Resources */,
+				871AEAB421215FFB0055FA9C /* ReportCell.xib in Resources */,
 				F9D8AE482111DE1800AF9AD5 /* NestedHorizontalStyleCollectionCell.xib in Resources */,
 				F90BA79F2110A2EC0030926A /* HouseListCollectionCell.xib in Resources */,
-
 				1566287F210EE41B003B0338 /* Login.storyboard in Resources */,
 				8739D9092119452F001998F5 /* PopularTrip.xib in Resources */,
 				8739D8ED21187D00001998F5 /* PerfectRefundCell.xib in Resources */,
@@ -681,32 +761,31 @@
 				8739D905211942C8001998F5 /* ThirdFooter.xib in Resources */,
 				8739D8E5211828CA001998F5 /* FirstFooter.xib in Resources */,
 				8739D91E211B1516001998F5 /* FacilitiesOneLineCell.xib in Resources */,
+				871AEA8B211D69F40055FA9C /* HomeRuleCell.xib in Resources */,
 				1566286F210ED4AE003B0338 /* LaunchScreen.storyboard in Resources */,
-
 				8739D8D921181CB8001998F5 /* FirstHeader.xib in Resources */,
 				8739D922211B1536001998F5 /* FacilitiesTwoLineCell.xib in Resources */,
 				8739D916211ACFD7001998F5 /* FacilitiesHeader.xib in Resources */,
+				871AEAB821217BD80055FA9C /* ReportNextCell.xib in Resources */,
 				8739D8CD21181483001998F5 /* BedRoomInfoCell.xib in Resources */,
+				871AEA75211D31B00055FA9C /* RefundCell.xib in Resources */,
 				8739D8BF2117F448001998F5 /* HomeWhereCell.xib in Resources */,
-
 				1589C437211422E9003F224D /* DefaultOneLineCell.xib in Resources */,
-
 				1566286C210ED4AE003B0338 /* Assets.xcassets in Resources */,
 				1589C43B21142300003F224D /* DefaultTwoLineCell.xib in Resources */,
 				15662881210EE4CF003B0338 /* Main.storyboard in Resources */,
-
 				8739D937211C051F001998F5 /* ReviewGradeCell.xib in Resources */,
 				8739D901211942B3001998F5 /* ThirdHeader.xib in Resources */,
 				8739D8D521181ABA001998F5 /* ExploringPublicCell.xib in Resources */,
+				871AEA7C211D381C0055FA9C /* AddFeeCell.xib in Resources */,
 				8739D8E121182621001998F5 /* MapCell.xib in Resources */,
 				8739D8FD2119393B001998F5 /* SimilarHomeCustomCell.xib in Resources */,
+				871AEA80211D38F50055FA9C /* AddFeeTitle.xib in Resources */,
 				8739D92A211B18D2001998F5 /* FacilitiesBoldLabelCell.xib in Resources */,
 				8739D8F52119379E001998F5 /* SecondHeader.xib in Resources */,
 				8739D8F12119341E001998F5 /* PerfectPaymentCell.xib in Resources */,
-
 				F924BE102110333700627A4A /* NestedSuggestionCollectionCell.xib in Resources */,
 				F9D8AE422111DCAE00AF9AD5 /* HorizontalStyleCollectionCell.xib in Resources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,6 +821,7 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -750,6 +830,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -764,31 +845,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
+				871AEA6D211D24430055FA9C /* ExploringViewController.swift in Sources */,
+				871AEA6E211D24430055FA9C /* ExploringDetailViewController.swift in Sources */,
 				F937FEB721158E1B004FD8CB /* SearchBarViewController.swift in Sources */,
+				871AEA74211D31B00055FA9C /* RefundCell.swift in Sources */,
 				F9D8AE412111DCAE00AF9AD5 /* HorizontalStyleCollectionCell.swift in Sources */,
 				F924BE0A2110215800627A4A /* SuggestionCollectionCell.swift in Sources */,
+				871AEA8A211D69F40055FA9C /* HomeRuleCell.swift in Sources */,
 				F924BE0F2110333700627A4A /* NestedSuggestionCollectionCell.swift in Sources */,
-				15662865210ED4AD003B0338 /* AppDelegate.swift in Sources */,
 				F9D8AE3C2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.swift in Sources */,
 				F9D8AE472111DE1800AF9AD5 /* NestedHorizontalStyleCollectionCell.swift in Sources */,
 				F924BE04210F2DB100627A4A /* AirbnbPlusCollectionCell.swift in Sources */,
-				F924BE01210EEDA000627A4A /* ExploringViewController.swift in Sources */,
 				F90BA79E2110A2EC0030926A /* HouseListCollectionCell.swift in Sources */,
 				F937FEB521143D06004FD8CB /* SelectingNumberOfPeopleViewController.swift in Sources */,
 				F90BA798211068F00030926A /* TwoLineHeaderCollectionReusableView.swift in Sources */,
-
+				871AEAB321215FFB0055FA9C /* ReportCell.swift in Sources */,
 				152D788A210EFA530060BF9B /* MoreOptionsViewController.swift in Sources */,
 				152D7890210F64340060BF9B /* SignUpEmailViewController.swift in Sources */,
+				871AEA62211C2E820055FA9C /* AppDelegate.swift in Sources */,
+				871AEA70211D30840055FA9C /* RefundViewController.swift in Sources */,
 				1589C43321140366003F224D /* UserInfoEnrollmentCell.swift in Sources */,
 				1589C489211C040F003F224D /* ProfileConfirmationViewController.swift in Sources */,
 				1568A4E72112F60200FA1223 /* ProfileViewController.swift in Sources */,
-				15662865210ED4AD003B0338 /* AppDelegate.swift in Sources */,
-
+				871AEA61211C24F80055FA9C /* EntryViewController.swift in Sources */,
 				8739D904211942C8001998F5 /* ThirdFooter.swift in Sources */,
 				8739D929211B18D2001998F5 /* FacilitiesBoldLabelCell.swift in Sources */,
-				8739D84C210EECCC001998F5 /* ExploringDetailViewController.swift in Sources */,
 				8739D8F82119391B001998F5 /* SimilarHome.swift in Sources */,
+				871AEAB721217BD80055FA9C /* ReportNextCell.swift in Sources */,
 				8739D8B62117E449001998F5 /* swipeImageCell.swift in Sources */,
 				8739D8DC21181EBD001998F5 /* FacilitiesCell.swift in Sources */,
 				8739D921211B1536001998F5 /* FacilitiesTwoLineCell.swift in Sources */,
@@ -798,7 +881,7 @@
 				8739D8C821181006001998F5 /* HomeDetailInfoCell.swift in Sources */,
 				8739D8D0211815F4001998F5 /* BedRoomInfoCollecionViewCell.swift in Sources */,
 				8739D8CC21181483001998F5 /* BedRoomInfoCell.swift in Sources */,
-				15662883210EE5CF003B0338 /* EntryViewController.swift in Sources */,
+				871AEA86211D69E20055FA9C /* HomeRuleBoldCell.swift in Sources */,
 				8739D8F02119341E001998F5 /* PerfectPaymentCell.swift in Sources */,
 				8739D90F211A899B001998F5 /* HomeImageDetailViewController.swift in Sources */,
 				8739D8F42119379E001998F5 /* SecondHeader.swift in Sources */,
@@ -808,20 +891,22 @@
 				8739D8C42117F8CB001998F5 /* HostInfoCell.swift in Sources */,
 				8739D8BE2117F448001998F5 /* HomeWhereCell.swift in Sources */,
 				8739D8BA2117ECAE001998F5 /* HomeInfoCell.swift in Sources */,
+				871AEA7F211D38F50055FA9C /* AddFeeTitle.swift in Sources */,
 				8739D900211942B3001998F5 /* ThirdHeader.swift in Sources */,
 				8739D936211C051F001998F5 /* ReviewGradeCell.swift in Sources */,
 				8739D930211B2D7A001998F5 /* HomeLocationViewController.swift in Sources */,
+				871AEAAF21215FE60055FA9C /* ReportBoldCell.swift in Sources */,
 				8739D8EC21187D00001998F5 /* PerfectRefundCell.swift in Sources */,
+				871AEA82211D68A20055FA9C /* HomeRuleViewController.swift in Sources */,
 				8739D8E82118326B001998F5 /* ReviewCell.swift in Sources */,
 				8739D92D211B243B001998F5 /* FacilitiesUnderLineCell.swift in Sources */,
 				8739D8E021182621001998F5 /* MapCell.swift in Sources */,
 				8739D8D821181CB8001998F5 /* FirstHeader.swift in Sources */,
 				8739D91D211B1516001998F5 /* FacilitiesOneLineCell.swift in Sources */,
 				8739D8FC2119393B001998F5 /* SimilarHomeCustomCell.swift in Sources */,
-
-
 				1589C4832119C095003F224D /* AuthService.swift in Sources */,
 				1568A4DF211188E600FA1223 /* SignUpDateOfBirthViewController.swift in Sources */,
+				871AEA77211D35F20055FA9C /* AddFeeViewController.swift in Sources */,
 				1589C43A21142300003F224D /* DefaultTwoLineCell.swift in Sources */,
 				1589C436211422E9003F224D /* DefaultOneLineCell.swift in Sources */,
 				1589C4872119FA10003F224D /* UserAuth.swift in Sources */,
@@ -831,16 +916,11 @@
 				1568A4E22111DA7800FA1223 /* SignInViewController.swift in Sources */,
 				1568A4DD2110912900FA1223 /* SignUpPasswordViewController.swift in Sources */,
 				1589C47E2119B83E003F224D /* ServiceResult.swift in Sources */,
-
-
-				F924BE01210EEDA000627A4A /* ExploringViewController.swift in Sources */,
-
-				8739D84C210EECCC001998F5 /* ExploringDetailViewController.swift in Sources */,
-
-				15662883210EE5CF003B0338 /* EntryViewController.swift in Sources */,
+				871AEAAB21215F190055FA9C /* HomeReportViewController.swift in Sources */,
+				871AEA7B211D381C0055FA9C /* AddFeeCell.swift in Sources */,
+				871AEA69211C72050055FA9C /* ReviewListCell.swift in Sources */,
 				1568A4E42112087B00FA1223 /* FindPasswordViewController.swift in Sources */,
 				152D788C210F054C0060BF9B /* SignUpNameViewController.swift in Sources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -978,21 +1058,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-
-				DEVELOPMENT_TEAM = G4MM77V7NH;
-
 				DEVELOPMENT_TEAM = 9UT8US6W3V;
-
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/AirbnbProject/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JinTonic.AirbnbProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 arm64 armv7s";
 			};
 			name = Debug;
 		};
@@ -1002,21 +1082,22 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-
-				DEVELOPMENT_TEAM = G4MM77V7NH;
-
 				DEVELOPMENT_TEAM = 9UT8US6W3V;
-
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/AirbnbProject/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JinTonic.AirbnbProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 arm64 armv7s";
 			};
 			name = Release;
 		};

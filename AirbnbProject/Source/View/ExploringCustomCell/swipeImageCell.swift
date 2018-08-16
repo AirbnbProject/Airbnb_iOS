@@ -16,27 +16,32 @@ class swipeImageCell: UICollectionViewCell {
 
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
-    
+    var completionHandler: ((UIScrollView) -> Void)?
+    var aa = String()
     weak var delegate: ImageViewDelegate?
     
-    var imageList = ["cameras", "eraser", "dj", "woman"]
+    var imageList = Array<String>()
+//    var imageList = ["eraser", "cameras", "woman", "dj"]
     var updateCounter = 0
+    var allInfo: [[String: Any]] = []
+    var imageView = UIImageView()
     
     override func awakeFromNib() {
         super.awakeFromNib()
+//        self.scrollView.delegate = self
         pageControl.numberOfPages = imageList.count
         var frame = CGRect(x:0, y:0, width:0, height:0)
         for i in 0..<imageList.count {
-            frame.origin.x = scrollView.frame.size.width * CGFloat(i)
-            frame.size = scrollView.frame.size
-            let imageView = UIImageView(frame: frame)
-            imageView.image = UIImage(named: imageList[i])
-            self.scrollView.addSubview(imageView)
+//            frame.origin.x = scrollView.frame.size.width * CGFloat(i)
+//            frame.size = scrollView.frame.size
+//             imageView = UIImageView(frame: frame)
+//            let url = URL(string: imageList[i])
+//            imageView.image = UIImage(named: imageList[i])
+//            imageView.kf.setImage(with: url)
+//            self.scrollView.addSubview(imageView)
             Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(moveToNextPage), userInfo: nil, repeats: true)
             //
-            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
             imageView.isUserInteractionEnabled = true
-            imageView.addGestureRecognizer(tapGestureRecognizer)
             //
             
         }
@@ -44,12 +49,6 @@ class swipeImageCell: UICollectionViewCell {
         scrollView.delegate = self as? UIScrollViewDelegate
         scrollView.isPagingEnabled = true
     }
-    //
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
-        let tappedImage = tapGestureRecognizer.view as! UIImageView
-        delegate?.ImageClick(self, didTapAddButton: tappedImage)
-    }
-    //
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         var pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width
@@ -70,8 +69,6 @@ class swipeImageCell: UICollectionViewCell {
         }
         
         self.scrollView.scrollRectToVisible(CGRect(x:slideToX, y:0, width:pageWidth, height:self.scrollView.frame.height), animated: true)
-//        var pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width
-//        pageControl.currentPage = Int(pageNumber) + 1
         var pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width + 1
         print(pageNumber)
         if Int(pageNumber) < imageList.count {
@@ -86,11 +83,13 @@ class swipeImageCell: UICollectionViewCell {
 
 extension swipeImageCell: UIScrollViewDelegate {
     func scrollViewDidEndDragging(_: UIScrollView, willDecelerate: Bool) {
-        var pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width + 1
-        if Int(pageNumber) < imageList.count {
-            pageControl.currentPage = Int(pageNumber)
-        }else {
-            pageControl.currentPage = 0
-        }
+//        var pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width + 1
+//        if Int(pageNumber) < 2 {
+//            pageControl.currentPage = Int(pageNumber)
+//        }else {
+//            pageControl.currentPage = 0
+//        }
+        
+        
     }
 }

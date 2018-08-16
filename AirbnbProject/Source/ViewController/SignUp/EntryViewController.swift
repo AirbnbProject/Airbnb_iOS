@@ -11,21 +11,21 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 class EntryViewController: UIViewController {
-
+    
     //MARK: - Property
     @IBOutlet weak var facebookLoginButton: UIButton!
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     deinit {
         print("EntryViewController Deinit")
     }
-
-
+    
+    
     //MARK: - Action
     @IBAction func moreOptions(_ sender: UIButton) {
         let moreOptionsVC = MoveStoryboard.toVC(storybardName: "Login", identifier: "MoreOptionsVC")
@@ -72,7 +72,7 @@ class EntryViewController: UIViewController {
                     let picture = resultData["picture"] as! [String:Any]
                     let pictureData = picture["data"] as! [String:Any]
                     let profileImage = pictureData["url"] as! String
-
+                    
                     
                     //TODO: - POST로 User Facebook 정보 보내기
                     
@@ -84,7 +84,7 @@ class EntryViewController: UIViewController {
     }
     
     //MARK: - Method
-
+    
     
 }
 

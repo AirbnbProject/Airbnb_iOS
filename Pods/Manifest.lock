@@ -10,11 +10,13 @@ PODS:
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.35.0):
     - FBSDKCoreKit
-  - Kingfisher (4.8.0)
+  - FSCalendar (2.7.9)
+  - Kingfisher (4.8.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - FBSDKLoginKit
+  - FSCalendar
   - Kingfisher (~> 4.0)
 
 SPEC REPOS:
@@ -23,6 +25,7 @@ SPEC REPOS:
     - Bolts
     - FBSDKCoreKit
     - FBSDKLoginKit
+    - FSCalendar
     - Kingfisher
 
 SPEC CHECKSUMS:
@@ -30,8 +33,9 @@ SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   FBSDKCoreKit: 1a5b2e3ceb5ca827a53c54aa5f4a3480efff80d2
   FBSDKLoginKit: 00a3d65d1226852f9d76dcddff01981e5e6d9c38
-  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
+  FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
+  Kingfisher: 868c1149679a7ab6869be118faa9b5aed154aaf0
 
-PODFILE CHECKSUM: bdf87a5ee45e5cf41ce706161c0f5f1b2ea6bc5e
+PODFILE CHECKSUM: a365569bd11e6c734152ba4e539d6874c34adc3c
 
 COCOAPODS: 1.5.3

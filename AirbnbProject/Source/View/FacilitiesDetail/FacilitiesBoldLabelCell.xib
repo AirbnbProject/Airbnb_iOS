@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qq8-VM-sGf">
-                        <rect key="frame" x="0.0" y="0.0" width="379" height="130"/>
+                        <rect key="frame" x="20" y="20" width="329" height="27.5"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -28,10 +28,9 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Qq8-VM-sGf" secondAttribute="bottom" id="4Fc-4S-Dnb"/>
-                <constraint firstItem="Qq8-VM-sGf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="NRf-NH-sHj"/>
-                <constraint firstItem="Qq8-VM-sGf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="adG-JK-r3z"/>
-                <constraint firstAttribute="trailing" secondItem="Qq8-VM-sGf" secondAttribute="trailing" id="hvh-OM-0aP"/>
+                <constraint firstItem="Qq8-VM-sGf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="455-Ls-kVd"/>
+                <constraint firstItem="Qq8-VM-sGf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="9sz-UQ-s7y"/>
+                <constraint firstAttribute="trailing" secondItem="Qq8-VM-sGf" secondAttribute="trailing" constant="30" id="QbM-qG-XpP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="379" height="130"/>

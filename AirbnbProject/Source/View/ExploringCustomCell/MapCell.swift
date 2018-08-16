@@ -13,17 +13,24 @@ class MapCell: UICollectionViewCell {
 
     @IBOutlet weak var mapView: MKMapView!
     var locationManager: CLLocationManager?
-    let latLon = [53.127665, 17.972944]
+    //47.439505, 20.903018
+//    let latLon = ["47.439505", "20.903018"]
+    var latLon = Array<String>()
     override func awakeFromNib() {
         super.awakeFromNib()
         mapView.delegate = self as? MKMapViewDelegate
+    }
+    
+    func makeMap(lat: Double, lon: Double) {
         locationManager = CLLocationManager()
-        mapView.centerCoordinate = CLLocationCoordinate2D(latitude: latLon[0], longitude: latLon[1])
+        mapView.centerCoordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
         locationManager!.delegate = self as? CLLocationManagerDelegate
-        
+        let region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(lat, lon), MKCoordinateSpanMake(0.3, 0.3))
+        mapView.setRegion(region, animated: true)
         let center = mapView.centerCoordinate
-        let circle = MKCircle(center: CLLocationCoordinate2D(latitude: latLon[0], longitude: latLon[1]), radius: 90000)
+        let circle = MKCircle(center: CLLocationCoordinate2D(latitude: lat, longitude: lon), radius: 10000)
         mapView.add(circle)
+        
     }
 
 }

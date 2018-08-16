@@ -20,9 +20,10 @@ class HomeLocationViewController: UIViewController {
         locationManager = CLLocationManager()
         mapView.centerCoordinate = CLLocationCoordinate2D(latitude: maps[0], longitude: maps[1])
         locationManager!.delegate = self as? CLLocationManagerDelegate
-        
+        let region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(maps[0], maps[1]), MKCoordinateSpanMake(0.3, 0.3))
+        mapView.setRegion(region, animated: true)
         let center = mapView.centerCoordinate
-        let circle = MKCircle(center: CLLocationCoordinate2D(latitude: maps[0], longitude: maps[1]), radius: 90000)
+        let circle = MKCircle(center: CLLocationCoordinate2D(latitude: maps[0], longitude: maps[1]), radius: 10000)
         mapView.add(circle)
     }
 

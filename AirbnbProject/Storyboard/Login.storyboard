@@ -14,7 +14,7 @@
         <!--Entry View Controller-->
         <scene sceneID="3hT-E1-xXJ">
             <objects>
-                <viewController id="PTb-Jz-4xJ" customClass="EntryViewController" customModule="AirbnbProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EntryViewController" id="PTb-Jz-4xJ" customClass="EntryViewController" customModule="AirbnbProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="93a-jI-ntE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,14 +34,14 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="airbnb" translatesAutoresizingMaskIntoConstraints="NO" id="CSX-OU-o37">
-                                <rect key="frame" x="22" y="163.66666666666666" width="48" height="48"/>
+                                <rect key="frame" x="22" y="164" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="BcD-lW-Deq"/>
                                     <constraint firstAttribute="width" secondItem="CSX-OU-o37" secondAttribute="height" multiplier="1:1" id="P0U-Ag-5xN"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEO-mS-OvU">
-                                <rect key="frame" x="22" y="393.33333333333331" width="370" height="50"/>
+                                <rect key="frame" x="22" y="393" width="370" height="50"/>
                                 <state key="normal" image="Create Signup">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -50,7 +50,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btl-l2-cPA">
-                                <rect key="frame" x="22" y="469.66666666666669" width="74" height="30"/>
+                                <rect key="frame" x="22" y="469" width="74" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="옵션 더 보기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -60,19 +60,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="'계속,''계정 만들기,' 또는 '기타 옵션'을 누름으로써 에어비앤비 서비스약관과 결제 asdf서비스 약관, 개인정보 보호정책, 차별 금지 정책에 모두 동의합니다." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwM-oy-Ah6">
-                                <rect key="frame" x="22" y="535.66666666666663" width="370" height="28"/>
+                                <rect key="frame" x="22" y="535" width="370" height="28"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="에어비앤비에 오신 것을 환영합니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajH-Bt-u69">
-                                <rect key="frame" x="22" y="231.66666666666666" width="370" height="30.999999999999972"/>
+                                <rect key="frame" x="22" y="232" width="370" height="31"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpO-lP-HbN">
-                                <rect key="frame" x="22" y="322.66666666666669" width="370" height="50.666666666666686"/>
+                                <rect key="frame" x="22" y="323" width="370" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Vqf-He-SiO"/>
                                 </constraints>
@@ -663,19 +663,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvk-ig-W2S">
-                                                    <rect key="frame" x="16" y="39.666666666666664" width="306" height="24"/>
+                                                    <rect key="frame" x="16" y="39.5" width="306" height="24"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="프로필 확인 및 수정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cW3-Uv-gf7">
-                                                    <rect key="frame" x="16" y="79.666666666666671" width="306" height="16"/>
+                                                    <rect key="frame" x="16" y="79.5" width="306" height="16"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="dJk-1Q-g30">
-                                                    <rect key="frame" x="338" y="33.666666666666664" width="60" height="59.999999999999993"/>
+                                                    <rect key="frame" x="338" y="33.5" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="DJO-J6-d1V"/>
                                                         <constraint firstAttribute="width" constant="60" id="Kvi-ZD-u7k"/>
@@ -707,13 +707,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="단계" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXZ-BH-jrk">
-                                                    <rect key="frame" x="16" y="30" width="35" height="23.666666666666671"/>
+                                                    <rect key="frame" x="16" y="30" width="35" height="23.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9gY-Wf-rrn">
-                                                    <rect key="frame" x="16" y="63.666666666666657" width="382" height="41"/>
+                                                    <rect key="frame" x="16" y="63.5" width="382" height="41"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="W7a-Cx-H3B"/>
                                                     </constraints>
@@ -721,13 +721,13 @@
                                                     <color key="trackTintColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                                 </progressView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="에어비앤비는 모든 회원님께 여행 또는 호스팅 전에 몇 가지 내용을 자세히 작성해주실 것으 부탁드립니다. 지금 작성하시면 나중에 수고를 줄일 수 있어요. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLf-Rc-lkG">
-                                                    <rect key="frame" x="16" y="117.66666666666669" width="312" height="79.333333333333314"/>
+                                                    <rect key="frame" x="16" y="117.5" width="312" height="79.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="ztE-aB-OOv">
-                                                    <rect key="frame" x="378" y="147.33333333333334" width="20" height="20"/>
+                                                    <rect key="frame" x="378" y="147.5" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="J8d-OM-JVB"/>
                                                         <constraint firstAttribute="width" secondItem="ztE-aB-OOv" secondAttribute="height" multiplier="1:1" id="O3V-xh-7mu"/>
@@ -794,13 +794,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ah7-g2-6V0">
-                                                    <rect key="frame" x="16" y="51.666666666666664" width="306" height="23.999999999999993"/>
+                                                    <rect key="frame" x="16" y="51.5" width="306" height="24"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="Ye3-wQ-FAq">
-                                                    <rect key="frame" x="338" y="33.666666666666664" width="60" height="59.999999999999993"/>
+                                                    <rect key="frame" x="338" y="33.5" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="BbR-pS-qfA"/>
                                                         <constraint firstAttribute="width" constant="60" id="LQV-iH-mDq"/>

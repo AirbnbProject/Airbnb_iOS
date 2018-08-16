@@ -50,7 +50,7 @@ extension SimilarHome: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
         ) -> CGSize {
-        return CGSize(width: 160, height: 250)
+        return CGSize(width: 170, height: 250)
     }
     
     func collectionView(

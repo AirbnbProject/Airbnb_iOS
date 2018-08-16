@@ -19,13 +19,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="376" height="96"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="편의시설" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5X-A0-cz6">
-                        <rect key="frame" x="20" y="16" width="82" height="42"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="편의시설" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5X-A0-cz6">
+                        <rect key="frame" x="20" y="20" width="82" height="42"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="82" id="ghr-uA-Pov"/>
                             <constraint firstAttribute="height" constant="42" id="tbc-AN-3jb"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -33,6 +33,7 @@
             </view>
             <constraints>
                 <constraint firstItem="Q5X-A0-cz6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="8UE-O4-fXV"/>
+                <constraint firstItem="Q5X-A0-cz6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="NJz-GX-RDC"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="376" height="96"/>
