@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SaveListCollectionCell" id="gTV-IL-0wX" customClass="SaveListCollectionCell" customModule="AirbnbProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="397" height="249"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="397" height="249"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saveList_Basic" translatesAutoresizingMaskIntoConstraints="NO" id="i6l-ne-adI">
+                        <rect key="frame" x="25" y="20" width="347" height="157"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PlL-eC-FwV">
+                        <rect key="frame" x="25" y="197" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARb-8M-ApQ">
+                        <rect key="frame" x="77" y="197" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOj-cI-ybs">
+                        <rect key="frame" x="25" y="248" width="347" height="1"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="UNn-5Q-7cd"/>
+                            <constraint firstAttribute="height" constant="1" id="xuy-Pe-oGU"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="hOj-cI-ybs" firstAttribute="top" secondItem="PlL-eC-FwV" secondAttribute="bottom" constant="30" id="0ZS-G3-lUo"/>
+                <constraint firstAttribute="bottom" secondItem="hOj-cI-ybs" secondAttribute="bottom" id="1Ek-e3-70p"/>
+                <constraint firstItem="ARb-8M-ApQ" firstAttribute="leading" secondItem="PlL-eC-FwV" secondAttribute="trailing" constant="10" id="9TE-1H-4WP"/>
+                <constraint firstItem="hOj-cI-ybs" firstAttribute="top" secondItem="ARb-8M-ApQ" secondAttribute="bottom" constant="30" id="Kl2-zz-UVK"/>
+                <constraint firstItem="i6l-ne-adI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="25" id="MCg-kX-3Qs"/>
+                <constraint firstItem="PlL-eC-FwV" firstAttribute="top" secondItem="i6l-ne-adI" secondAttribute="bottom" constant="20" id="TU6-M8-xqz"/>
+                <constraint firstItem="i6l-ne-adI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="VUN-Ks-X7o"/>
+                <constraint firstItem="hOj-cI-ybs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="25" id="WRG-WP-CC0"/>
+                <constraint firstAttribute="trailing" secondItem="i6l-ne-adI" secondAttribute="trailing" constant="25" id="ZSo-aM-XJA"/>
+                <constraint firstItem="hOj-cI-ybs" firstAttribute="leading" secondItem="i6l-ne-adI" secondAttribute="leading" id="lUK-LM-3G0"/>
+                <constraint firstAttribute="trailing" secondItem="hOj-cI-ybs" secondAttribute="trailing" constant="25" id="msJ-33-Pml"/>
+                <constraint firstItem="ARb-8M-ApQ" firstAttribute="top" secondItem="i6l-ne-adI" secondAttribute="bottom" constant="20" id="n5U-hq-KUo"/>
+                <constraint firstItem="PlL-eC-FwV" firstAttribute="leading" secondItem="i6l-ne-adI" secondAttribute="leading" id="x8D-Zx-jzT"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="397" height="249"/>
+            <connections>
+                <outlet property="saveListCityNameTitle" destination="PlL-eC-FwV" id="Xyb-PV-XRn"/>
+                <outlet property="saveListHouseNumberTitle" destination="ARb-8M-ApQ" id="1Az-Lb-pIg"/>
+                <outlet property="saveListImageView" destination="i6l-ne-adI" id="twB-17-0Vw"/>
+            </connections>
+            <point key="canvasLocation" x="5.5" y="-6.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="saveList_Basic" width="138" height="91"/>
+    </resources>
+</document>

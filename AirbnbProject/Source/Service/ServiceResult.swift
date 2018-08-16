@@ -10,7 +10,7 @@ import Foundation
 
 enum Result<T> {
     case success(T)
-    case failure(response: [String:Any]?, error: Error)
+    case failure(Data?, Error)
 }
 
 enum AuthError: Error {
@@ -19,4 +19,5 @@ enum AuthError: Error {
     case invalidBirthDay
     case invalidPassword
 }
+
 

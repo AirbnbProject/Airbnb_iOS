@@ -11,6 +11,15 @@
 		152D788A210EFA530060BF9B /* MoreOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D7889210EFA530060BF9B /* MoreOptionsViewController.swift */; };
 		152D788C210F054C0060BF9B /* SignUpNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D788B210F054C0060BF9B /* SignUpNameViewController.swift */; };
 		152D7890210F64340060BF9B /* SignUpEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D788F210F64340060BF9B /* SignUpEmailViewController.swift */; };
+		15423334211C2E310076D1AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15662864210ED4AD003B0338 /* AppDelegate.swift */; };
+		1542333B211C32D50076D1AB /* ExploringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15423339211C32D50076D1AB /* ExploringViewController.swift */; };
+		1542333C211C32D50076D1AB /* ExploringDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1542333A211C32D50076D1AB /* ExploringDetailViewController.swift */; };
+		15423340211C8DF60076D1AB /* ProfileConfirmationDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1542333F211C8DF60076D1AB /* ProfileConfirmationDefaultCell.swift */; };
+		15423342211CA42F0076D1AB /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15423341211CA42F0076D1AB /* ProfileDetailViewController.swift */; };
+		154F5A5421241D22008960DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 154F5A5321241D22008960DE /* GoogleService-Info.plist */; };
+		154F5A57212482B8008960DE /* AuthenticatedInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154F5A56212482B8008960DE /* AuthenticatedInfoViewController.swift */; };
+		154F5A7B212564B8008960DE /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154F5A7A212564B8008960DE /* Message.storyboard */; };
+
 		1566286C210ED4AE003B0338 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1566286B210ED4AE003B0338 /* Assets.xcassets */; };
 		1566286F210ED4AE003B0338 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1566286D210ED4AE003B0338 /* LaunchScreen.storyboard */; };
 		1566287F210EE41B003B0338 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1566287E210EE41B003B0338 /* Login.storyboard */; };
@@ -20,18 +29,19 @@
 		1568A4E22111DA7800FA1223 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568A4E12111DA7800FA1223 /* SignInViewController.swift */; };
 		1568A4E42112087B00FA1223 /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568A4E32112087B00FA1223 /* FindPasswordViewController.swift */; };
 		1568A4E72112F60200FA1223 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568A4E62112F60200FA1223 /* ProfileViewController.swift */; };
+		157A70DD21204E58002910CB /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 157A70DC21204E58002910CB /* Profile.storyboard */; };
+		157A710721215DB2002910CB /* ReservationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157A710621215DB2002910CB /* ReservationViewController.swift */; };
 		1589C4312113F2B5003F224D /* ProfileUpdateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C4302113F2B5003F224D /* ProfileUpdateCell.swift */; };
 		1589C43321140366003F224D /* UserInfoEnrollmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C43221140366003F224D /* UserInfoEnrollmentCell.swift */; };
 		1589C436211422E9003F224D /* DefaultOneLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C434211422E9003F224D /* DefaultOneLineCell.swift */; };
 		1589C437211422E9003F224D /* DefaultOneLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1589C435211422E9003F224D /* DefaultOneLineCell.xib */; };
-		1589C43A21142300003F224D /* DefaultTwoLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C43821142300003F224D /* DefaultTwoLineCell.swift */; };
-		1589C43B21142300003F224D /* DefaultTwoLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1589C43921142300003F224D /* DefaultTwoLineCell.xib */; };
 		1589C47E2119B83E003F224D /* ServiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C47D2119B83E003F224D /* ServiceResult.swift */; };
 		1589C4812119BEEF003F224D /* DefineConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C4802119BEEF003F224D /* DefineConstants.swift */; };
 		1589C4832119C095003F224D /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C4822119C095003F224D /* AuthService.swift */; };
 		1589C4852119CEDC003F224D /* MoveToStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C4842119CEDC003F224D /* MoveToStoryboard.swift */; };
 		1589C4872119FA10003F224D /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C4862119FA10003F224D /* UserAuth.swift */; };
 		1589C489211C040F003F224D /* ProfileConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C488211C040E003F224D /* ProfileConfirmationViewController.swift */; };
+
 		871AEA61211C24F80055FA9C /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEA60211C24F80055FA9C /* EntryViewController.swift */; };
 		871AEA62211C2E820055FA9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15662864210ED4AD003B0338 /* AppDelegate.swift */; };
 		871AEA69211C72050055FA9C /* ReviewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEA67211C72050055FA9C /* ReviewListCell.swift */; };
@@ -58,6 +68,16 @@
 		871AEAB421215FFB0055FA9C /* ReportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 871AEAB221215FFB0055FA9C /* ReportCell.xib */; };
 		871AEAB721217BD80055FA9C /* ReportNextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEAB521217BD80055FA9C /* ReportNextCell.swift */; };
 		871AEAB821217BD80055FA9C /* ReportNextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 871AEAB621217BD80055FA9C /* ReportNextCell.xib */; };
+
+		159262242122EFD30089C77B /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159262232122EFD30089C77B /* UserProfile.swift */; };
+		159262262122F1260089C77B /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159262252122F1260089C77B /* ProfileService.swift */; };
+		15FD62C3211C219B00B9A4BB /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FD62C2211C219B00B9A4BB /* EntryViewController.swift */; };
+		15FF4FF0211D823C003DE812 /* ProfileUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF4FEF211D823C003DE812 /* ProfileUpdateViewController.swift */; };
+		15FF4FF4211D8318003DE812 /* ProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF4FF3211D8318003DE812 /* ProfileImageCell.swift */; };
+		15FF4FF7211D8366003DE812 /* ProfileTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF4FF6211D8366003DE812 /* ProfileTextFieldCell.swift */; };
+		15FF4FFF211D94B0003DE812 /* DetailUserInfoHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF4FFE211D94B0003DE812 /* DetailUserInfoHeaderCell.swift */; };
+
+
 		8739D8B62117E449001998F5 /* swipeImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8739D8B42117E449001998F5 /* swipeImageCell.swift */; };
 		8739D8B72117E449001998F5 /* swipeImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8739D8B52117E449001998F5 /* swipeImageCell.xib */; };
 		8739D8BA2117ECAE001998F5 /* HomeInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8739D8B82117ECAE001998F5 /* HomeInfoCell.swift */; };
@@ -116,6 +136,9 @@
 		8739D932211BFA0F001998F5 /* HomeReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8739D931211BFA0F001998F5 /* HomeReviewViewController.swift */; };
 		8739D936211C051F001998F5 /* ReviewGradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8739D934211C051F001998F5 /* ReviewGradeCell.swift */; };
 		8739D937211C051F001998F5 /* ReviewGradeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8739D935211C051F001998F5 /* ReviewGradeCell.xib */; };
+
+		F9060EE3211C2CF700BFD6B4 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9060EE2211C2CF700BFD6B4 /* EntryViewController.swift */; };
+
 		F90BA798211068F00030926A /* TwoLineHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BA796211068F00030926A /* TwoLineHeaderCollectionReusableView.swift */; };
 		F90BA799211068F00030926A /* TwoLineHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F90BA797211068F00030926A /* TwoLineHeaderCollectionReusableView.xib */; };
 		F90BA79E2110A2EC0030926A /* HouseListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BA79C2110A2EC0030926A /* HouseListCollectionCell.swift */; };
@@ -128,6 +151,22 @@
 		F924BE102110333700627A4A /* NestedSuggestionCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F924BE0E2110333700627A4A /* NestedSuggestionCollectionCell.xib */; };
 		F937FEB521143D06004FD8CB /* SelectingNumberOfPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F937FEB421143D06004FD8CB /* SelectingNumberOfPeopleViewController.swift */; };
 		F937FEB721158E1B004FD8CB /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F937FEB621158E1B004FD8CB /* SearchBarViewController.swift */; };
+
+		F99F74FE21246FE1002B8169 /* ShowEverythingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99F74FD21246FE1002B8169 /* ShowEverythingViewController.swift */; };
+		F99F75022124707D002B8169 /* PageStyleHouseListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99F75002124707D002B8169 /* PageStyleHouseListCollectionCell.swift */; };
+		F99F75032124707D002B8169 /* PageStyleHouseListCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99F75012124707D002B8169 /* PageStyleHouseListCollectionCell.xib */; };
+		F9ADB731211C32CE00C5116F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15662864210ED4AD003B0338 /* AppDelegate.swift */; };
+		F9C3AC332122A57700D8F82D /* RoomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C3AC322122A57700D8F82D /* RoomInfo.swift */; };
+		F9D22C06211C8EAA00BA2C49 /* ExploringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F924BE00210EEDA000627A4A /* ExploringViewController.swift */; };
+		F9D22C07211C8EAA00BA2C49 /* ExploringDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8739D84B210EECCC001998F5 /* ExploringDetailViewController.swift */; };
+		F9D22C11211D74AD00BA2C49 /* SaveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D22C10211D74AD00BA2C49 /* SaveListViewController.swift */; };
+		F9D22C15211D754B00BA2C49 /* SaveListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D22C13211D754B00BA2C49 /* SaveListCollectionCell.swift */; };
+		F9D22C16211D754B00BA2C49 /* SaveListCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D22C14211D754B00BA2C49 /* SaveListCollectionCell.xib */; };
+		F9D22C18211D77E900BA2C49 /* SaveList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D22C17211D77E900BA2C49 /* SaveList.storyboard */; };
+		F9D22C1C211D9AA800BA2C49 /* OneLineHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D22C1A211D9AA800BA2C49 /* OneLineHeaderCollectionReusableView.swift */; };
+		F9D22C1D211D9AA800BA2C49 /* OneLineHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D22C1B211D9AA800BA2C49 /* OneLineHeaderCollectionReusableView.xib */; };
+		F9D22C1F211D9EF600BA2C49 /* SaveTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D22C1E211D9EF600BA2C49 /* SaveTestViewController.swift */; };
+
 		F9D8AE3C2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8AE3A2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.swift */; };
 		F9D8AE3D2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D8AE3B2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.xib */; };
 		F9D8AE412111DCAE00AF9AD5 /* HorizontalStyleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8AE3F2111DCAE00AF9AD5 /* HorizontalStyleCollectionCell.swift */; };
@@ -140,6 +179,13 @@
 		152D7889210EFA530060BF9B /* MoreOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOptionsViewController.swift; sourceTree = "<group>"; };
 		152D788B210F054C0060BF9B /* SignUpNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNameViewController.swift; sourceTree = "<group>"; };
 		152D788F210F64340060BF9B /* SignUpEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmailViewController.swift; sourceTree = "<group>"; };
+		15423339211C32D50076D1AB /* ExploringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploringViewController.swift; sourceTree = "<group>"; };
+		1542333A211C32D50076D1AB /* ExploringDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploringDetailViewController.swift; sourceTree = "<group>"; };
+		1542333F211C8DF60076D1AB /* ProfileConfirmationDefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfirmationDefaultCell.swift; sourceTree = "<group>"; };
+		15423341211CA42F0076D1AB /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
+		154F5A5321241D22008960DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		154F5A56212482B8008960DE /* AuthenticatedInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedInfoViewController.swift; sourceTree = "<group>"; };
+		154F5A7A212564B8008960DE /* Message.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
 		15662861210ED4AD003B0338 /* AirbnbProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirbnbProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15662864210ED4AD003B0338 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1566286B210ED4AE003B0338 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -152,20 +198,28 @@
 		1568A4E12111DA7800FA1223 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		1568A4E32112087B00FA1223 /* FindPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
 		1568A4E62112F60200FA1223 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		157A70DC21204E58002910CB /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		157A710621215DB2002910CB /* ReservationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationViewController.swift; sourceTree = "<group>"; };
 		1589C4302113F2B5003F224D /* ProfileUpdateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateCell.swift; sourceTree = "<group>"; };
 		1589C43221140366003F224D /* UserInfoEnrollmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoEnrollmentCell.swift; sourceTree = "<group>"; };
 		1589C434211422E9003F224D /* DefaultOneLineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultOneLineCell.swift; sourceTree = "<group>"; };
 		1589C435211422E9003F224D /* DefaultOneLineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultOneLineCell.xib; sourceTree = "<group>"; };
-		1589C43821142300003F224D /* DefaultTwoLineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTwoLineCell.swift; sourceTree = "<group>"; };
-		1589C43921142300003F224D /* DefaultTwoLineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultTwoLineCell.xib; sourceTree = "<group>"; };
 		1589C47D2119B83E003F224D /* ServiceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResult.swift; sourceTree = "<group>"; };
 		1589C4802119BEEF003F224D /* DefineConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineConstants.swift; sourceTree = "<group>"; };
 		1589C4822119C095003F224D /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		1589C4842119CEDC003F224D /* MoveToStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveToStoryboard.swift; sourceTree = "<group>"; };
 		1589C4862119FA10003F224D /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 		1589C488211C040E003F224D /* ProfileConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfirmationViewController.swift; sourceTree = "<group>"; };
+		159262232122EFD30089C77B /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		159262252122F1260089C77B /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		15FD62C2211C219B00B9A4BB /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryViewController.swift; path = ../../../../../../../Desktop/Airbnb_iOS/AirbnbProject/Source/ViewController/SignUp/EntryViewController.swift; sourceTree = "<group>"; };
+		15FF4FEF211D823C003DE812 /* ProfileUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateViewController.swift; sourceTree = "<group>"; };
+		15FF4FF3211D8318003DE812 /* ProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCell.swift; sourceTree = "<group>"; };
+		15FF4FF6211D8366003DE812 /* ProfileTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextFieldCell.swift; sourceTree = "<group>"; };
+		15FF4FFE211D94B0003DE812 /* DetailUserInfoHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUserInfoHeaderCell.swift; sourceTree = "<group>"; };
 		38310991B84D0E2221F076C0 /* Pods-AirbnbProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject.release.xcconfig"; sourceTree = "<group>"; };
 		66F552965419A8DFCC187B4A /* Pods_AirbnbProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirbnbProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+
 		871AEA60211C24F80055FA9C /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		871AEA67211C72050055FA9C /* ReviewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListCell.swift; sourceTree = "<group>"; };
 		871AEA68211C72050055FA9C /* ReviewListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewListCell.xib; sourceTree = "<group>"; };
@@ -191,6 +245,7 @@
 		871AEAB221215FFB0055FA9C /* ReportCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportCell.xib; sourceTree = "<group>"; };
 		871AEAB521217BD80055FA9C /* ReportNextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportNextCell.swift; sourceTree = "<group>"; };
 		871AEAB621217BD80055FA9C /* ReportNextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportNextCell.xib; sourceTree = "<group>"; };
+
 		8739D8B42117E449001998F5 /* swipeImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swipeImageCell.swift; sourceTree = "<group>"; };
 		8739D8B52117E449001998F5 /* swipeImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = swipeImageCell.xib; sourceTree = "<group>"; };
 		8739D8B82117ECAE001998F5 /* HomeInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInfoCell.swift; sourceTree = "<group>"; };
@@ -250,6 +305,8 @@
 		8739D934211C051F001998F5 /* ReviewGradeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewGradeCell.swift; sourceTree = "<group>"; };
 		8739D935211C051F001998F5 /* ReviewGradeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewGradeCell.xib; sourceTree = "<group>"; };
 		B4AD846C3DE3FD1CF06D4F37 /* Pods-AirbnbProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject.debug.xcconfig"; sourceTree = "<group>"; };
+		F9060EDE211C2C9500BFD6B4 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntryViewController.swift; path = ../../../../../../../Downloads/EntryViewController.swift; sourceTree = "<group>"; };
+		F9060EE2211C2CF700BFD6B4 /* EntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		F90BA796211068F00030926A /* TwoLineHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoLineHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		F90BA797211068F00030926A /* TwoLineHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwoLineHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		F90BA79C2110A2EC0030926A /* HouseListCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseListCollectionCell.swift; sourceTree = "<group>"; };
@@ -262,6 +319,17 @@
 		F924BE0E2110333700627A4A /* NestedSuggestionCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NestedSuggestionCollectionCell.xib; sourceTree = "<group>"; };
 		F937FEB421143D06004FD8CB /* SelectingNumberOfPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectingNumberOfPeopleViewController.swift; sourceTree = "<group>"; };
 		F937FEB621158E1B004FD8CB /* SearchBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewController.swift; sourceTree = "<group>"; };
+		F99F74FD21246FE1002B8169 /* ShowEverythingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEverythingViewController.swift; sourceTree = "<group>"; };
+		F99F75002124707D002B8169 /* PageStyleHouseListCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStyleHouseListCollectionCell.swift; sourceTree = "<group>"; };
+		F99F75012124707D002B8169 /* PageStyleHouseListCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageStyleHouseListCollectionCell.xib; sourceTree = "<group>"; };
+		F9C3AC322122A57700D8F82D /* RoomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfo.swift; sourceTree = "<group>"; };
+		F9D22C10211D74AD00BA2C49 /* SaveListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveListViewController.swift; sourceTree = "<group>"; };
+		F9D22C13211D754B00BA2C49 /* SaveListCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveListCollectionCell.swift; sourceTree = "<group>"; };
+		F9D22C14211D754B00BA2C49 /* SaveListCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaveListCollectionCell.xib; sourceTree = "<group>"; };
+		F9D22C17211D77E900BA2C49 /* SaveList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = SaveList.storyboard; path = AirbnbProject/Storyboard/SaveList.storyboard; sourceTree = SOURCE_ROOT; };
+		F9D22C1A211D9AA800BA2C49 /* OneLineHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		F9D22C1B211D9AA800BA2C49 /* OneLineHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OneLineHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		F9D22C1E211D9EF600BA2C49 /* SaveTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTestViewController.swift; sourceTree = "<group>"; };
 		F9D8AE3A2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineFooterCollectionReusableView.swift; sourceTree = "<group>"; };
 		F9D8AE3B2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OneLineFooterCollectionReusableView.xib; sourceTree = "<group>"; };
 		F9D8AE3F2111DCAE00AF9AD5 /* HorizontalStyleCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalStyleCollectionCell.swift; sourceTree = "<group>"; };
@@ -285,6 +353,7 @@
 		152D7888210EFA3C0060BF9B /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				15FD62C2211C219B00B9A4BB /* EntryViewController.swift */,
 				152D7889210EFA530060BF9B /* MoreOptionsViewController.swift */,
 				152D788B210F054C0060BF9B /* SignUpNameViewController.swift */,
 				152D788F210F64340060BF9B /* SignUpEmailViewController.swift */,
@@ -293,6 +362,34 @@
 				871AEA60211C24F80055FA9C /* EntryViewController.swift */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		1542333D211C8CFA0076D1AB /* ProfileConfirmation */ = {
+			isa = PBXGroup;
+			children = (
+				1589C488211C040E003F224D /* ProfileConfirmationViewController.swift */,
+				154F5A5521248254008960DE /* AuthenticatedInformationViewController */,
+				1542333E211C8D3D0076D1AB /* ProfileConfirmationCell */,
+				15FF4FF1211D826E003DE812 /* ProfileDetailViewController */,
+				15FF4FEE211D8149003DE812 /* ProfileUpdateViewController */,
+			);
+			path = ProfileConfirmation;
+			sourceTree = "<group>";
+		};
+		1542333E211C8D3D0076D1AB /* ProfileConfirmationCell */ = {
+			isa = PBXGroup;
+			children = (
+				1542333F211C8DF60076D1AB /* ProfileConfirmationDefaultCell.swift */,
+			);
+			path = ProfileConfirmationCell;
+			sourceTree = "<group>";
+		};
+		154F5A5521248254008960DE /* AuthenticatedInformationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				154F5A56212482B8008960DE /* AuthenticatedInfoViewController.swift */,
+			);
+			path = AuthenticatedInformationViewController;
 			sourceTree = "<group>";
 		};
 		15662858210ED4AC003B0338 = {
@@ -328,12 +425,10 @@
 			isa = PBXGroup;
 			children = (
 				15662864210ED4AD003B0338 /* AppDelegate.swift */,
-				1566287C210EE38D003B0338 /* Utility */,
 				1589C4762119B529003F224D /* Model */,
 				1589C47A2119B667003F224D /* Service */,
 				1589C47F2119BD5F003F224D /* Utility */,
 				1566287B210EE385003B0338 /* ViewController */,
-				15662879210EE37C003B0338 /* Model */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -351,20 +446,20 @@
 			children = (
 				1566287E210EE41B003B0338 /* Login.storyboard */,
 				15662880210EE4CF003B0338 /* Main.storyboard */,
+
+				F9D22C17211D77E900BA2C49 /* SaveList.storyboard */,
+
+				157A70DC21204E58002910CB /* Profile.storyboard */,
+				154F5A7A212564B8008960DE /* Message.storyboard */,
+
 			);
 			path = Storyboard;
-			sourceTree = "<group>";
-		};
-		15662879210EE37C003B0338 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		1566287A210EE381003B0338 /* View */ = {
 			isa = PBXGroup;
 			children = (
+
 				871AEAAC21215FC00055FA9C /* ReportCell */,
 				871AEA83211D69B80055FA9C /* HomeRuleCell */,
 				871AEA78211D38040055FA9C /* AddFeeCell */,
@@ -372,11 +467,18 @@
 				8739D933211C03EF001998F5 /* ReviewCell */,
 				8739D910211ACA40001998F5 /* FacilitiesDetail */,
 				8739D8B32117E21C001998F5 /* ExploringCustomCell */,
+
+				F9D8AE3E2111DBE500AF9AD5 /* NestedHorizontalStyleCollectionCell */,
+				F90BA7912110666D0030926A /* SearchingSectionHeaderCollectionReusableView */,
+				F9D22C19211D9A1F00BA2C49 /* SaveListSectionHeaderCollectionReusableView */,
+
 				F9D8AE3E2111DBE500AF9AD5 /* ProposeOfTravelCollectionCell */,
 				F90BA7912110666D0030926A /* HeaderCollectionReusableView */,
+
 				F9D8AE392111BF0F00AF9AD5 /* FooterCollectionReusableView */,
 				F924BE0C2110330300627A4A /* SuggestionCollectionCell */,
 				F90BA79A21106B700030926A /* AirbnbPlusCollectionCell */,
+				F99F74FF2124700A002B8169 /* PageStyleHouseListCollectionCell */,
 				F90BA79B2110A19E0030926A /* HouseListCollectionCell */,
 			);
 			name = View;
@@ -387,36 +489,51 @@
 			isa = PBXGroup;
 			children = (
 				871AEA6C211D24430055FA9C /* ExploringDetailViewController.swift */,
-				871AEA6B211D24420055FA9C /* ExploringViewController.swift */,
+				
+
+				F9060EE2211C2CF700BFD6B4 /* EntryViewController.swift */,
+
 				1568A4E52112F5EA00FA1223 /* Profile */,
 				1568A4E02111DA4300FA1223 /* SignIn */,
 				152D7888210EFA3C0060BF9B /* SignUp */,
+
 				F937FEB621158E1B004FD8CB /* SearchBarViewController.swift */,
 				F937FEB421143D06004FD8CB /* SelectingNumberOfPeopleViewController.swift */,
+				152D7888210EFA3C0060BF9B /* SignUp */,
 				1566287A210EE381003B0338 /* View */,
+
+				1542333A211C32D50076D1AB /* ExploringDetailViewController.swift */,
+				15423339211C32D50076D1AB /* ExploringViewController.swift */,
+
+
 				8739D90E211A899B001998F5 /* HomeImageDetailViewController.swift */,
+				8739D84B210EECCC001998F5 /* ExploringDetailViewController.swift */,
 				8739D911211ACAD2001998F5 /* FacilitiesDetailViewController.swift */,
 				8739D92F211B2D7A001998F5 /* HomeLocationViewController.swift */,
 				8739D931211BFA0F001998F5 /* HomeReviewViewController.swift */,
+
 				871AEA6F211D30840055FA9C /* RefundViewController.swift */,
 				871AEA76211D35F20055FA9C /* AddFeeViewController.swift */,
 				871AEA81211D68A20055FA9C /* HomeRuleViewController.swift */,
 				871AEAAA21215F190055FA9C /* HomeReportViewController.swift */,
+
+				F9D22C10211D74AD00BA2C49 /* SaveListViewController.swift */,
+				F9D22C1E211D9EF600BA2C49 /* SaveTestViewController.swift */,
+				F924BE00210EEDA000627A4A /* ExploringViewController.swift */,
+				F99F74FD21246FE1002B8169 /* ShowEverythingViewController.swift */,
+				F9D22C12211D74DE00BA2C49 /* SaveListCollectionCell */,
+
+				157A710621215DB2002910CB /* ReservationViewController.swift */,
+
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		1566287C210EE38D003B0338 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utility;
 			sourceTree = "<group>";
 		};
 		1566287D210EE3CF003B0338 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				1566286D210ED4AE003B0338 /* LaunchScreen.storyboard */,
+				154F5A5321241D22008960DE /* GoogleService-Info.plist */,
 				15662870210ED4AE003B0338 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -435,29 +552,32 @@
 			isa = PBXGroup;
 			children = (
 				1568A4E62112F60200FA1223 /* ProfileViewController.swift */,
-				1589C488211C040E003F224D /* ProfileConfirmationViewController.swift */,
-				1568A4E82112F61800FA1223 /* SubCell */,
+				1568A4E82112F61800FA1223 /* ProfileViewCell */,
+				1542333D211C8CFA0076D1AB /* ProfileConfirmation */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		1568A4E82112F61800FA1223 /* SubCell */ = {
+		1568A4E82112F61800FA1223 /* ProfileViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				1589C4302113F2B5003F224D /* ProfileUpdateCell.swift */,
 				1589C43221140366003F224D /* UserInfoEnrollmentCell.swift */,
 				1589C434211422E9003F224D /* DefaultOneLineCell.swift */,
 				1589C435211422E9003F224D /* DefaultOneLineCell.xib */,
-				1589C43821142300003F224D /* DefaultTwoLineCell.swift */,
-				1589C43921142300003F224D /* DefaultTwoLineCell.xib */,
 			);
-			path = SubCell;
+			path = ProfileViewCell;
 			sourceTree = "<group>";
 		};
 		1589C4762119B529003F224D /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				1589C4862119FA10003F224D /* UserAuth.swift */,
+
+				F9C3AC322122A57700D8F82D /* RoomInfo.swift */,
+
+				159262232122EFD30089C77B /* UserProfile.swift */,
+
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -467,6 +587,7 @@
 			children = (
 				1589C47D2119B83E003F224D /* ServiceResult.swift */,
 				1589C4822119C095003F224D /* AuthService.swift */,
+				159262252122F1260089C77B /* ProfileService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -478,6 +599,33 @@
 				1589C4842119CEDC003F224D /* MoveToStoryboard.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		15FF4FEE211D8149003DE812 /* ProfileUpdateViewController */ = {
+			isa = PBXGroup;
+			children = (
+				15FF4FEF211D823C003DE812 /* ProfileUpdateViewController.swift */,
+				15FF4FF2211D82CD003DE812 /* ProfileUpdateCell */,
+			);
+			path = ProfileUpdateViewController;
+			sourceTree = "<group>";
+		};
+		15FF4FF1211D826E003DE812 /* ProfileDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				15423341211CA42F0076D1AB /* ProfileDetailViewController.swift */,
+			);
+			path = ProfileDetailViewController;
+			sourceTree = "<group>";
+		};
+		15FF4FF2211D82CD003DE812 /* ProfileUpdateCell */ = {
+			isa = PBXGroup;
+			children = (
+				15FF4FF3211D8318003DE812 /* ProfileImageCell.swift */,
+				15FF4FF6211D8366003DE812 /* ProfileTextFieldCell.swift */,
+				15FF4FFE211D94B0003DE812 /* DetailUserInfoHeaderCell.swift */,
+			);
+			path = ProfileUpdateCell;
 			sourceTree = "<group>";
 		};
 		4783672EC0ADDB9B518A9E15 /* Frameworks */ = {
@@ -618,13 +766,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F90BA7912110666D0030926A /* HeaderCollectionReusableView */ = {
+		F90BA7912110666D0030926A /* SearchingSectionHeaderCollectionReusableView */ = {
 			isa = PBXGroup;
 			children = (
 				F90BA796211068F00030926A /* TwoLineHeaderCollectionReusableView.swift */,
 				F90BA797211068F00030926A /* TwoLineHeaderCollectionReusableView.xib */,
 			);
-			path = HeaderCollectionReusableView;
+			path = SearchingSectionHeaderCollectionReusableView;
 			sourceTree = "<group>";
 		};
 		F90BA79A21106B700030926A /* AirbnbPlusCollectionCell */ = {
@@ -656,6 +804,33 @@
 			path = SuggestionCollectionCell;
 			sourceTree = "<group>";
 		};
+		F99F74FF2124700A002B8169 /* PageStyleHouseListCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				F99F75002124707D002B8169 /* PageStyleHouseListCollectionCell.swift */,
+				F99F75012124707D002B8169 /* PageStyleHouseListCollectionCell.xib */,
+			);
+			path = PageStyleHouseListCollectionCell;
+			sourceTree = "<group>";
+		};
+		F9D22C12211D74DE00BA2C49 /* SaveListCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				F9D22C13211D754B00BA2C49 /* SaveListCollectionCell.swift */,
+				F9D22C14211D754B00BA2C49 /* SaveListCollectionCell.xib */,
+			);
+			path = SaveListCollectionCell;
+			sourceTree = "<group>";
+		};
+		F9D22C19211D9A1F00BA2C49 /* SaveListSectionHeaderCollectionReusableView */ = {
+			isa = PBXGroup;
+			children = (
+				F9D22C1A211D9AA800BA2C49 /* OneLineHeaderCollectionReusableView.swift */,
+				F9D22C1B211D9AA800BA2C49 /* OneLineHeaderCollectionReusableView.xib */,
+			);
+			path = SaveListSectionHeaderCollectionReusableView;
+			sourceTree = "<group>";
+		};
 		F9D8AE392111BF0F00AF9AD5 /* FooterCollectionReusableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -665,7 +840,7 @@
 			path = FooterCollectionReusableView;
 			sourceTree = "<group>";
 		};
-		F9D8AE3E2111DBE500AF9AD5 /* ProposeOfTravelCollectionCell */ = {
+		F9D8AE3E2111DBE500AF9AD5 /* NestedHorizontalStyleCollectionCell */ = {
 			isa = PBXGroup;
 			children = (
 				F9D8AE3F2111DCAE00AF9AD5 /* HorizontalStyleCollectionCell.swift */,
@@ -673,7 +848,7 @@
 				F9D8AE452111DE1800AF9AD5 /* NestedHorizontalStyleCollectionCell.swift */,
 				F9D8AE462111DE1800AF9AD5 /* NestedHorizontalStyleCollectionCell.xib */,
 			);
-			path = ProposeOfTravelCollectionCell;
+			path = NestedHorizontalStyleCollectionCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -754,17 +929,21 @@
 				1566287F210EE41B003B0338 /* Login.storyboard in Resources */,
 				8739D9092119452F001998F5 /* PopularTrip.xib in Resources */,
 				8739D8ED21187D00001998F5 /* PerfectRefundCell.xib in Resources */,
+				F99F75032124707D002B8169 /* PageStyleHouseListCollectionCell.xib in Resources */,
 				8739D8B72117E449001998F5 /* swipeImageCell.xib in Resources */,
 				8739D92E211B243B001998F5 /* FacilitiesUnderLineCell.xib in Resources */,
+				F9D22C1D211D9AA800BA2C49 /* OneLineHeaderCollectionReusableView.xib in Resources */,
 				8739D8C52117F8CB001998F5 /* HostInfoCell.xib in Resources */,
 				8739D8C921181006001998F5 /* HomeDetailInfoCell.xib in Resources */,
 				8739D905211942C8001998F5 /* ThirdFooter.xib in Resources */,
+				154F5A7B212564B8008960DE /* Message.storyboard in Resources */,
 				8739D8E5211828CA001998F5 /* FirstFooter.xib in Resources */,
 				8739D91E211B1516001998F5 /* FacilitiesOneLineCell.xib in Resources */,
 				871AEA8B211D69F40055FA9C /* HomeRuleCell.xib in Resources */,
 				1566286F210ED4AE003B0338 /* LaunchScreen.storyboard in Resources */,
 				8739D8D921181CB8001998F5 /* FirstHeader.xib in Resources */,
 				8739D922211B1536001998F5 /* FacilitiesTwoLineCell.xib in Resources */,
+				157A70DD21204E58002910CB /* Profile.storyboard in Resources */,
 				8739D916211ACFD7001998F5 /* FacilitiesHeader.xib in Resources */,
 				871AEAB821217BD80055FA9C /* ReportNextCell.xib in Resources */,
 				8739D8CD21181483001998F5 /* BedRoomInfoCell.xib in Resources */,
@@ -772,7 +951,10 @@
 				8739D8BF2117F448001998F5 /* HomeWhereCell.xib in Resources */,
 				1589C437211422E9003F224D /* DefaultOneLineCell.xib in Resources */,
 				1566286C210ED4AE003B0338 /* Assets.xcassets in Resources */,
+
 				1589C43B21142300003F224D /* DefaultTwoLineCell.xib in Resources */,
+				F9D22C18211D77E900BA2C49 /* SaveList.storyboard in Resources */,
+
 				15662881210EE4CF003B0338 /* Main.storyboard in Resources */,
 				8739D937211C051F001998F5 /* ReviewGradeCell.xib in Resources */,
 				8739D901211942B3001998F5 /* ThirdHeader.xib in Resources */,
@@ -785,7 +967,10 @@
 				8739D8F52119379E001998F5 /* SecondHeader.xib in Resources */,
 				8739D8F12119341E001998F5 /* PerfectPaymentCell.xib in Resources */,
 				F924BE102110333700627A4A /* NestedSuggestionCollectionCell.xib in Resources */,
+				F9D22C16211D754B00BA2C49 /* SaveListCollectionCell.xib in Resources */,
 				F9D8AE422111DCAE00AF9AD5 /* HorizontalStyleCollectionCell.xib in Resources */,
+
+				154F5A5421241D22008960DE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -819,19 +1004,30 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CVCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -845,29 +1041,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				871AEA6D211D24430055FA9C /* ExploringViewController.swift in Sources */,
+
 				871AEA6E211D24430055FA9C /* ExploringDetailViewController.swift in Sources */,
+
+				F9D22C06211C8EAA00BA2C49 /* ExploringViewController.swift in Sources */,
+				F9D22C1F211D9EF600BA2C49 /* SaveTestViewController.swift in Sources */,
+				1542333B211C32D50076D1AB /* ExploringViewController.swift in Sources */,
+
 				F937FEB721158E1B004FD8CB /* SearchBarViewController.swift in Sources */,
 				871AEA74211D31B00055FA9C /* RefundCell.swift in Sources */,
 				F9D8AE412111DCAE00AF9AD5 /* HorizontalStyleCollectionCell.swift in Sources */,
 				F924BE0A2110215800627A4A /* SuggestionCollectionCell.swift in Sources */,
 				871AEA8A211D69F40055FA9C /* HomeRuleCell.swift in Sources */,
+				157A710721215DB2002910CB /* ReservationViewController.swift in Sources */,
 				F924BE0F2110333700627A4A /* NestedSuggestionCollectionCell.swift in Sources */,
+				15FF4FF0211D823C003DE812 /* ProfileUpdateViewController.swift in Sources */,
+
 				F9D8AE3C2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.swift in Sources */,
 				F9D8AE472111DE1800AF9AD5 /* NestedHorizontalStyleCollectionCell.swift in Sources */,
 				F924BE04210F2DB100627A4A /* AirbnbPlusCollectionCell.swift in Sources */,
 				F90BA79E2110A2EC0030926A /* HouseListCollectionCell.swift in Sources */,
+				F99F75022124707D002B8169 /* PageStyleHouseListCollectionCell.swift in Sources */,
 				F937FEB521143D06004FD8CB /* SelectingNumberOfPeopleViewController.swift in Sources */,
 				F90BA798211068F00030926A /* TwoLineHeaderCollectionReusableView.swift in Sources */,
-				871AEAB321215FFB0055FA9C /* ReportCell.swift in Sources */,
+
+        871AEAB321215FFB0055FA9C /* ReportCell.swift in Sources */,
+				871AEA70211D30840055FA9C /* RefundViewController.swift in Sources */,
+
 				152D788A210EFA530060BF9B /* MoreOptionsViewController.swift in Sources */,
 				152D7890210F64340060BF9B /* SignUpEmailViewController.swift in Sources */,
-				871AEA62211C2E820055FA9C /* AppDelegate.swift in Sources */,
-				871AEA70211D30840055FA9C /* RefundViewController.swift in Sources */,
+				F9ADB731211C32CE00C5116F /* AppDelegate.swift in Sources */,
 				1589C43321140366003F224D /* UserInfoEnrollmentCell.swift in Sources */,
 				1589C489211C040F003F224D /* ProfileConfirmationViewController.swift in Sources */,
 				1568A4E72112F60200FA1223 /* ProfileViewController.swift in Sources */,
-				871AEA61211C24F80055FA9C /* EntryViewController.swift in Sources */,
+				15423334211C2E310076D1AB /* AppDelegate.swift in Sources */,
+				1589C43321140366003F224D /* UserInfoEnrollmentCell.swift in Sources */,
+				1589C489211C040F003F224D /* ProfileConfirmationViewController.swift in Sources */,
+				1568A4E72112F60200FA1223 /* ProfileViewController.swift in Sources */,
+				15FD62C3211C219B00B9A4BB /* EntryViewController.swift in Sources */,
+
 				8739D904211942C8001998F5 /* ThirdFooter.swift in Sources */,
 				8739D929211B18D2001998F5 /* FacilitiesBoldLabelCell.swift in Sources */,
 				8739D8F82119391B001998F5 /* SimilarHome.swift in Sources */,
@@ -879,13 +1091,19 @@
 				8739D8E4211828CA001998F5 /* FirstFooter.swift in Sources */,
 				8739D912211ACAD2001998F5 /* FacilitiesDetailViewController.swift in Sources */,
 				8739D8C821181006001998F5 /* HomeDetailInfoCell.swift in Sources */,
+				15423342211CA42F0076D1AB /* ProfileDetailViewController.swift in Sources */,
 				8739D8D0211815F4001998F5 /* BedRoomInfoCollecionViewCell.swift in Sources */,
 				8739D8CC21181483001998F5 /* BedRoomInfoCell.swift in Sources */,
 				871AEA86211D69E20055FA9C /* HomeRuleBoldCell.swift in Sources */,
+
 				8739D8F02119341E001998F5 /* PerfectPaymentCell.swift in Sources */,
 				8739D90F211A899B001998F5 /* HomeImageDetailViewController.swift in Sources */,
 				8739D8F42119379E001998F5 /* SecondHeader.swift in Sources */,
+				F9D22C11211D74AD00BA2C49 /* SaveListViewController.swift in Sources */,
+				F99F74FE21246FE1002B8169 /* ShowEverythingViewController.swift in Sources */,
+				F9D22C1C211D9AA800BA2C49 /* OneLineHeaderCollectionReusableView.swift in Sources */,
 				8739D9082119452F001998F5 /* PopularTrip.swift in Sources */,
+				154F5A57212482B8008960DE /* AuthenticatedInfoViewController.swift in Sources */,
 				8739D915211ACFD7001998F5 /* FacilitiesHeader.swift in Sources */,
 				8739D932211BFA0F001998F5 /* HomeReviewViewController.swift in Sources */,
 				8739D8C42117F8CB001998F5 /* HostInfoCell.swift in Sources */,
@@ -898,9 +1116,17 @@
 				871AEAAF21215FE60055FA9C /* ReportBoldCell.swift in Sources */,
 				8739D8EC21187D00001998F5 /* PerfectRefundCell.swift in Sources */,
 				871AEA82211D68A20055FA9C /* HomeRuleViewController.swift in Sources */,
+				F9C3AC332122A57700D8F82D /* RoomInfo.swift in Sources */,
+				15423340211C8DF60076D1AB /* ProfileConfirmationDefaultCell.swift in Sources */,
+				15FF4FF4211D8318003DE812 /* ProfileImageCell.swift in Sources */,
 				8739D8E82118326B001998F5 /* ReviewCell.swift in Sources */,
+				F9060EE3211C2CF700BFD6B4 /* EntryViewController.swift in Sources */,
 				8739D92D211B243B001998F5 /* FacilitiesUnderLineCell.swift in Sources */,
-				8739D8E021182621001998F5 /* MapCell.swift in Sources */,
+				F9D22C15211D754B00BA2C49 /* SaveListCollectionCell.swift in Sources */,
+				15FF4FF7211D8366003DE812 /* ProfileTextFieldCell.swift in Sources */,
+
+        8739D8E021182621001998F5 /* MapCell.swift in Sources */,
+				15FF4FFF211D94B0003DE812 /* DetailUserInfoHeaderCell.swift in Sources */,
 				8739D8D821181CB8001998F5 /* FirstHeader.swift in Sources */,
 				8739D91D211B1516001998F5 /* FacilitiesOneLineCell.swift in Sources */,
 				8739D8FC2119393B001998F5 /* SimilarHomeCustomCell.swift in Sources */,
@@ -908,10 +1134,13 @@
 				1568A4DF211188E600FA1223 /* SignUpDateOfBirthViewController.swift in Sources */,
 				871AEA77211D35F20055FA9C /* AddFeeViewController.swift in Sources */,
 				1589C43A21142300003F224D /* DefaultTwoLineCell.swift in Sources */,
+
 				1589C436211422E9003F224D /* DefaultOneLineCell.swift in Sources */,
 				1589C4872119FA10003F224D /* UserAuth.swift in Sources */,
 				1589C4812119BEEF003F224D /* DefineConstants.swift in Sources */,
 				1589C4312113F2B5003F224D /* ProfileUpdateCell.swift in Sources */,
+				159262242122EFD30089C77B /* UserProfile.swift in Sources */,
+				159262262122F1260089C77B /* ProfileService.swift in Sources */,
 				1589C4852119CEDC003F224D /* MoveToStoryboard.swift in Sources */,
 				1568A4E22111DA7800FA1223 /* SignInViewController.swift in Sources */,
 				1568A4DD2110912900FA1223 /* SignUpPasswordViewController.swift in Sources */,
@@ -919,6 +1148,7 @@
 				871AEAAB21215F190055FA9C /* HomeReportViewController.swift in Sources */,
 				871AEA7B211D381C0055FA9C /* AddFeeCell.swift in Sources */,
 				871AEA69211C72050055FA9C /* ReviewListCell.swift in Sources */,
+
 				1568A4E42112087B00FA1223 /* FindPasswordViewController.swift in Sources */,
 				152D788C210F054C0060BF9B /* SignUpNameViewController.swift in Sources */,
 			);
@@ -989,7 +1219,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1043,7 +1273,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1058,14 +1288,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+
 				DEVELOPMENT_TEAM = 9UT8US6W3V;
 				ENABLE_BITCODE = YES;
+				DEVELOPMENT_TEAM = G4MM77V7NH;
+				ENABLE_BITCODE = YES;
+				DEVELOPMENT_TEAM = CNMQE42DQF;
+
 				INFOPLIST_FILE = "$(SRCROOT)/AirbnbProject/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JinTonic.AirbnbProject;
@@ -1073,6 +1309,11 @@
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 arm64 armv7s";
+				PRODUCT_BUNDLE_IDENTIFIER = kr.Inswag.AirbnbProject;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+
 			};
 			name = Debug;
 		};
@@ -1082,9 +1323,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+        
 				DEVELOPMENT_TEAM = 9UT8US6W3V;
 				ENABLE_BITCODE = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/AirbnbProject/Supporting Files/Info.plist";
+				DEVELOPMENT_TEAM = G4MM77V7NH;
+				ENABLE_BITCODE = YES;
+				DEVELOPMENT_TEAM = CNMQE42DQF;
+
+INFOPLIST_FILE = "$(SRCROOT)/AirbnbProject/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1093,11 +1339,17 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.JinTonic.AirbnbProject;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.Inswag.AirbnbProject;
+
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;
+
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 arm64 armv7s";
+
+				TARGETED_DEVICE_FAMILY = 1;
+
 			};
 			name = Release;
 		};
