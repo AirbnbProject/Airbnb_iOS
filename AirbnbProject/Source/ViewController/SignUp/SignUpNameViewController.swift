@@ -79,9 +79,9 @@ class SignUpNameViewController: UIViewController {
     }
     
     @IBAction func nextButton(_ sender: UIButton) {
-        
-        let name = lastNameTextField.text! + firstNameTextField.text!
-        UserDefaults.standard.set(name, forKey: "name")
+
+        UserDefaults.standard.set(self.firstNameTextField.text!, forKey: "fristName")
+        UserDefaults.standard.set(self.lastNameTextField.text!, forKey: "lastName")
         
         let signupEmailVC = MoveStoryboard.toVC(storybardName: "Login", identifier: "SignUpEmailVC")
         self.navigationController?.pushViewController(signupEmailVC, animated: true)

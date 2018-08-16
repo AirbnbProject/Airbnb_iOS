@@ -621,6 +621,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdU-wP-rsv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3158" y="54"/>
+
         </scene>
         <!--Home Image Detail View Controller-->
         <scene sceneID="WJk-sC-C5X">

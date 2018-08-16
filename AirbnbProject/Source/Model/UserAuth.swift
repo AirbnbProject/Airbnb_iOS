@@ -9,66 +9,33 @@
 import Foundation
 
 //회원가입 모델
-struct UserSignUp: Codable {
-    let username: String
-    let email: String
+struct UserSignUp: Decodable {
+    
+    let firstName: String
+    let lastName: String
+    let userName: String
     let birthday: String
     let password: String
+
+    enum Codingkeys: String, CodingKey {
+        case birthday, password
+        case userName = "username"
+        case firstName = "first_name"
+        case lastName = "last_name"
+    }
+
+    init(from decoder: Decoder) throws {
+        let value = try decoder.container(keyedBy: Codingkeys.self)
+        self.firstName = try value.decode(String.self, forKey: .firstName)
+        self.lastName = try value.decode(String.self, forKey: .lastName)
+        self.userName = try value.decode(String.self, forKey: .userName)
+        self.birthday = try value.decode(String.self, forKey: .birthday)
+        self.password = try value.decode(String.self, forKey: .password)
+    }
 }
 
-struct UserLogin: Codable {
-//  {
-//    "token": "<user_token_key>",
-//    "user": {
-    //    "username": "<user_email>",
-    //    "profile_image": "<user_profile_image>",
-    //    "phone_number": "<user_phone_number>",
-    //    "birthday": "<user_birthday>",
-    //    "is_host": false,
-    //    "likes_posts": []
-//    }
-//  }
-    
-    /*
-     let pk: Int
-     let username: String
-     var firstName: String?
-     var lastName: String?
-     var email: String?
-     
-     enum CodingKeys: String, CodingKey {
-     case user
-     case token
-     }
-     
-     enum AdditionalInfoKeys: String, CodingKey {
-     case pk
-     case username
-     case firstName = "first_name"
-     case lastName = "last_name"
-     case email
-     }
-     
-     init(from decoder: Decoder) throws {
-     let values = try decoder.container(keyedBy: CodingKeys.self)
-     let token = try values.decodeIfPresent(String.self, forKey: .token)
-     
-     let userDict: KeyedDecodingContainer<User.AdditionalInfoKeys>
-     if token != nil {
-     UserManager.token = token
-     userDict = try values.nestedContainer(keyedBy: AdditionalInfoKeys.self, forKey: .user)
-     } else {
-     userDict = try decoder.container(keyedBy: AdditionalInfoKeys.self)
-     }
-     
-     pk = try userDict.decode(Int.self, forKey: .pk)
-     username = try userDict.decode(String.self, forKey: .username)
-     firstName = try userDict.decodeIfPresent(String.self, forKey: .firstName)
-     lastName = try userDict.decodeIfPresent(String.self, forKey: .lastName)
-     email = try userDict.decodeIfPresent(String.self, forKey: .email)
-     }
- */
-    
+//로그인 모델
+struct UserLogin: Decodable {
     
     let token: String
     let user: User
@@ -78,39 +45,74 @@ struct UserLogin: Codable {
         case user
     }
     
-    struct User: Codable {
-        let username: String
-        let profile_image: String?
-        let phone_number: String
-        let birthday: String
-        let is_host: Bool
-        let likes_posts: [String]?
+    struct User: Decodable {
         
-        enum Codingkeys: String, CodingKey {
-            case username, birthday
+        let firstName: String
+        let lastName: String
+        let profileImage: String?
+        let phoneNumber: String?
+        let birthday: String?
+        let isHost: Bool
+        let createDate: String
+//        let likesPost: [String]?
+        
+        enum UserKeys: String, CodingKey {
+            case firstName = "first_name"
+            case lastName = "last_name"
+            case userName = "username"
             case profileImage = "profile_image"
             case phoneNumber = "phone_number"
+            case birthday
             case isHost = "is_host"
-            case likesPosts = "likes_posts"
+            case createDate = "create_date"
+//            case likesPost = "likes_posts"
+        }
+        
+        init(from decoder: Decoder) throws {
+            let nestedContainer = try decoder.container(keyedBy: UserKeys.self)
+            self.firstName = try nestedContainer.decode(String.self, forKey: .firstName)
+            self.lastName = try nestedContainer.decode(String.self, forKey: .lastName)
+            self.profileImage = try nestedContainer.decodeIfPresent(String.self, forKey: .profileImage)
+            self.phoneNumber = try nestedContainer.decodeIfPresent(String.self, forKey: .phoneNumber)
+            self.birthday = try nestedContainer.decodeIfPresent(String.self, forKey: .birthday)
+            self.isHost = try nestedContainer.decode(Bool.self, forKey: .isHost)
+            self.createDate = try nestedContainer.decode(String.self, forKey: .createDate)
+//            self.likesPost = try nestedContainer.decodeIfPresent([String].self, forKey: .likesPost)
         }
     }
     
-//    init(from decoder: Decoder) throws {
-//        
-//    }
-    
-    //TODO: - 마무리
-//    init(from decoder: Decoder) throws {
-//        let values = try decoder.container(keyedBy: CodingKeys.self)
-//        let token = try values.decode(String.self, forKey: .token)
-//
-//    }
-    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        self.token = try values.decode(String.self, forKey: .token)
+        self.user = try values.decode(User.self, forKey: .user)
+    }
+
 }
 
 //이메일 중복 모델
 struct EmailCheck: Codable {
     let username: String
 }
+
+// 페이스북 로그인 모델
+struct FacebookLogin: Decodable {
+    let email: String
+    let id: String
+    let lastName: String
+    let firstName: String
+    let url: String
+    
+    enum Codingkeys: String, CodingKey {
+        case email, id, url
+        case lastName = "last_name"
+        case firstName = "first_name"
+    }
+}
+
+//비밀번호 찾기
+struct FindPassword: Decodable {
+    let email: String
+}
+
 
 

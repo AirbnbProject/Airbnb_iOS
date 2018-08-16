@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 //UI Constraint
 private enum Constraint {
@@ -25,6 +26,7 @@ class SignUpDateOfBirthViewController: UIViewController {
     
     private let datePicker = UIDatePicker()
     private let authService: AuthServiceType = AuthService()
+    private var activityView: NVActivityIndicatorView!
     
     //MARK: - Life Cycle
     
@@ -82,41 +84,48 @@ class SignUpDateOfBirthViewController: UIViewController {
             return
         }
         
-        UserDefaults.standard.set(dateOfBirthTextField.text!, forKey: "birthday")
+        activityView.startAnimating()
         
-        self.progressView.progress = 1.0
-        UIView.animate(withDuration: 0.7) {
-            self.progressView.layoutIfNeeded()
-        }
+        UserDefaults.standard.set(dateOfBirthTextField.text!, forKey: "birthday")
 
-        let name = UserDefaults.standard.object(forKey: "name")! as! String
+        let firstName = UserDefaults.standard.object(forKey: "fristName") as! String
+        let lastName = UserDefaults.standard.object(forKey: "lastName") as! String
         let email = UserDefaults.standard.object(forKey: "email")! as! String
         let birthday = UserDefaults.standard.object(forKey: "birthday")! as! String
         let password = UserDefaults.standard.object(forKey: "password")! as! String
         
         //TODO:- 통신
-        authService.singUp(userName: name, email: email, birthday: birthday, password: password, completion: { result in
+        authService.signUp(firstName: firstName, lastName: lastName, email: email, birthday: birthday, password: password, completion: { result in
             switch result {
             case .success(let userInfo):
+                self.activityView.stopAnimating()
+                
                 print("회원가입 성공")
                 print("UserInfo", userInfo)
                 
-                //UserDefault내용 전체 삭제
+                self.progressView.progress = 1.0
+                UIView.animate(withDuration: 0.7) { self.progressView.layoutIfNeeded() }
+                
+                // 이메일 인증 Alert
+                let alertController =  UIAlertController(title: "이메일 인증", message: "해당 이메일로 인증 메일이 발송되었습니다. 인증이 완료된 후 로그인이 가능합니다.", preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.default, handler: { (_) in
+                    self.navigationController?.popToRootViewController(animated: true)
+                })
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
+                
+                // UserDefault내용 전체 삭제
                 if let appDomain = Bundle.main.bundleIdentifier {
                     UserDefaults.standard.removePersistentDomain(forName: appDomain)
                 }
-                
-                self.navigationController?.popToRootViewController(animated: true)
             case .failure(let error):
-                print(error.response!)
+                self.activityView.stopAnimating()
+                print(error)
             }
         })
-        
-        //TODO: - 홈으로 이동(로그인창 말고 메인페이지로 바로 이동됨)
-//        let signInVC = MoveStoryboard.toVC(storybardName: "Login", identifier: "SignInVC")
-//        navigationController?.pushViewController(signInVC, animated: true)
+
     }
-    
+
     @IBAction func errorCloseButton(_ sender: UIButton) {
         self.errorContentView.isHidden = true
     }
@@ -129,8 +138,18 @@ class SignUpDateOfBirthViewController: UIViewController {
         errorContentView.isHidden = true
         dateOfBirthTextField.delegate = self
         
+        setupActivityIndicator()
         setupDatePicker()
 
+    }
+
+    private func setupActivityIndicator() {
+        
+        activityView = NVActivityIndicatorView(frame: CGRect(x: self.view.center.x - 50, y: self.view.center.y - 50, width: 100, height: 100), type: NVActivityIndicatorType.ballBeat, color: UIColor(red: 0/255.0, green: 132/255.0, blue: 137/255.0, alpha: 1), padding: 25)
+        
+        activityView.backgroundColor = .white
+        activityView.layer.cornerRadius = 10
+        self.view.addSubview(activityView)
     }
     
     private func setupDatePicker() {
