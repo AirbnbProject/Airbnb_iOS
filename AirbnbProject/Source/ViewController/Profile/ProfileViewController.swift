@@ -7,17 +7,23 @@
 //
 
 import UIKit
+import Kingfisher
+import Firebase
 
 private enum Constraint {
-    static let profileUpdateHeight: CGFloat = 100.0
+    static let profileUpdateHeight: CGFloat = 110.0
     static let userInfoEnrollment: CGFloat = 225.0
     static let defaultOneLineCell: CGFloat = 80.0
 }
 
 class ProfileViewController: UIViewController {
 
-    private let oneLineData = ["출장을 떠나시나요?","알림","친구를 초대하세요","여행 크레딧과 쿠폰","여행 크레딧과 쿠폰","설정","도움말","호스트가 되어보세요","피드백 남기기"]
-    private let oneLineimage = ["arrow_right","bell","user-plus","user-plus","award","settings","ic_help_outline","home","edit"]
+    private let oneLineData = ["출장을 떠나시나요?","설정","도움말","호스트가 되어보세요","피드백 남기기"]
+    private let oneLineimage = ["arrow_right","settings","ic_help_outline","home","edit"]
+    private let profileService: ProfileServiceType = ProfileService()
+    private let userdefault = UserDefaults.standard
+    private var userDetailInfo: [String:Any] = [:]
+    private var ref: DatabaseReference!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,6 +31,11 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         setupInitialize()
+        fetchData()
+    }
+    
+    deinit {
+        print("ProfileViewController deinit")
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +44,8 @@ class ProfileViewController: UIViewController {
     }
 
     private func setupInitialize() {
+        
+        ref = Database.database().reference()
         
         //네비게이션 Bottom Line Hidden
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
@@ -43,6 +56,19 @@ class ProfileViewController: UIViewController {
         
         tableView.register(UINib(nibName: "DefaultOneLineCell", bundle: nil), forCellReuseIdentifier: "DefaultOneLineCell")
     }
+    
+    private func fetchData() {
+        
+        if let currentUserToken = userdefault.string(forKey: "CurrentUserToken") {
+            self.ref.child("Users").child(currentUserToken).observe(DataEventType.value, with: { (snapshot) in
+                let userInfo = snapshot.value! as! [String:Any]
+                self.userDetailInfo = userInfo
+                
+                self.tableView.reloadData()
+            })
+        }
+    }
+
 }
 
 extension ProfileViewController: UITableViewDataSource {
@@ -68,10 +94,18 @@ extension ProfileViewController: UITableViewDataSource {
             switch indexPath.row {
                 case 0:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileUpdateCell", for: indexPath) as! ProfileUpdateCell
+                    
+                    cell.name.text = self.userDetailInfo["firstName"] as? String
+                    if let image = self.userDetailInfo["profileImage"] {
+                        cell.profileImage.kf.setImage(with: URL(string: image as! String), placeholder: UIImage(named: "profile"))
+                    }
+                    
                     return cell
+                
                 case 1:
                     let cell = tableView.dequeueReusableCell(withIdentifier: "UserInfoEnrollmentCell", for: indexPath) as! UserInfoEnrollmentCell
                     return cell
+                
                 default:
                     return UITableViewCell()
                 }
@@ -124,7 +158,9 @@ extension ProfileViewController: UITableViewDelegate {
         case 0:
             switch indexPath.row {
             case 0:
-                print("수정")
+                let profileConfirmationVC = MoveStoryboard.toVC(storybardName: "Profile", identifier: "ProfileConfirmationViewController") as! ProfileConfirmationViewController
+                profileConfirmationVC.userDetailInfo = self.userDetailInfo
+                navigationController?.pushViewController(profileConfirmationVC, animated: true)
             default:
                 print("section1")
             }

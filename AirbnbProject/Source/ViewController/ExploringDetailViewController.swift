@@ -36,6 +36,7 @@ class ExploringDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //
 //        let border = CALayer()
 //        let width = CGFloat(2.0)
 //        border.borderColor = UIColor.gray.cgColor

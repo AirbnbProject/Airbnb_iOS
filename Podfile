@@ -9,5 +9,8 @@ target 'AirbnbProject' do
   pod 'Alamofire', '~> 4.7'
   pod 'Kingfisher', '~> 4.0'
   pod 'FBSDKLoginKit'
-    
+  pod 'NVActivityIndicatorView'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'CVCalendar', '~> 1.6.1'    
 end
