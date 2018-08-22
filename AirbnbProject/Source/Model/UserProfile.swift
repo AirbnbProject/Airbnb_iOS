@@ -8,17 +8,6 @@
 
 import Foundation
 
-/*
- {
- "profile_image": "https://fc-airbnb-project.s3.amazonaws.com/media/profile_image/profile_image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI2BXOTY66NHNMYIQ%2F20180814%2Fap-northeast-2%2Fs3%2Faws4_request&X-Amz-Date=20180814T110501Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5d83af17c40aae36a5e84295e56f843fb6ee4c475088da2aff110ce062ac8a1a",
- "phone_number": "",
- "birthday": "",
- "first_name": "승진",
- "last_name": "김",
- "is_host": false
- }
- */
-
 struct UserInfo: Decodable {
     let profileImage: String?
     let phoneNumber: String?

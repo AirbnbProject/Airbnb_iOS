@@ -19,6 +19,9 @@ PODS:
   - Firebase/Database (5.5.0):
     - Firebase/CoreOnly
     - FirebaseDatabase (= 5.0.2)
+  - Firebase/Storage (5.5.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (= 3.0.0)
   - FirebaseAnalytics (5.1.0):
     - FirebaseCore (~> 5.1)
     - FirebaseInstanceID (~> 3.2)
@@ -36,6 +39,9 @@ PODS:
   - FirebaseInstanceID (3.2.0):
     - FirebaseCore (~> 5.1)
     - GoogleUtilities/Environment (~> 5.2)
+  - FirebaseStorage (3.0.0):
+    - FirebaseCore (~> 5.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleAppMeasurement (5.1.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2.0)
     - GoogleUtilities/MethodSwizzler (~> 5.2.0)
@@ -58,6 +64,10 @@ PODS:
   - "GoogleUtilities/NSData+zlib (5.2.2)"
   - GoogleUtilities/Reachability (5.2.2):
     - GoogleUtilities/Logger
+  - GTMSessionFetcher/Core (1.2.0)
+  - JSQMessagesViewController (7.3.5):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
   - Kingfisher (4.8.0)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
@@ -76,6 +86,8 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - Firebase/Core
   - Firebase/Database
+  - Firebase/Storage
+  - JSQMessagesViewController
   - Kingfisher (~> 4.0)
   - NVActivityIndicatorView
   - SwiftyJSON
@@ -92,8 +104,12 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseDatabase
     - FirebaseInstanceID
+    - FirebaseStorage
     - GoogleAppMeasurement
     - GoogleUtilities
+    - GTMSessionFetcher
+    - JSQMessagesViewController
+    - JSQSystemSoundPlayer
     - Kingfisher
     - leveldb-library
     - nanopb
@@ -111,14 +127,20 @@ SPEC CHECKSUMS:
   FirebaseCore: ee4b35cf8c8e781da296cc7c15125e4608bb954d
   FirebaseDatabase: 27be5ac5bc75e0b17537b2bbfada8258addcc8cd
   FirebaseInstanceID: 8cd2c6cfe7b9ab65ce7e248f6da7f26f6775b9be
+  FirebaseStorage: 7ca4bb7b58a25fa647b04f524033fc7cb7eb272b
   GoogleAppMeasurement: e785bdb86d3d280abc778156cec323a975f11d1d
   GoogleUtilities: 06b66f9567769a7958db20a92f0128b2843e49d5
+  GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
+  JSQMessagesViewController: 6587f56aedbcb150a8ba1d968e1ef58b1bc758b7
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NVActivityIndicatorView: 963f62bf9f993fcf23218e55958e5b1761b9504c
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 0e71e89d91530370cf78d91b195b4968bbea07c5
+
+PODFILE CHECKSUM: af37cba358cfc07f33e0ddc9316970ac39e1ebe9
+
 
 COCOAPODS: 1.5.3

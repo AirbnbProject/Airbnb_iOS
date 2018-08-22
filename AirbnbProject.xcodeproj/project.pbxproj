@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		06D8EF2899F203BA8ADBD254 /* Pods_AirbnbProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F552965419A8DFCC187B4A /* Pods_AirbnbProject.framework */; };
+		1520B955212B3333003D7E72 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1568A4E62112F60200FA1223 /* ProfileViewController.swift */; };
+		1520B956212B33AC003D7E72 /* UserInfoEnrollmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C43221140366003F224D /* UserInfoEnrollmentCell.swift */; };
+		1520B957212B33B1003D7E72 /* ProfileConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C488211C040E003F224D /* ProfileConfirmationViewController.swift */; };
 		152D788A210EFA530060BF9B /* MoreOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D7889210EFA530060BF9B /* MoreOptionsViewController.swift */; };
 		152D788C210F054C0060BF9B /* SignUpNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D788B210F054C0060BF9B /* SignUpNameViewController.swift */; };
 		152D7890210F64340060BF9B /* SignUpEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D788F210F64340060BF9B /* SignUpEmailViewController.swift */; };
@@ -42,6 +45,10 @@
 		1589C4872119FA10003F224D /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1589C4862119FA10003F224D /* UserAuth.swift */; };
 		159262242122EFD30089C77B /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159262232122EFD30089C77B /* UserProfile.swift */; };
 		159262262122F1260089C77B /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159262252122F1260089C77B /* ProfileService.swift */; };
+		15C28BF62125BED6007E9F45 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C28BF52125BED6007E9F45 /* MessageViewController.swift */; };
+		15C28BF82125BF8A007E9F45 /* MessageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C28BF72125BF8A007E9F45 /* MessageHeaderView.swift */; };
+		15C28BFA2125D018007E9F45 /* MessageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C28BF92125D018007E9F45 /* MessageListCell.swift */; };
+		15C28BFF2125DF21007E9F45 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C28BFE2125DF21007E9F45 /* ChattingViewController.swift */; };
 		15FF4FF0211D823C003DE812 /* ProfileUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF4FEF211D823C003DE812 /* ProfileUpdateViewController.swift */; };
 		15FF4FF4211D8318003DE812 /* ProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF4FF3211D8318003DE812 /* ProfileImageCell.swift */; };
 		15FF4FF7211D8366003DE812 /* ProfileTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF4FF6211D8366003DE812 /* ProfileTextFieldCell.swift */; };
@@ -204,6 +211,13 @@
 		1589C488211C040E003F224D /* ProfileConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfirmationViewController.swift; sourceTree = "<group>"; };
 		159262232122EFD30089C77B /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		159262252122F1260089C77B /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+
+		15C28BF52125BED6007E9F45 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		15C28BF72125BF8A007E9F45 /* MessageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHeaderView.swift; sourceTree = "<group>"; };
+		15C28BF92125D018007E9F45 /* MessageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListCell.swift; sourceTree = "<group>"; };
+		15C28BFE2125DF21007E9F45 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
+		15FD62C2211C219B00B9A4BB /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryViewController.swift; path = ../../../../../../../Desktop/Airbnb_iOS/AirbnbProject/Source/ViewController/SignUp/EntryViewController.swift; sourceTree = "<group>"; };
+
 		15FF4FEF211D823C003DE812 /* ProfileUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateViewController.swift; sourceTree = "<group>"; };
 		15FF4FF3211D8318003DE812 /* ProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCell.swift; sourceTree = "<group>"; };
 		15FF4FF6211D8366003DE812 /* ProfileTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextFieldCell.swift; sourceTree = "<group>"; };
@@ -564,7 +578,11 @@
 		1566287B210EE385003B0338 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+
 				87A51CD2212C034300771063 /* RoomLikeVC */,
+
+				15C28BF42125BE76007E9F45 /* MessageVC */,
+
 				1568A4E52112F5EA00FA1223 /* ProfileVC */,
 				1568A4E02111DA4300FA1223 /* SignInVC */,
 				152D7888210EFA3C0060BF9B /* SignUpVC */,
@@ -647,6 +665,41 @@
 				87A51CAE2127A6C300771063 /* BorderExtension.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		15C28BF42125BE76007E9F45 /* MessageVC */ = {
+			isa = PBXGroup;
+			children = (
+				15C28BFD2125DECE007E9F45 /* MessageConfirmVC */,
+				15C28BFC2125DEB2007E9F45 /* ChattingVC */,
+			);
+			path = MessageVC;
+			sourceTree = "<group>";
+		};
+		15C28BFB2125D01B007E9F45 /* MessageCell */ = {
+			isa = PBXGroup;
+			children = (
+				15C28BF72125BF8A007E9F45 /* MessageHeaderView.swift */,
+				15C28BF92125D018007E9F45 /* MessageListCell.swift */,
+			);
+			path = MessageCell;
+			sourceTree = "<group>";
+		};
+		15C28BFC2125DEB2007E9F45 /* ChattingVC */ = {
+			isa = PBXGroup;
+			children = (
+				15C28BFE2125DF21007E9F45 /* ChattingViewController.swift */,
+			);
+			path = ChattingVC;
+			sourceTree = "<group>";
+		};
+		15C28BFD2125DECE007E9F45 /* MessageConfirmVC */ = {
+			isa = PBXGroup;
+			children = (
+				15C28BF52125BED6007E9F45 /* MessageViewController.swift */,
+				15C28BFB2125D01B007E9F45 /* MessageCell */,
+			);
+			path = MessageConfirmVC;
 			sourceTree = "<group>";
 		};
 		15FF4FEE211D8149003DE812 /* ProfileUpdateViewController */ = {
@@ -1068,7 +1121,10 @@
 				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -1082,7 +1138,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CVCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -1114,6 +1173,7 @@
 				F937FEB721158E1B004FD8CB /* SearchBarViewController.swift in Sources */,
 				871AEA74211D31B00055FA9C /* RefundCell.swift in Sources */,
 				F9D8AE412111DCAE00AF9AD5 /* HorizontalStyleCollectionCell.swift in Sources */,
+				1520B955212B3333003D7E72 /* ProfileViewController.swift in Sources */,
 				871AEA8A211D69F40055FA9C /* HomeRuleCell.swift in Sources */,
 				157A710721215DB2002910CB /* ReservationViewController.swift in Sources */,
 				F924BE0F2110333700627A4A /* NestedSuggestionCollectionCell.swift in Sources */,
@@ -1124,10 +1184,12 @@
 				F99F75022124707D002B8169 /* PageStyleHouseListCollectionCell.swift in Sources */,
 				F937FEB521143D06004FD8CB /* SelectingNumberOfPeopleViewController.swift in Sources */,
 				F90BA798211068F00030926A /* TwoLineHeaderCollectionReusableView.swift in Sources */,
+				1520B956212B33AC003D7E72 /* UserInfoEnrollmentCell.swift in Sources */,
 				871AEAB321215FFB0055FA9C /* ReportCell.swift in Sources */,
 				871AEA70211D30840055FA9C /* RefundViewController.swift in Sources */,
 				152D788A210EFA530060BF9B /* MoreOptionsViewController.swift in Sources */,
 				152D7890210F64340060BF9B /* SignUpEmailViewController.swift in Sources */,
+				15C28BF62125BED6007E9F45 /* MessageViewController.swift in Sources */,
 				8739D904211942C8001998F5 /* ThirdFooter.swift in Sources */,
 				8739D929211B18D2001998F5 /* FacilitiesBoldLabelCell.swift in Sources */,
 				8739D8F82119391B001998F5 /* SimilarHome.swift in Sources */,
@@ -1141,6 +1203,7 @@
 				8739D912211ACAD2001998F5 /* FacilitiesDetailViewController.swift in Sources */,
 				8739D8C821181006001998F5 /* HomeDetailInfoCell.swift in Sources */,
 				15423342211CA42F0076D1AB /* ProfileDetailViewController.swift in Sources */,
+				15C28BF82125BF8A007E9F45 /* MessageHeaderView.swift in Sources */,
 				8739D8D0211815F4001998F5 /* BedRoomInfoCollecionViewCell.swift in Sources */,
 				8739D8CC21181483001998F5 /* BedRoomInfoCell.swift in Sources */,
 				871AEA86211D69E20055FA9C /* HomeRuleBoldCell.swift in Sources */,
@@ -1154,6 +1217,7 @@
 				154F5A57212482B8008960DE /* AuthenticatedInfoViewController.swift in Sources */,
 				8739D915211ACFD7001998F5 /* FacilitiesHeader.swift in Sources */,
 				8739D932211BFA0F001998F5 /* HomeReviewViewController.swift in Sources */,
+				15C28BFA2125D018007E9F45 /* MessageListCell.swift in Sources */,
 				154F5A7C21257FB4008960DE /* AppDelegate.swift in Sources */,
 				8739D8C42117F8CB001998F5 /* HostInfoCell.swift in Sources */,
 				8739D8BE2117F448001998F5 /* HomeWhereCell.swift in Sources */,
@@ -1166,6 +1230,7 @@
 				871AEAAF21215FE60055FA9C /* ReportBoldCell.swift in Sources */,
 				87A51CAF2127A6C300771063 /* BorderExtension.swift in Sources */,
 				8739D8EC21187D00001998F5 /* PerfectRefundCell.swift in Sources */,
+				1520B957212B33B1003D7E72 /* ProfileConfirmationViewController.swift in Sources */,
 				871AEA82211D68A20055FA9C /* HomeRuleViewController.swift in Sources */,
 				F9C3AC332122A57700D8F82D /* RoomInfo.swift in Sources */,
 				15423340211C8DF60076D1AB /* ProfileConfirmationDefaultCell.swift in Sources */,
@@ -1174,6 +1239,7 @@
 				8739D92D211B243B001998F5 /* FacilitiesUnderLineCell.swift in Sources */,
 				F9D22C15211D754B00BA2C49 /* SaveListCollectionCell.swift in Sources */,
 				15FF4FF7211D8366003DE812 /* ProfileTextFieldCell.swift in Sources */,
+				15C28BFF2125DF21007E9F45 /* ChattingViewController.swift in Sources */,
 				8739D8E021182621001998F5 /* MapCell.swift in Sources */,
 				87A51CB121293DA800771063 /* RoomDetailInfo.swift in Sources */,
 				15FF4FFF211D94B0003DE812 /* DetailUserInfoHeaderCell.swift in Sources */,
