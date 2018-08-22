@@ -16,6 +16,15 @@ class ProfileTextFieldCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+//        pickerView.delegate = self
+//        pickerView.dataSource = self
+//        datePicker.datePickerMode = .date
+//        datePicker.locale = Locale.init(identifier: "ko_KR")
+//        datePicker.addTarget(self, action: #selector(dateChanged(datePicker:)), for: UIControlEvents.valueChanged)
+//        self.dateOfBirthTextField.inputView = datePicker
+        
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

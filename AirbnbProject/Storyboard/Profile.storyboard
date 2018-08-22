@@ -362,6 +362,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="l6D-Eu-F2l" id="Dgs-uh-NXr"/>
+                                                    </connections>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I6C-V3-5Vt">
                                                     <rect key="frame" x="24" y="81" width="327" height="1"/>
@@ -427,6 +430,7 @@
                     <connections>
                         <outlet property="saveButton" destination="8kt-FS-jTR" id="xBr-mY-pqZ"/>
                         <outlet property="tableView" destination="lfQ-yT-5Pz" id="LJ6-fL-Omn"/>
+                        <outlet property="tableViewHeight" destination="naX-q7-8a6" id="hJw-wY-WIC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E8T-Si-YnM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -653,6 +657,78 @@
             </objects>
             <point key="canvasLocation" x="2066" y="1414"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="paG-5R-Fia">
+            <objects>
+                <viewController id="uaD-R8-YGh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GwQ-jS-Gb3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login_Background" translatesAutoresizingMaskIntoConstraints="NO" id="kex-7Y-oe6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Ovd-ss-2Ff"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMb-UE-3Jg">
+                                <rect key="frame" x="16" y="60" width="20" height="22"/>
+                                <state key="normal" image="close_White"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="호스팅 준비를 시작해볼까요?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjN-xm-aco">
+                                <rect key="frame" x="16" y="102" width="343" height="31"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기본 사항을 입력하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ht-ws-NqS">
+                                <rect key="frame" x="16" y="216" width="184.33333333333334" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="침대, 욕실, 편의시설에 대한 정보를 작성하세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxY-CB-HVY">
+                                <rect key="frame" x="16" y="248" width="343" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4x-lz-LEf">
+                                <rect key="frame" x="16" y="284" width="70" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Nud-Gc-bzi"/>
+                                    <constraint firstAttribute="height" constant="50" id="fyw-H9-PCJ"/>
+                                </constraints>
+                                <state key="normal" title="계속" backgroundImage="Login_Background">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="I4x-lz-LEf" firstAttribute="leading" secondItem="Dsm-Gd-mUW" secondAttribute="leading" constant="16" id="2XW-ld-TFT"/>
+                            <constraint firstItem="IjN-xm-aco" firstAttribute="leading" secondItem="Dsm-Gd-mUW" secondAttribute="leading" constant="16" id="4Ck-O2-7QO"/>
+                            <constraint firstItem="2Ht-ws-NqS" firstAttribute="leading" secondItem="Dsm-Gd-mUW" secondAttribute="leading" constant="16" id="9Vj-ek-RvL"/>
+                            <constraint firstItem="Dsm-Gd-mUW" firstAttribute="trailing" secondItem="AxY-CB-HVY" secondAttribute="trailing" constant="16" id="EvQ-XU-nds"/>
+                            <constraint firstItem="Dsm-Gd-mUW" firstAttribute="trailing" secondItem="kex-7Y-oe6" secondAttribute="trailing" id="MCx-eT-xsI"/>
+                            <constraint firstItem="AxY-CB-HVY" firstAttribute="leading" secondItem="2Ht-ws-NqS" secondAttribute="leading" id="NHn-PC-Yu9"/>
+                            <constraint firstItem="I4x-lz-LEf" firstAttribute="top" secondItem="AxY-CB-HVY" secondAttribute="bottom" constant="16" id="U1C-Tb-KhW"/>
+                            <constraint firstItem="IjN-xm-aco" firstAttribute="top" secondItem="bMb-UE-3Jg" secondAttribute="bottom" constant="20" id="Yaq-6A-Zfa"/>
+                            <constraint firstItem="kex-7Y-oe6" firstAttribute="leading" secondItem="Dsm-Gd-mUW" secondAttribute="leading" id="baU-M1-r1m"/>
+                            <constraint firstItem="bMb-UE-3Jg" firstAttribute="leading" secondItem="Dsm-Gd-mUW" secondAttribute="leading" constant="16" id="c5x-xV-Iah"/>
+                            <constraint firstItem="2Ht-ws-NqS" firstAttribute="top" secondItem="kex-7Y-oe6" secondAttribute="bottom" constant="16" id="myF-P0-OJD"/>
+                            <constraint firstItem="AxY-CB-HVY" firstAttribute="top" secondItem="2Ht-ws-NqS" secondAttribute="bottom" constant="8" id="qjc-3F-3u8"/>
+                            <constraint firstItem="Dsm-Gd-mUW" firstAttribute="trailing" secondItem="IjN-xm-aco" secondAttribute="trailing" constant="16" id="rRa-N7-sSW"/>
+                            <constraint firstItem="kex-7Y-oe6" firstAttribute="top" secondItem="GwQ-jS-Gb3" secondAttribute="top" id="wAf-xf-bCa"/>
+                            <constraint firstItem="bMb-UE-3Jg" firstAttribute="top" secondItem="Dsm-Gd-mUW" secondAttribute="top" constant="16" id="yfU-N9-MQT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dsm-Gd-mUW"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gax-d3-dMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2869.5999999999999" y="2176.847290640394"/>
+        </scene>
         <!--Profile Detail View Controller-->
         <scene sceneID="gi9-uX-m9G">
             <objects>
@@ -719,6 +795,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Login_Background" width="375" height="667"/>
         <image name="arrow_right" width="11" height="20"/>
         <image name="camera" width="24" height="20"/>
         <image name="close_White" width="20" height="20"/>
