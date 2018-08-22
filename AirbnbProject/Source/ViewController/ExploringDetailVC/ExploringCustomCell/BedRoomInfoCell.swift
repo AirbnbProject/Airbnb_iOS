@@ -46,7 +46,7 @@ extension BedRoomInfoCell: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
         ) -> CGSize {
-        return CGSize(width: 150, height: 140)
+        return CGSize(width: 0, height: 0)
     }
     
     func collectionView(

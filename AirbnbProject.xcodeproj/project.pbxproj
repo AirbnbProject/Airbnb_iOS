@@ -21,7 +21,6 @@
 		154F5A57212482B8008960DE /* AuthenticatedInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154F5A56212482B8008960DE /* AuthenticatedInfoViewController.swift */; };
 		154F5A7B212564B8008960DE /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 154F5A7A212564B8008960DE /* Message.storyboard */; };
 		154F5A7C21257FB4008960DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15662864210ED4AD003B0338 /* AppDelegate.swift */; };
-		154F5A7E21258098008960DE /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FD62C2211C219B00B9A4BB /* EntryViewController.swift */; };
 		154F5A9021258B99008960DE /* SuggestionCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154F5A8E21258B99008960DE /* SuggestionCollectionCell.swift */; };
 		154F5A9121258B99008960DE /* SuggestionCollectionCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 154F5A8F21258B99008960DE /* SuggestionCollectionCell.xib */; };
 		154F5A9421258C7C008960DE /* AirbnbPlusCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154F5A9221258C7C008960DE /* AirbnbPlusCollectionCell.swift */; };
@@ -135,6 +134,15 @@
 		8739D932211BFA0F001998F5 /* HomeReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8739D931211BFA0F001998F5 /* HomeReviewViewController.swift */; };
 		8739D936211C051F001998F5 /* ReviewGradeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8739D934211C051F001998F5 /* ReviewGradeCell.swift */; };
 		8739D937211C051F001998F5 /* ReviewGradeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8739D935211C051F001998F5 /* ReviewGradeCell.xib */; };
+		87A51CAD21268C4100771063 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A51CAC21268C4100771063 /* EntryViewController.swift */; };
+		87A51CAF2127A6C300771063 /* BorderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A51CAE2127A6C300771063 /* BorderExtension.swift */; };
+		87A51CB121293DA800771063 /* RoomDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A51CB021293DA800771063 /* RoomDetailInfo.swift */; };
+		87A51CB3212A679C00771063 /* RoomDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A51CB2212A679C00771063 /* RoomDetailService.swift */; };
+		87A51CD4212C035C00771063 /* RoomLikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A51CD3212C035C00771063 /* RoomLikeViewController.swift */; };
+		87A51CD8212C044E00771063 /* RoomLikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A51CD6212C044E00771063 /* RoomLikeCell.swift */; };
+		87A51CD9212C044E00771063 /* RoomLikeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87A51CD7212C044E00771063 /* RoomLikeCell.xib */; };
+		87A51CDB212C616100771063 /* RoomLikeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A51CDA212C616100771063 /* RoomLikeList.swift */; };
+		87A51CDD212C637C00771063 /* LikeListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A51CDC212C637C00771063 /* LikeListService.swift */; };
 		F90BA798211068F00030926A /* TwoLineHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BA796211068F00030926A /* TwoLineHeaderCollectionReusableView.swift */; };
 		F90BA799211068F00030926A /* TwoLineHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F90BA797211068F00030926A /* TwoLineHeaderCollectionReusableView.xib */; };
 		F90BA79E2110A2EC0030926A /* HouseListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BA79C2110A2EC0030926A /* HouseListCollectionCell.swift */; };
@@ -203,11 +211,13 @@
 		1589C488211C040E003F224D /* ProfileConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfirmationViewController.swift; sourceTree = "<group>"; };
 		159262232122EFD30089C77B /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		159262252122F1260089C77B /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+
 		15C28BF52125BED6007E9F45 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		15C28BF72125BF8A007E9F45 /* MessageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHeaderView.swift; sourceTree = "<group>"; };
 		15C28BF92125D018007E9F45 /* MessageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListCell.swift; sourceTree = "<group>"; };
 		15C28BFE2125DF21007E9F45 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
 		15FD62C2211C219B00B9A4BB /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryViewController.swift; path = ../../../../../../../Desktop/Airbnb_iOS/AirbnbProject/Source/ViewController/SignUp/EntryViewController.swift; sourceTree = "<group>"; };
+
 		15FF4FEF211D823C003DE812 /* ProfileUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateViewController.swift; sourceTree = "<group>"; };
 		15FF4FF3211D8318003DE812 /* ProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCell.swift; sourceTree = "<group>"; };
 		15FF4FF6211D8366003DE812 /* ProfileTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextFieldCell.swift; sourceTree = "<group>"; };
@@ -296,6 +306,15 @@
 		8739D931211BFA0F001998F5 /* HomeReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReviewViewController.swift; sourceTree = "<group>"; };
 		8739D934211C051F001998F5 /* ReviewGradeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewGradeCell.swift; sourceTree = "<group>"; };
 		8739D935211C051F001998F5 /* ReviewGradeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewGradeCell.xib; sourceTree = "<group>"; };
+		87A51CAC21268C4100771063 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryViewController.swift; path = ../../../../EntryViewController.swift; sourceTree = "<group>"; };
+		87A51CAE2127A6C300771063 /* BorderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderExtension.swift; sourceTree = "<group>"; };
+		87A51CB021293DA800771063 /* RoomDetailInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailInfo.swift; sourceTree = "<group>"; };
+		87A51CB2212A679C00771063 /* RoomDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailService.swift; sourceTree = "<group>"; };
+		87A51CD3212C035C00771063 /* RoomLikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomLikeViewController.swift; sourceTree = "<group>"; };
+		87A51CD6212C044E00771063 /* RoomLikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomLikeCell.swift; sourceTree = "<group>"; };
+		87A51CD7212C044E00771063 /* RoomLikeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoomLikeCell.xib; sourceTree = "<group>"; };
+		87A51CDA212C616100771063 /* RoomLikeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomLikeList.swift; sourceTree = "<group>"; };
+		87A51CDC212C637C00771063 /* LikeListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListService.swift; sourceTree = "<group>"; };
 		B4AD846C3DE3FD1CF06D4F37 /* Pods-AirbnbProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject.debug.xcconfig"; sourceTree = "<group>"; };
 		F90BA796211068F00030926A /* TwoLineHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoLineHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		F90BA797211068F00030926A /* TwoLineHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwoLineHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
@@ -339,7 +358,7 @@
 		152D7888210EFA3C0060BF9B /* SignUpVC */ = {
 			isa = PBXGroup;
 			children = (
-				15FD62C2211C219B00B9A4BB /* EntryViewController.swift */,
+				87A51CAC21268C4100771063 /* EntryViewController.swift */,
 				152D7889210EFA530060BF9B /* MoreOptionsViewController.swift */,
 				152D788B210F054C0060BF9B /* SignUpNameViewController.swift */,
 				152D788F210F64340060BF9B /* SignUpEmailViewController.swift */,
@@ -559,7 +578,11 @@
 		1566287B210EE385003B0338 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+
+				87A51CD2212C034300771063 /* RoomLikeVC */,
+
 				15C28BF42125BE76007E9F45 /* MessageVC */,
+
 				1568A4E52112F5EA00FA1223 /* ProfileVC */,
 				1568A4E02111DA4300FA1223 /* SignInVC */,
 				152D7888210EFA3C0060BF9B /* SignUpVC */,
@@ -616,6 +639,8 @@
 				1589C4862119FA10003F224D /* UserAuth.swift */,
 				F9C3AC322122A57700D8F82D /* RoomInfo.swift */,
 				159262232122EFD30089C77B /* UserProfile.swift */,
+				87A51CB021293DA800771063 /* RoomDetailInfo.swift */,
+				87A51CDA212C616100771063 /* RoomLikeList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -626,6 +651,8 @@
 				1589C47D2119B83E003F224D /* ServiceResult.swift */,
 				1589C4822119C095003F224D /* AuthService.swift */,
 				159262252122F1260089C77B /* ProfileService.swift */,
+				87A51CB2212A679C00771063 /* RoomDetailService.swift */,
+				87A51CDC212C637C00771063 /* LikeListService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -635,6 +662,7 @@
 			children = (
 				1589C4802119BEEF003F224D /* DefineConstants.swift */,
 				1589C4842119CEDC003F224D /* MoveToStoryboard.swift */,
+				87A51CAE2127A6C300771063 /* BorderExtension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -830,6 +858,24 @@
 			path = ReviewCell;
 			sourceTree = "<group>";
 		};
+		87A51CD2212C034300771063 /* RoomLikeVC */ = {
+			isa = PBXGroup;
+			children = (
+				87A51CD3212C035C00771063 /* RoomLikeViewController.swift */,
+				87A51CD5212C03E400771063 /* RoomLikeCell */,
+			);
+			path = RoomLikeVC;
+			sourceTree = "<group>";
+		};
+		87A51CD5212C03E400771063 /* RoomLikeCell */ = {
+			isa = PBXGroup;
+			children = (
+				87A51CD6212C044E00771063 /* RoomLikeCell.swift */,
+				87A51CD7212C044E00771063 /* RoomLikeCell.xib */,
+			);
+			path = RoomLikeCell;
+			sourceTree = "<group>";
+		};
 		BC9DFE7A4F6242E0A213120F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1019,6 +1065,7 @@
 				871AEAB821217BD80055FA9C /* ReportNextCell.xib in Resources */,
 				8739D8CD21181483001998F5 /* BedRoomInfoCell.xib in Resources */,
 				871AEA75211D31B00055FA9C /* RefundCell.xib in Resources */,
+				87A51CD9212C044E00771063 /* RoomLikeCell.xib in Resources */,
 				8739D8BF2117F448001998F5 /* HomeWhereCell.xib in Resources */,
 				1589C437211422E9003F224D /* DefaultOneLineCell.xib in Resources */,
 				1566286C210ED4AE003B0338 /* Assets.xcassets in Resources */,
@@ -1080,6 +1127,7 @@
 				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -1096,6 +1144,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -1111,10 +1160,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87A51CAD21268C4100771063 /* EntryViewController.swift in Sources */,
 				154F5A9421258C7C008960DE /* AirbnbPlusCollectionCell.swift in Sources */,
 				154F5A9521258C7C008960DE /* AirbnbPlusCollectionCell.xib in Sources */,
 				154F5A9021258B99008960DE /* SuggestionCollectionCell.swift in Sources */,
 				154F5A9121258B99008960DE /* SuggestionCollectionCell.xib in Sources */,
+				87A51CB3212A679C00771063 /* RoomDetailService.swift in Sources */,
 				871AEA6E211D24430055FA9C /* ExploringDetailViewController.swift in Sources */,
 				F9D22C06211C8EAA00BA2C49 /* (null) in Sources */,
 				F9D22C1F211D9EF600BA2C49 /* SaveTestViewController.swift in Sources */,
@@ -1143,11 +1194,11 @@
 				8739D929211B18D2001998F5 /* FacilitiesBoldLabelCell.swift in Sources */,
 				8739D8F82119391B001998F5 /* SimilarHome.swift in Sources */,
 				871AEAB721217BD80055FA9C /* ReportNextCell.swift in Sources */,
+				87A51CD8212C044E00771063 /* RoomLikeCell.swift in Sources */,
 				8739D8B62117E449001998F5 /* swipeImageCell.swift in Sources */,
 				8739D8DC21181EBD001998F5 /* FacilitiesCell.swift in Sources */,
 				8739D921211B1536001998F5 /* FacilitiesTwoLineCell.swift in Sources */,
 				8739D8D421181ABA001998F5 /* ExploringPublicCell.swift in Sources */,
-				154F5A7E21258098008960DE /* EntryViewController.swift in Sources */,
 				8739D8E4211828CA001998F5 /* FirstFooter.swift in Sources */,
 				8739D912211ACAD2001998F5 /* FacilitiesDetailViewController.swift in Sources */,
 				8739D8C821181006001998F5 /* HomeDetailInfoCell.swift in Sources */,
@@ -1171,11 +1222,13 @@
 				8739D8C42117F8CB001998F5 /* HostInfoCell.swift in Sources */,
 				8739D8BE2117F448001998F5 /* HomeWhereCell.swift in Sources */,
 				8739D8BA2117ECAE001998F5 /* HomeInfoCell.swift in Sources */,
+				87A51CD4212C035C00771063 /* RoomLikeViewController.swift in Sources */,
 				871AEA7F211D38F50055FA9C /* AddFeeTitle.swift in Sources */,
 				8739D900211942B3001998F5 /* ThirdHeader.swift in Sources */,
 				8739D936211C051F001998F5 /* ReviewGradeCell.swift in Sources */,
 				8739D930211B2D7A001998F5 /* HomeLocationViewController.swift in Sources */,
 				871AEAAF21215FE60055FA9C /* ReportBoldCell.swift in Sources */,
+				87A51CAF2127A6C300771063 /* BorderExtension.swift in Sources */,
 				8739D8EC21187D00001998F5 /* PerfectRefundCell.swift in Sources */,
 				1520B957212B33B1003D7E72 /* ProfileConfirmationViewController.swift in Sources */,
 				871AEA82211D68A20055FA9C /* HomeRuleViewController.swift in Sources */,
@@ -1188,9 +1241,11 @@
 				15FF4FF7211D8366003DE812 /* ProfileTextFieldCell.swift in Sources */,
 				15C28BFF2125DF21007E9F45 /* ChattingViewController.swift in Sources */,
 				8739D8E021182621001998F5 /* MapCell.swift in Sources */,
+				87A51CB121293DA800771063 /* RoomDetailInfo.swift in Sources */,
 				15FF4FFF211D94B0003DE812 /* DetailUserInfoHeaderCell.swift in Sources */,
 				8739D8D821181CB8001998F5 /* FirstHeader.swift in Sources */,
 				8739D91D211B1516001998F5 /* FacilitiesOneLineCell.swift in Sources */,
+				87A51CDD212C637C00771063 /* LikeListService.swift in Sources */,
 				8739D8FC2119393B001998F5 /* SimilarHomeCustomCell.swift in Sources */,
 				1589C4832119C095003F224D /* AuthService.swift in Sources */,
 				1568A4DF211188E600FA1223 /* SignUpDateOfBirthViewController.swift in Sources */,
@@ -1204,6 +1259,7 @@
 				1589C4852119CEDC003F224D /* MoveToStoryboard.swift in Sources */,
 				1568A4E22111DA7800FA1223 /* SignInViewController.swift in Sources */,
 				1568A4DD2110912900FA1223 /* SignUpPasswordViewController.swift in Sources */,
+				87A51CDB212C616100771063 /* RoomLikeList.swift in Sources */,
 				1589C47E2119B83E003F224D /* ServiceResult.swift in Sources */,
 				871AEAAB21215F190055FA9C /* HomeReportViewController.swift in Sources */,
 				871AEA7B211D381C0055FA9C /* AddFeeCell.swift in Sources */,
@@ -1347,7 +1403,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CNMQE42DQF;
+				DEVELOPMENT_TEAM = 9UT8US6W3V;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/AirbnbProject/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1371,7 +1427,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CNMQE42DQF;
+				DEVELOPMENT_TEAM = 9UT8US6W3V;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/AirbnbProject/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
