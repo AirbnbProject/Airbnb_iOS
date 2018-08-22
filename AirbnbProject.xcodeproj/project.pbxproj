@@ -152,8 +152,10 @@
 		F937FEB521143D06004FD8CB /* SelectingNumberOfPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F937FEB421143D06004FD8CB /* SelectingNumberOfPeopleViewController.swift */; };
 		F937FEB721158E1B004FD8CB /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F937FEB621158E1B004FD8CB /* SearchBarViewController.swift */; };
 		F99F74FE21246FE1002B8169 /* ShowEverythingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99F74FD21246FE1002B8169 /* ShowEverythingViewController.swift */; };
-		F99F75022124707D002B8169 /* PageStyleHouseListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99F75002124707D002B8169 /* PageStyleHouseListCollectionCell.swift */; };
-		F99F75032124707D002B8169 /* PageStyleHouseListCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99F75012124707D002B8169 /* PageStyleHouseListCollectionCell.xib */; };
+		F99F75022124707D002B8169 /* SingleHouseListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99F75002124707D002B8169 /* SingleHouseListCollectionCell.swift */; };
+		F99F75032124707D002B8169 /* SingleHouseListCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99F75012124707D002B8169 /* SingleHouseListCollectionCell.xib */; };
+		F99F752A2128321E002B8169 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEA60211C24F80055FA9C /* EntryViewController.swift */; };
+		F9BCD810212A9A3A0059A568 /* RoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BCD80F212A9A3A0059A568 /* RoomService.swift */; };
 		F9C3AC332122A57700D8F82D /* RoomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C3AC322122A57700D8F82D /* RoomInfo.swift */; };
 		F9D22C06211C8EAA00BA2C49 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		F9D22C11211D74AD00BA2C49 /* SaveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D22C10211D74AD00BA2C49 /* SaveListViewController.swift */; };
@@ -162,7 +164,6 @@
 		F9D22C18211D77E900BA2C49 /* SaveList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D22C17211D77E900BA2C49 /* SaveList.storyboard */; };
 		F9D22C1C211D9AA800BA2C49 /* OneLineHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D22C1A211D9AA800BA2C49 /* OneLineHeaderCollectionReusableView.swift */; };
 		F9D22C1D211D9AA800BA2C49 /* OneLineHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D22C1B211D9AA800BA2C49 /* OneLineHeaderCollectionReusableView.xib */; };
-		F9D22C1F211D9EF600BA2C49 /* SaveTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D22C1E211D9EF600BA2C49 /* SaveTestViewController.swift */; };
 		F9D8AE3C2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8AE3A2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.swift */; };
 		F9D8AE3D2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D8AE3B2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.xib */; };
 		F9D8AE412111DCAE00AF9AD5 /* HorizontalStyleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D8AE3F2111DCAE00AF9AD5 /* HorizontalStyleCollectionCell.swift */; };
@@ -211,7 +212,6 @@
 		1589C488211C040E003F224D /* ProfileConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConfirmationViewController.swift; sourceTree = "<group>"; };
 		159262232122EFD30089C77B /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		159262252122F1260089C77B /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
-
 		15C28BF52125BED6007E9F45 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		15C28BF72125BF8A007E9F45 /* MessageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHeaderView.swift; sourceTree = "<group>"; };
 		15C28BF92125D018007E9F45 /* MessageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListCell.swift; sourceTree = "<group>"; };
@@ -325,8 +325,9 @@
 		F937FEB421143D06004FD8CB /* SelectingNumberOfPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectingNumberOfPeopleViewController.swift; sourceTree = "<group>"; };
 		F937FEB621158E1B004FD8CB /* SearchBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewController.swift; sourceTree = "<group>"; };
 		F99F74FD21246FE1002B8169 /* ShowEverythingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEverythingViewController.swift; sourceTree = "<group>"; };
-		F99F75002124707D002B8169 /* PageStyleHouseListCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStyleHouseListCollectionCell.swift; sourceTree = "<group>"; };
-		F99F75012124707D002B8169 /* PageStyleHouseListCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageStyleHouseListCollectionCell.xib; sourceTree = "<group>"; };
+		F99F75002124707D002B8169 /* SingleHouseListCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleHouseListCollectionCell.swift; sourceTree = "<group>"; };
+		F99F75012124707D002B8169 /* SingleHouseListCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleHouseListCollectionCell.xib; sourceTree = "<group>"; };
+		F9BCD80F212A9A3A0059A568 /* RoomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomService.swift; sourceTree = "<group>"; };
 		F9C3AC322122A57700D8F82D /* RoomInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfo.swift; sourceTree = "<group>"; };
 		F9D22C10211D74AD00BA2C49 /* SaveListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveListViewController.swift; sourceTree = "<group>"; };
 		F9D22C13211D754B00BA2C49 /* SaveListCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveListCollectionCell.swift; sourceTree = "<group>"; };
@@ -334,7 +335,6 @@
 		F9D22C17211D77E900BA2C49 /* SaveList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = SaveList.storyboard; path = AirbnbProject/Storyboard/SaveList.storyboard; sourceTree = SOURCE_ROOT; };
 		F9D22C1A211D9AA800BA2C49 /* OneLineHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		F9D22C1B211D9AA800BA2C49 /* OneLineHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OneLineHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
-		F9D22C1E211D9EF600BA2C49 /* SaveTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTestViewController.swift; sourceTree = "<group>"; };
 		F9D8AE3A2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineFooterCollectionReusableView.swift; sourceTree = "<group>"; };
 		F9D8AE3B2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OneLineFooterCollectionReusableView.xib; sourceTree = "<group>"; };
 		F9D8AE3F2111DCAE00AF9AD5 /* HorizontalStyleCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalStyleCollectionCell.swift; sourceTree = "<group>"; };
@@ -358,13 +358,13 @@
 		152D7888210EFA3C0060BF9B /* SignUpVC */ = {
 			isa = PBXGroup;
 			children = (
+
 				87A51CAC21268C4100771063 /* EntryViewController.swift */,
 				152D7889210EFA530060BF9B /* MoreOptionsViewController.swift */,
 				152D788B210F054C0060BF9B /* SignUpNameViewController.swift */,
 				152D788F210F64340060BF9B /* SignUpEmailViewController.swift */,
 				1568A4DC2110912900FA1223 /* SignUpPasswordViewController.swift */,
 				1568A4DE211188E600FA1223 /* SignUpDateOfBirthViewController.swift */,
-				871AEA60211C24F80055FA9C /* EntryViewController.swift */,
 			);
 			path = SignUpVC;
 			sourceTree = "<group>";
@@ -488,18 +488,17 @@
 			isa = PBXGroup;
 			children = (
 				15423339211C32D50076D1AB /* ExploringViewController.swift */,
+				F99F74FD21246FE1002B8169 /* ShowEverythingViewController.swift */,
 				F937FEB621158E1B004FD8CB /* SearchBarViewController.swift */,
 				F937FEB421143D06004FD8CB /* SelectingNumberOfPeopleViewController.swift */,
-				F99F74FD21246FE1002B8169 /* ShowEverythingViewController.swift */,
-				F9D22C1E211D9EF600BA2C49 /* SaveTestViewController.swift */,
 				157A710621215DB2002910CB /* ReservationViewController.swift */,
-				F90BA7912110666D0030926A /* SearchingSectionHeaderCollectionReusableView */,
-				F9D8AE392111BF0F00AF9AD5 /* FooterCollectionReusableView */,
+				F90BA7912110666D0030926A /* TwoLineHeaderCollectionReusableView */,
+				F9D8AE392111BF0F00AF9AD5 /* OneLineFooterCollectionReusableView */,
 				F9D8AE3E2111DBE500AF9AD5 /* NestedHorizontalStyleCollectionCell */,
 				F924BE0C2110330300627A4A /* SuggestionCollectionCell */,
 				F90BA79A21106B700030926A /* AirbnbPlusCollectionCell */,
 				F90BA79B2110A19E0030926A /* HouseListCollectionCell */,
-				F99F74FF2124700A002B8169 /* PageStyleHouseListCollectionCell */,
+				F99F74FF2124700A002B8169 /* SingleHouseListCollectionCell */,
 			);
 			path = ExploringVC;
 			sourceTree = "<group>";
@@ -651,8 +650,11 @@
 				1589C47D2119B83E003F224D /* ServiceResult.swift */,
 				1589C4822119C095003F224D /* AuthService.swift */,
 				159262252122F1260089C77B /* ProfileService.swift */,
+
+				F9BCD80F212A9A3A0059A568 /* RoomService.swift */,
 				87A51CB2212A679C00771063 /* RoomDetailService.swift */,
 				87A51CDC212C637C00771063 /* LikeListService.swift */,
+
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -885,13 +887,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F90BA7912110666D0030926A /* SearchingSectionHeaderCollectionReusableView */ = {
+		F90BA7912110666D0030926A /* TwoLineHeaderCollectionReusableView */ = {
 			isa = PBXGroup;
 			children = (
 				F90BA796211068F00030926A /* TwoLineHeaderCollectionReusableView.swift */,
 				F90BA797211068F00030926A /* TwoLineHeaderCollectionReusableView.xib */,
 			);
-			path = SearchingSectionHeaderCollectionReusableView;
+			path = TwoLineHeaderCollectionReusableView;
 			sourceTree = "<group>";
 		};
 		F90BA79A21106B700030926A /* AirbnbPlusCollectionCell */ = {
@@ -923,13 +925,13 @@
 			path = SuggestionCollectionCell;
 			sourceTree = "<group>";
 		};
-		F99F74FF2124700A002B8169 /* PageStyleHouseListCollectionCell */ = {
+		F99F74FF2124700A002B8169 /* SingleHouseListCollectionCell */ = {
 			isa = PBXGroup;
 			children = (
-				F99F75002124707D002B8169 /* PageStyleHouseListCollectionCell.swift */,
-				F99F75012124707D002B8169 /* PageStyleHouseListCollectionCell.xib */,
+				F99F75002124707D002B8169 /* SingleHouseListCollectionCell.swift */,
+				F99F75012124707D002B8169 /* SingleHouseListCollectionCell.xib */,
 			);
-			path = PageStyleHouseListCollectionCell;
+			path = SingleHouseListCollectionCell;
 			sourceTree = "<group>";
 		};
 		F9D22C12211D74DE00BA2C49 /* SaveListCollectionCell */ = {
@@ -950,13 +952,13 @@
 			path = SaveListSectionHeaderCollectionReusableView;
 			sourceTree = "<group>";
 		};
-		F9D8AE392111BF0F00AF9AD5 /* FooterCollectionReusableView */ = {
+		F9D8AE392111BF0F00AF9AD5 /* OneLineFooterCollectionReusableView */ = {
 			isa = PBXGroup;
 			children = (
 				F9D8AE3A2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.swift */,
 				F9D8AE3B2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.xib */,
 			);
-			path = FooterCollectionReusableView;
+			path = OneLineFooterCollectionReusableView;
 			sourceTree = "<group>";
 		};
 		F9D8AE3E2111DBE500AF9AD5 /* NestedHorizontalStyleCollectionCell */ = {
@@ -1046,7 +1048,7 @@
 				1566287F210EE41B003B0338 /* Login.storyboard in Resources */,
 				8739D9092119452F001998F5 /* PopularTrip.xib in Resources */,
 				8739D8ED21187D00001998F5 /* PerfectRefundCell.xib in Resources */,
-				F99F75032124707D002B8169 /* PageStyleHouseListCollectionCell.xib in Resources */,
+				F99F75032124707D002B8169 /* SingleHouseListCollectionCell.xib in Resources */,
 				8739D8B72117E449001998F5 /* swipeImageCell.xib in Resources */,
 				8739D92E211B243B001998F5 /* FacilitiesUnderLineCell.xib in Resources */,
 				F9D22C1D211D9AA800BA2C49 /* OneLineHeaderCollectionReusableView.xib in Resources */,
@@ -1160,6 +1162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				87A51CAD21268C4100771063 /* EntryViewController.swift in Sources */,
 				154F5A9421258C7C008960DE /* AirbnbPlusCollectionCell.swift in Sources */,
 				154F5A9521258C7C008960DE /* AirbnbPlusCollectionCell.xib in Sources */,
@@ -1168,7 +1171,6 @@
 				87A51CB3212A679C00771063 /* RoomDetailService.swift in Sources */,
 				871AEA6E211D24430055FA9C /* ExploringDetailViewController.swift in Sources */,
 				F9D22C06211C8EAA00BA2C49 /* (null) in Sources */,
-				F9D22C1F211D9EF600BA2C49 /* SaveTestViewController.swift in Sources */,
 				1542333B211C32D50076D1AB /* ExploringViewController.swift in Sources */,
 				F937FEB721158E1B004FD8CB /* SearchBarViewController.swift in Sources */,
 				871AEA74211D31B00055FA9C /* RefundCell.swift in Sources */,
@@ -1181,7 +1183,7 @@
 				F9D8AE3C2111C0CB00AF9AD5 /* OneLineFooterCollectionReusableView.swift in Sources */,
 				F9D8AE472111DE1800AF9AD5 /* NestedHorizontalStyleCollectionCell.swift in Sources */,
 				F90BA79E2110A2EC0030926A /* HouseListCollectionCell.swift in Sources */,
-				F99F75022124707D002B8169 /* PageStyleHouseListCollectionCell.swift in Sources */,
+				F99F75022124707D002B8169 /* SingleHouseListCollectionCell.swift in Sources */,
 				F937FEB521143D06004FD8CB /* SelectingNumberOfPeopleViewController.swift in Sources */,
 				F90BA798211068F00030926A /* TwoLineHeaderCollectionReusableView.swift in Sources */,
 				1520B956212B33AC003D7E72 /* UserInfoEnrollmentCell.swift in Sources */,
@@ -1264,6 +1266,7 @@
 				871AEAAB21215F190055FA9C /* HomeReportViewController.swift in Sources */,
 				871AEA7B211D381C0055FA9C /* AddFeeCell.swift in Sources */,
 				871AEA69211C72050055FA9C /* ReviewListCell.swift in Sources */,
+				F9BCD810212A9A3A0059A568 /* RoomService.swift in Sources */,
 				1568A4E42112087B00FA1223 /* FindPasswordViewController.swift in Sources */,
 				152D788C210F054C0060BF9B /* SignUpNameViewController.swift in Sources */,
 			);
@@ -1403,6 +1406,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+
 				DEVELOPMENT_TEAM = 9UT8US6W3V;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/AirbnbProject/Supporting Files/Info.plist";
@@ -1427,6 +1431,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+
 				DEVELOPMENT_TEAM = 9UT8US6W3V;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/AirbnbProject/Supporting Files/Info.plist";

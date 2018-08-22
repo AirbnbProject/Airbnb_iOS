@@ -35,8 +35,6 @@ class HouseListCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
         self.houseImageView.layer.cornerRadius = 3.0
         self.houseImageView.layer.masksToBounds = true
-        
-        
     }
     
     @IBAction func favoriteCheckBtnDidTap(_ sender: UIButton) {

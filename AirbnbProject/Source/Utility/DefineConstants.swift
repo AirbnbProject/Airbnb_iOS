@@ -23,13 +23,20 @@ enum API {
     enum UserInfo {
         static let fetchProfile = API.baseURL + "/members/profile/"
     }
-    
-    
-     enum RoomDetail {
+
+    enum MainPage {
+        static let getRoomList = API.baseURL + "/rooms/main/"
+        static let getTotalRoomList = API.baseURL + "/rooms/list?address_city="
+        static let getTotalRoomListInKorea = API.baseURL + "/rooms/list/"
+        static let getSearchResultByKeyword = API.baseURL + "/rooms/list?search="
+    }
+
+    enum RoomDetail {
         static let detailInfo = API.baseURL + "/rooms/main/"
-     }
+    }
     
     enum RoomLike {
         static let likeList = API.baseURL + "/members/likes/"
     }
+
 }

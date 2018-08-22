@@ -34,18 +34,13 @@ class DistributeGroupOfAgeViewController: UIViewController {
     @IBOutlet weak var infantMinusBtn: UIButton!
     @IBOutlet weak var infantPlusBtn: UIButton!
     
-    
-    
     private var currentNumberOfAdult: Int = 1
     private var currentNumberOfKid: Int = 0
     private var currentNumberOfInfant: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
         setupButtonSetting()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
