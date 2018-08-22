@@ -11,7 +11,7 @@ import UIKit
 class HomeRuleViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    var hostName = String()
     var ruleLists = Array<String>()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,8 +60,8 @@ extension HomeRuleViewController: UICollectionViewDataSource {
         ) -> UICollectionViewCell {
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeRuleBoldCell", for: indexPath) as! HomeRuleBoldCell
-            cell.ruleTitle.text = "엄태형 님의 숙소 이용규칙 확인하기"
-            cell.ruleSub.text = "다음은 엄태형님의 숙소에서 지켜야 할 가이드라인과 숙지할 사항입니다"
+            cell.ruleTitle.text = "\(hostName) 님의 숙소 이용규칙 확인하기"
+            cell.ruleSub.text = "다음은 \(hostName)님의 숙소에서 지켜야 할 가이드라인과 숙지할 사항입니다"
             return cell
         }else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeRuleCell", for: indexPath) as! HomeRuleCell

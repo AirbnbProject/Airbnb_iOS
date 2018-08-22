@@ -12,6 +12,7 @@ target 'AirbnbProject' do
   pod 'NVActivityIndicatorView'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
-  pod 'CVCalendar', '~> 1.6.1'    
+  pod 'CVCalendar', '~> 1.6.1'
+  pod 'SwiftyJSON'    
 
 end

@@ -11,16 +11,17 @@ import Kingfisher
 
 class ExploringDetailViewController: UIViewController {
     
+    @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    private let detailService: RoomDetailServiceType = RoomDetailService()
     
     var moreTrip = false
     var moreText = false
-    
-    var allInfo = [[String: Any]]()
+    var deliveriedPK = Int()
+    var allInfo: [RoomDetail]? = []
     
     var pageNumber = CGFloat()
-    
-    var exArr = ["https://cdn.namuwikiusercontent.com/s/2a2247cddcf5b21806e1bb3382807c571a94f1ef605491be5274cc8e8b225fa0f49614090b5783d81e6fb756433de0e650b34c56b3eb9efa2465f99a1aa47d222adac63136dad39bb5166024cfd5ab79?e=1540443520&k=fVEljU0mK6g-ZyGZlLOv5Q", "https://pbs.twimg.com/media/DauyuHdV4AEGiUo.jpg", "https://cdn.namuwikiusercontent.com/s/2a2247cddcf5b21806e1bb3382807c571a94f1ef605491be5274cc8e8b225fa0f49614090b5783d81e6fb756433de0e650b34c56b3eb9efa2465f99a1aa47d222adac63136dad39bb5166024cfd5ab79?e=1540443520&k=fVEljU0mK6g-ZyGZlLOv5Q", "https://pbs.twimg.com/media/DauyuHdV4AEGiUo.jpg"]
     
     private struct Metric {
         // collectionView
@@ -43,15 +44,8 @@ class ExploringDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //
-//        let border = CALayer()
-//        let width = CGFloat(2.0)
-//        border.borderColor = UIColor.gray.cgColor
-//        border.frame = CGRect(x: 0, y: collectionView.frame.size.height - width, width:  collectionView.frame.size.width, height: collectionView.frame.size.height)
-//
-//        border.borderWidth = width
-//        collectionView.layer.addSublayer(border)
-//        collectionView.layer.masksToBounds = true
+        settingInfo()
+        self.navigationController?.navigationBar.isHidden = true
         //register xib
         collectionView.register(
             UINib(nibName: "swipeImageCell", bundle: nil),
@@ -134,159 +128,6 @@ class ExploringDetailViewController: UIViewController {
         collectionView.register(UINib(nibName: "FirstFooter", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "FirstFooter")
         
         collectionView.register(UINib(nibName: "ThirdFooter", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "ThirdFooter")
-        
-        
-        
-        let jsonData = """
-    [
-    {
-        "pk": 6,
-        "rooms_type": "OR",
-        "rooms_name": "401-2 Cheap yet comfy stay in Seoul",
-        "rooms_tag": "성북구",
-        "rooms_host": {
-            "first_name": "Taeyoung",
-            "last_name": "",
-            "profile_image": "https://fc-airbnb-project.s3.amazonaws.com/media/profile_image/profile_image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI2BXOTY66NHNMYIQ%2F20180814%2Fap-northeast-2%2Fs3%2Faws4_request&X-Amz-Date=20180814T074206Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c770231c6fda46849bef358b126ccb717803db8f4957c7e900056138b187ab61",
-            "phone_number": "01000000000",
-            "birthday": "",
-            "is_host": true,
-            "create_date": "2018-08-14",
-            "likes_posts": []
-        },
-        "rooms_cover_image": "https://fc-airbnb-project.s3.amazonaws.com/media/cover_image/rooms_cover_image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI2BXOTY66NHNMYIQ%2F20180814%2Fap-northeast-2%2Fs3%2Faws4_request&X-Amz-Date=20180814T074206Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=113c41f2a3cbd225d00909d2ae626011457b4719a7a0743a2999bfe5fc932629",
-        "room_images": [
-            {
-                "room_image": "https://fc-airbnb-project.s3.amazonaws.com/media/room_profile_image/rooms_profile_image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI2BXOTY66NHNMYIQ%2F20180814%2Fap-northeast-2%2Fs3%2Faws4_request&X-Amz-Date=20180814T074206Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bbdd82b368c856a3226f287c129d2468cb53a4726503e63552eb9ae3bd124fc8"
-            },
-            {
-                "room_image": "https://fc-airbnb-project.s3.amazonaws.com/media/room_profile_image/rooms_profile_image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI2BXOTY66NHNMYIQ%2F20180814%2Fap-northeast-2%2Fs3%2Faws4_request&X-Amz-Date=20180814T074206Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bbdd82b368c856a3226f287c129d2468cb53a4726503e63552eb9ae3bd124fc8"
-            },
-            {
-                "room_image": "https://fc-airbnb-project.s3.amazonaws.com/media/room_profile_image/rooms_profile_image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI2BXOTY66NHNMYIQ%2F20180814%2Fap-northeast-2%2Fs3%2Faws4_request&X-Amz-Date=20180814T074206Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bbdd82b368c856a3226f287c129d2468cb53a4726503e63552eb9ae3bd124fc8"
-            },
-            {
-                "room_image": "https://fc-airbnb-project.s3.amazonaws.com/media/room_profile_image/rooms_profile_image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI2BXOTY66NHNMYIQ%2F20180814%2Fap-northeast-2%2Fs3%2Faws4_request&X-Amz-Date=20180814T074206Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bbdd82b368c856a3226f287c129d2468cb53a4726503e63552eb9ae3bd124fc8"
-            },
-            {
-                "room_image": "https://fc-airbnb-project.s3.amazonaws.com/media/room_profile_image/rooms_profile_image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI2BXOTY66NHNMYIQ%2F20180814%2Fap-northeast-2%2Fs3%2Faws4_request&X-Amz-Date=20180814T074206Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bbdd82b368c856a3226f287c129d2468cb53a4726503e63552eb9ae3bd124fc8"
-            },
-            {
-                "room_image": "https://fc-airbnb-project.s3.amazonaws.com/media/room_profile_image/rooms_profile_image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI2BXOTY66NHNMYIQ%2F20180814%2Fap-northeast-2%2Fs3%2Faws4_request&X-Amz-Date=20180814T074206Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bbdd82b368c856a3226f287c129d2468cb53a4726503e63552eb9ae3bd124fc8"
-            },
-            {
-                "room_image": "https://fc-airbnb-project.s3.amazonaws.com/media/room_profile_image/rooms_profile_image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAI2BXOTY66NHNMYIQ%2F20180814%2Fap-northeast-2%2Fs3%2Faws4_request&X-Amz-Date=20180814T074206Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bbdd82b368c856a3226f287c129d2468cb53a4726503e63552eb9ae3bd124fc8"
-            }
-        ],
-        "rooms_amount": 1,
-        "rooms_bed": 1,
-        "rooms_personnel": 2,
-        "rooms_bathroom": 1,
-        "days_price": 32800,
-        "room_rules": [
-            {
-                "rule_list": "어린이(만 0-12세)에게 안전하거나 적합하지 않음"
-            },
-            {
-                "rule_list": "흡연 금지"
-            },
-            {
-                "rule_list": "반려동물 동반에 적합하지 않음"
-            },
-            {
-                "rule_list": "파티나 이벤트 금지"
-            },
-            {
-                "rule_list": "체크인 가능 시간: 14:00 이후"
-            },
-            {
-                "rule_list": "체크아웃: 11:00까지"
-            },
-            {
-                "rule_list": "키패드(으)로 셀프 체크인"
-            }
-        ],
-        "room_facilities": [
-            {
-                "facilities": "주방"
-            },
-            {
-                "facilities": "무선 인터넷"
-            },
-            {
-                "facilities": "다리미"
-            },
-            {
-                "facilities": "헤어드라이어"
-            },
-            {
-                "facilities": "옷걸이"
-            },
-            {
-                "facilities": "필수품목"
-            }
-        ],
-        "rooms_description": "이 설명을 한국어로 번역하기",
-        "check_in_minimum": 1,
-        "check_in_maximum": 3,
-        "room_reservations": [],
-        "refund": "일반 정책 More information 체크인 5일 전까지 예약을 취소하면 에어비앤비 서비스 수수료을 제외한 요금이 환불됩니다.체크인까지 5일이 남지 않은 시점에 예약을 취소하면 첫 1박 요금과 나머지 숙박 요금의 50%는 환불되지 않습니다. 에어비앤비 서비스 수수료는 예약 후 48시간 이내에 취소하고 체크인 전인 경우에만 환불됩니다.",
-        "address_country": "한국",
-        "address_city": "서울",
-        "address_district": "성북구",
-        "address_detail": "Seongbuk",
-        "address_latitude": "37.57956369609633",
-        "address_longitude": "127.02012574408243",
-        "created_at": "2018-08-14",
-        "modified_date": "2018-08-14"
-    }
-    ]
-    """
-        
-        let data = jsonData.data(using: .utf8)!
-        do {
-            let json = try JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
-            let roomType = json[0]["rooms_type"] as! String
-            let roomName = json[0]["rooms_name"] as! String
-            let roomTag = json[0]["rooms_tag"] as! String
-            let roomHost = json[0]["rooms_host"] as! [String: Any]
-            let roomHostFirstName = roomHost["first_name"] as! String
-//            let roomHostLastName = roomHost["Last_name"] as! String // null
-            let roomHostProfileImage = roomHost["profile_image"] as! String
-            let roomImages = json[0]["room_images"] as! [[String: Any]]
-            var roomImageArr = Array<String>()
-            for i in 0..<roomImages.count {
-                roomImageArr.append(roomImages[i]["room_image"] as! String)
-            }
-            let roomAmount = json[0]["rooms_amount"] as! Int
-            let roomBed = json[0]["rooms_bed"] as! Int
-            let roomPerson = json[0]["rooms_personnel"] as! Int
-            let roomBathroom = json[0]["rooms_bathroom"] as! Int
-            let roomPrice = json[0]["days_price"] as! Int
-            let roomRule = json[0]["room_rules"] as! [[String: Any]]
-            var roomRuleArr = Array<String>()
-            for i in 0..<roomRule.count {
-                roomRuleArr.append(roomRule[i]["rule_list"] as! String)
-            }
-            let facilities = json[0]["room_facilities"] as! [[String: Any]]
-            var facilitiesArr = Array<String>()
-            for i in 0..<facilities.count {
-               facilitiesArr.append(facilities[i]["facilities"] as! String)
-            }
-            let roomDescription = json[0]["rooms_description"] as! String
-            let checkInMin = json[0]["check_in_minimum"] as! Int
-            let checkInMax = json[0]["check_in_maximum"] as! Int
-            let roomRefund = json[0]["refund"] as! String
-            let roomLat = json[0]["address_latitude"] as! String
-            let roomLon = json[0]["address_longitude"] as! String
-            allInfo = json
-            
-        }catch {
-            print("error")
-        }
-        
-        collectionView.reloadData()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -294,16 +135,63 @@ class ExploringDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func goback(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    func settingInfo() {
+        detailService.searchRoomDetailInfo(pk: deliveriedPK) { (result) in
+            switch result {
+            case .success(let value):
+                print(value)
+                self.allInfo = value
+                self.collectionView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contY = collectionView.contentOffset.y
+        let index = IndexPath(item: 0, section: 0)
+        let cells = collectionView.cellForItem(at: index)
+        var cellY = cells?.frame.maxY
+        guard cellY == nil else {
+            if Float(contY) <= Float(cellY!) {
+//                self.navigationController?.navigationBar.alpha = 0
+                                self.navigationController?.isNavigationBarHidden = true
+                backBtn.isHidden = false
+            }else {
+//                self.navigationController?.navigationBar.alpha = 1
+                                self.navigationController?.isNavigationBarHidden = false
+                backBtn.isHidden = true
+            }
+            return
+        }
+    }
+    
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let detailCell = storyBoard.instantiateViewController(withIdentifier: "HomeImageDetailViewController") as! HomeImageDetailViewController
-        detailCell.homeImage = exArr
+        guard (allInfo?.count)! > 0 else { return }
+        var roomImages = allInfo![0].roomImages
+        var imageArr = Array<String>()
+        for i in 0..<(roomImages?.count)! {
+            imageArr.append(roomImages![i]["room_image"] as! String)
+        }
+        detailCell.homeImage = imageArr
         self.present(detailCell, animated: true)
     }
     
     @objc func moveToNextPage() {
+        guard (allInfo?.count)! > 0 else { return }
+        var roomImages = allInfo![0].roomImages
+        var imageArr = Array<String>()
+        for i in 0..<(roomImages?.count)! {
+            imageArr.append(roomImages![i]["room_image"] as! String)
+        }
         if let cell = collectionView.cellForItem(at: IndexPath(item: 0, section: 0)) as? swipeImageCell {
             let pageWidth:CGFloat = cell.scrollView.frame.width
             let maxWidth:CGFloat = pageWidth * 4
@@ -319,7 +207,7 @@ class ExploringDetailViewController: UIViewController {
             cell.scrollView.scrollRectToVisible(CGRect(x:slideToX, y:0, width:pageWidth, height:cell.scrollView.frame.height), animated: true)
             var pageNumber = cell.scrollView.contentOffset.x / cell.scrollView.frame.size.width + 1
             print(pageNumber)
-            if Int(pageNumber) < exArr.count {
+            if Int(pageNumber) < imageArr.count {
                 cell.pageControl.currentPage = Int(pageNumber)
             }else {
                 cell.pageControl.currentPage = 0
@@ -327,15 +215,13 @@ class ExploringDetailViewController: UIViewController {
         }
         
     }
-    
-
 }
 
 //extension
 
 extension ExploringDetailViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 6
+        return 5//return 6
     }
     
     func collectionView(
@@ -353,12 +239,12 @@ extension ExploringDetailViewController: UICollectionViewDataSource {
             return 9
         case 4:
             return 1
-        case 5:
-            if moreTrip == false {
-                return 4
-            }else {
-                return 8
-            }
+//        case 5:
+//            if moreTrip == false {
+//                return 4
+//            }else {
+//                return 8
+//            }
         default:
             break
         }
@@ -372,14 +258,16 @@ extension ExploringDetailViewController: UICollectionViewDataSource {
             if indexPath.section == 0 || indexPath.section == 1 || indexPath.section == 3 || indexPath.section == 2 {
                 header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FirstHeader", for: indexPath) as! FirstHeader
                 header.isHidden = true
-                return header
+                //return header
             }else if indexPath.section == 4{
                 header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SecondHeader", for: indexPath) as! SecondHeader
-                return header
+               // return header
             }else {
                 header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ThirdHeader", for: indexPath) as! ThirdHeader
-                return header
+               // return header
             }
+            
+            return header
         case UICollectionElementKindSectionFooter:
             if indexPath.section == 0 || indexPath.section == 1 || indexPath.section == 3 || indexPath.section == 4 {
                 let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FirstFooter", for: indexPath) as! FirstFooter
@@ -387,15 +275,14 @@ extension ExploringDetailViewController: UICollectionViewDataSource {
                 return footer
             }else if indexPath.section == 2 {
                 let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FirstFooter", for: indexPath) as! FirstFooter
-                //
-                let roomRule = allInfo[0]["room_rules"] as! [[String: Any]]
-                var roomRuleArr = Array<String>()
-                for i in 0..<roomRule.count {
-                    roomRuleArr.append(roomRule[i]["rule_list"] as! String)
-                }
-                //
-                footer.checkIn.text = "\(roomRuleArr[roomRuleArr.count - 3])"
-                footer.checkOut.text = "\(roomRuleArr[roomRuleArr.count - 2])"
+                guard (allInfo?.count)! > 0 else { return footer}
+                    let roomRule = allInfo![0].roomRules
+                    var roomRuleArr = Array<String>()
+                    for i in 0..<roomRule.count {
+                        roomRuleArr.append(roomRule[i]["rule_list"] as! String)
+                    }
+                    footer.checkIn.text = "\(roomRuleArr[roomRuleArr.count - 3])"
+                    footer.checkOut.text = "\(roomRuleArr[roomRuleArr.count - 2])"
                 return footer
             }else {
                 let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ThirdFooter", for: indexPath) as! ThirdFooter
@@ -432,20 +319,16 @@ extension ExploringDetailViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath == IndexPath(item: 0, section: 0) {
-            print("fuxk you")
-        }else if indexPath == IndexPath(item: 3, section: 1) {
-            moreText = true
-            collectionView.reloadItems(at: [IndexPath(item: 3, section: 1)])
-        }else if indexPath == IndexPath(item: 0, section: 2) {
+        if indexPath == IndexPath(item: 0, section: 2) {
             let new = MoveStoryboard.toVC(storybardName: "Main", identifier: "FacilitiesDetailViewController")
             self.present(new, animated: true)
-        }else if indexPath == IndexPath(item: 1, section: 2) {
+        } else if indexPath == IndexPath(item: 1, section: 2) {
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let mapViewController = storyBoard.instantiateViewController(withIdentifier: "HomeLocationViewController") as! HomeLocationViewController
-            let roomLat = allInfo[0]["address_latitude"] as! String
-            let roomLon = allInfo[0]["address_longitude"] as! String
-            mapViewController.maps = [Double(roomLat)!, Double(roomLon)!]
+            guard (allInfo?.count)! > 0 else { return }
+                let roomLat = allInfo![0].addressLatitude
+                let roomLon = allInfo![0].addressLongitude
+                mapViewController.maps = [Double(roomLat)!, Double(roomLon)!]
             self.present(mapViewController, animated: true)
         }else if indexPath == IndexPath(item: 0, section: 3) {
             let new = MoveStoryboard.toVC(storybardName: "Main", identifier: "HomeReviewViewController")
@@ -453,18 +336,23 @@ extension ExploringDetailViewController: UICollectionViewDataSource {
         }else if indexPath == IndexPath(item: 1, section: 3){
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let ruleViewController = storyBoard.instantiateViewController(withIdentifier: "HomeRuleViewController") as! HomeRuleViewController
-            var roomRule = allInfo[0]["room_rules"] as! [[String: Any]]
-            var roomRuleArr = Array<String>()
-            for i in 0..<roomRule.count {
-                roomRuleArr.append(roomRule[i]["rule_list"] as! String)
+            guard (allInfo?.count)! > 0 else { return }
+                var roomRule = allInfo![0].roomRules
+                var roomRuleArr = Array<String>()
+                for i in 0..<roomRule.count {
+                    roomRuleArr.append(roomRule[i]["rule_list"] as! String)
             }
+            let roomHost = allInfo![0].roomsHost
+            var hosts = roomHost.firstName
             ruleViewController.ruleLists = roomRuleArr
+            ruleViewController.hostName = hosts
             self.present(ruleViewController, animated: true)
         }else if indexPath == IndexPath(item: 2, section: 3) {
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let refundViewController = storyBoard.instantiateViewController(withIdentifier: "RefundViewController") as! RefundViewController
-            let roomRefund = allInfo[0]["refund"] as! String
-            refundViewController.refundRule = roomRefund
+            guard (allInfo?.count)! > 0 else { return }
+                let roomRefund = allInfo![0].refund
+                refundViewController.refundRule = roomRefund
             self.present(refundViewController, animated: true)
         }else if indexPath == IndexPath(item: 4, section: 3) {
             let new = MoveStoryboard.toVC(storybardName: "Main", identifier: "AddFeeViewController")
@@ -472,6 +360,9 @@ extension ExploringDetailViewController: UICollectionViewDataSource {
         }else if indexPath == IndexPath(item: 8, section: 3) {
             let new = MoveStoryboard.toVC(storybardName: "Main", identifier: "HomeReportViewController")
             self.present(new, animated: true)
+        }else if indexPath == IndexPath(item: 3, section: 1) {
+            moreText = true
+            collectionView.reloadItems(at: [IndexPath(item: 3, section: 1)])
         }
         print(indexPath)
     }
@@ -485,34 +376,31 @@ extension ExploringDetailViewController: UICollectionViewDataSource {
             switch indexPath.row {
             case 0:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "swipeImageCell", for: indexPath) as! swipeImageCell
-                let roomImages = allInfo[0]["room_images"] as! [[String: Any]]
-                var roomImageArr = Array<String>()
-                for i in 0..<roomImages.count {
-                    roomImageArr.append(roomImages[i]["room_image"] as! String)
+                guard (allInfo?.count)! > 0 else { return cell }
+                var roomImages = allInfo![0].roomImages
+                var imageArr = Array<String>()
+                for i in 0..<(roomImages?.count)! {
+                    imageArr.append(roomImages![i]["room_image"] as! String)
                 }
-                //
-                cell.pageControl.numberOfPages = exArr.count
-                var frame = CGRect(x:0, y:0, width:0, height:0)
-                for i in 0..<exArr.count {
-                    frame.origin.x = cell.scrollView.frame.size.width * CGFloat(i)
-                    frame.size = cell.scrollView.frame.size
-                    cell.imageView = UIImageView(frame: frame)
-                    let url = URL(string: exArr[i])
-                    cell.imageView.kf.setImage(with: url)
-                    cell.scrollView.addSubview(cell.imageView)
-                    
-                    cell.imageView.isUserInteractionEnabled = true
-                    
-                    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-                    cell.imageView.isUserInteractionEnabled = true
-                    cell.imageView.addGestureRecognizer(tapGestureRecognizer)
-                    
-                    Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(moveToNextPage), userInfo: nil, repeats: true)
-                    //
-                    
-                    //
-                }
-                cell.scrollView.contentSize = CGSize(width: (cell.scrollView.frame.size.width * CGFloat(exArr.count)), height: cell.scrollView.frame.size.height)
+                    cell.pageControl.numberOfPages = imageArr.count
+                    var frame = CGRect(x:0, y:0, width:0, height:0)
+                    for i in 0..<imageArr.count {
+                        frame.origin.x = cell.scrollView.frame.size.width * CGFloat(i)
+                        frame.size = cell.scrollView.frame.size
+                        cell.imageView = UIImageView(frame: frame)
+                        let url = URL(string: imageArr[i])
+                        cell.imageView.kf.setImage(with: url)
+                        cell.scrollView.addSubview(cell.imageView)
+                        
+                        cell.imageView.isUserInteractionEnabled = true
+                        
+                        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+                        cell.imageView.isUserInteractionEnabled = true
+                        cell.imageView.addGestureRecognizer(tapGestureRecognizer)
+                        
+                        Timer.scheduledTimer(timeInterval: 4, target: self, selector: #selector(moveToNextPage), userInfo: nil, repeats: true)
+                    }
+                cell.scrollView.contentSize = CGSize(width: (cell.scrollView.frame.size.width * CGFloat(imageArr.count)), height: cell.scrollView.frame.size.height)
                 cell.scrollView.delegate = self as? UIScrollViewDelegate
                 cell.scrollView.isPagingEnabled = true
                 
@@ -525,44 +413,39 @@ extension ExploringDetailViewController: UICollectionViewDataSource {
             case 0:
                 var roomType = String()
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeWhereCell", for: indexPath) as! HomeWhereCell
-                switch allInfo[0]["rooms_type"] as! String {
-                case "OR":
-                    roomType = "ONE ROOM"
-                case "AP":
-                    roomType = "APT"
-                case "HO":
-                    roomType = "HOUSING"
-                case "GH":
-                    roomType = "GUESTHOUSE"
-                default:
-                    break
-                }
-                cell.homeLocation.text = roomType
-                cell.homeTitle.text = allInfo[0]["rooms_name"] as! String
+                guard (allInfo?.count)! > 0 else { return cell }
+                    cell.homeLocation.text = allInfo![0].roomsType
+                    cell.homeTitle.text = allInfo![0].roomsName
                 return cell
             case 1:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HostInfoCell", for: indexPath) as! HostInfoCell
-                let roomHost = allInfo[0]["rooms_host"] as! [String: Any]
-                let roomHostFirstName = roomHost["first_name"] as! String
-                let roomHostProfileImage = roomHost["profile_image"] as! String
+                guard (allInfo?.count)! > 0 else { return cell }
+                
+                    let roomHost = allInfo![0].roomsHost
+                    let roomHostFirstName = roomHost.firstName
+                    let roomHostProfileImage = roomHost.profileImage
                 let url = URL(string: roomHostProfileImage)
-                //
-                cell.hostLocation.text = allInfo[0]["rooms_tag"] as! String
-                cell.hostName.text = roomHostFirstName
-                cell.hostProfile.kf.setImage(with: url)
-                cell.addBorderBottom(size: 1.0, color: .gray)
+                    //
+                    cell.hostLocation.text = "\(allInfo![0].addressDistrict), \(allInfo![0].addressCity), \(allInfo![0].addressCountry)"
+                    cell.hostName.text = roomHostFirstName
+                    cell.hostProfile.kf.setImage(with: url)
+                
                 return cell
             case 2:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeInfoCell", for: indexPath) as! HomeInfoCell
-                cell.peopleCount.text = "\(allInfo[0]["rooms_personnel"] as! Int)명"
-                cell.roomCount.text = "방 \(allInfo[0]["rooms_amount"] as! Int)개"
-                cell.bedCount.text = "침대 \(allInfo[0]["rooms_bed"] as! Int)개"
-                cell.washCount.text = "욕실 \(allInfo[0]["rooms_bathroom"] as! Int)개"
+                guard (allInfo?.count)! > 0 else { return cell }
+                
+                    cell.peopleCount.text = "\(allInfo![0].roomsPersonnel)명"
+                    cell.roomCount.text = "방 \(allInfo![0].roomsAmount)개"
+                    cell.bedCount.text = "침대 \(allInfo![0].roomsBed)개"
+                    cell.washCount.text = "욕실 \(allInfo![0].roomsBathroom)개"
+                
                 cell.addBorderBottom(size: 1.0, color: .gray)
                 return cell
             case 3:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeDetailInfoCell", for: indexPath) as! HomeDetailInfoCell
-                cell.homeDetail.text = "When adding a collection view to your user interface, your app’s main job is to manage the data associated with that collection view. The collection view gets its data from the data source object, which is an object that conforms to the UICollectionViewDataSource Protocol and is provided by your app. Data in the collection view is organized into individual items, which can then be grouped into sections for presentation. An item is the smallest unit of data you want to present. For example, in a photos app, an item might be a single image. The collection view presents items onscreen using a cell, which is an instance of the UICollectionViewCell class that your data source configures and provides."
+                guard (allInfo?.count)! > 0 else { return cell }
+                cell.homeDetail.text = allInfo![0].roomsDescription
                 var text = cell.homeDetail.text
                 if moreText == false {
                     if (text?.count)! >= 200 {
@@ -577,7 +460,10 @@ extension ExploringDetailViewController: UICollectionViewDataSource {
                 return cell
             case 5:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExploringPublicCell", for: indexPath) as! ExploringPublicCell
-                cell.publicLabel.text = "최소 \(allInfo[0]["check_in_minimum"] as! Int)박"
+                guard (allInfo?.count)! > 0 else { return cell }
+                
+                    cell.publicLabel.text = "최소 \(allInfo![0].checkInMinimum)박"
+                
                 cell.addBorderBottom(size: 1.0, color: .gray)
                 return cell
             default:
@@ -591,9 +477,10 @@ extension ExploringDetailViewController: UICollectionViewDataSource {
                 return cell
             case 1:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MapCell", for: indexPath) as! MapCell
-                let roomLat = allInfo[0]["address_latitude"] as! String
-                let roomLon = allInfo[0]["address_longitude"] as! String
-                cell.makeMap(lat: Double(roomLat)!, lon: Double(roomLon)!)//
+                guard (allInfo?.count)! > 0 else { return cell }
+                    let roomLat = allInfo![0].addressLatitude
+                    let roomLon = allInfo![0].addressLongitude
+                    cell.makeMap(lat: Double(roomLat)!, lon: Double(roomLon)!)//
                 return cell
             default:
                 break
@@ -702,17 +589,17 @@ extension ExploringDetailViewController: UICollectionViewDelegateFlowLayout {
             case 0:
                 return CGSize(width: view.frame.width, height: 130)
             case 1:
-                return CGSize(width: view.frame.width, height: 110)
+                return CGSize(width: view.frame.width, height: 80)
             case 2:
-                return CGSize(width: view.frame.width, height: 150)
+                return CGSize(width: view.frame.width, height: 130)
             case 3:
                 if moreText == false {
-                    return CGSize(width: view.frame.width, height: 160)
+                    return CGSize(width: view.frame.width, height: 200)
                 }else {
                    return CGSize(width: view.frame.width, height: 400)
                 }
             case 4:
-                return CGSize(width: view.frame.width, height: 200)
+                return CGSize(width: view.frame.width, height: 0)
             case 5:
                 return CGSize(width: view.frame.width, height: 80)
             default:
@@ -780,47 +667,21 @@ extension ExploringDetailViewController: UICollectionViewDelegateFlowLayout {
 //delegate
 extension ExploringDetailViewController: FooterDelegate {
     func FooterCell(_ itemCell: ThirdFooter, didTapAddButton: UIButton) {
-        tripInfo = ["스파체험, 팜스프링스 사막", "스파체험, 팜스프링스 사막", "행글라이딩, 로스앤젤레스,", "사진촬영, 팜스프링스 사막", "스파체험, 팜스프링스 사막", "스파체험, 팜스프링스 사막", "행글라이딩, 로스앤젤레스,", "사진촬영, 팜스프링스 사막"]
-        tripPrice = ["1인당 $63,375", "1인당 $63,375", "1인당 $328,397", "1인당 $86,420", "1인당 $63,375", "1인당 $63,375", "1인당 $328,397", "1인당 $86,420"]
-        tripGrade = ["★★★★★", "★★★★★", "★★★★★", "★★★★", "★", "★★★★★", "★★★★★", "★★★★"]
-        tripName = ["Hot Spring Sunset for Two", "Hot Spring Sanctuary for Two", "Hang Gliding", "Photoshoot & Adventure in Downtown", "Hot Spring Sunset for Two", "Hot Spring Sanctuary for Two", "Hang Gliding", "Photoshoot & Adventure in Downtown"]
-        moreTrip = true
-        let indexSet = IndexSet(integer: 5)
-        self.collectionView.reloadSections(indexSet)
-    }
-}
-
-
-extension UIView {
-    func addBorderTop(size size: CGFloat, color: UIColor) {
-        addBorderUtility(x: 0, y: 0, width: frame.width, height: size, color: color)
-    }
-    func addBorderBottom(size size: CGFloat, color: UIColor) {
-        addBorderUtility(x: 10, y: frame.height - size, width: frame.width - 40, height: size, color: color)
-    }
-    func addBorderLeft(size size: CGFloat, color: UIColor) {
-        addBorderUtility(x: 0, y: 0, width: size, height: frame.height, color: color)
-    }
-    func addBorderRight(size size: CGFloat, color: UIColor) {
-        addBorderUtility(x: frame.width - size, y: 0, width: size, height: frame.height, color: color)
-    }
-    private func addBorderUtility(x x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat, color: UIColor) {
-        let border = CALayer()
         
-        border.backgroundColor = UIColor.gray.cgColor
-        border.frame = CGRect(x: x, y: y, width: width, height: height)
-        layer.addSublayer(border)
     }
 }
 
 extension ExploringDetailViewController: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width
-        print(pageNumber)
-
+        guard (allInfo?.count)! > 0 else { return }
+        var roomImages = allInfo![0].roomImages
+        var imageArr = Array<String>()
+        for i in 0..<(roomImages?.count)! {
+            imageArr.append(roomImages![i]["room_image"] as! String)
+        }
         if let cell = collectionView.cellForItem(at: IndexPath(item: 0, section: 0)) as? swipeImageCell {
-//            cell.pageControl.currentPage = Int(pageNumber)
-            if Int(pageNumber) < exArr.count {
+            if Int(pageNumber) < imageArr.count {
                 cell.pageControl.currentPage = Int(pageNumber)
             }else {
                 cell.pageControl.currentPage = 0

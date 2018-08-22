@@ -24,4 +24,12 @@ enum API {
         static let fetchProfile = API.baseURL + "/members/profile/"
     }
     
+    
+     enum RoomDetail {
+        static let detailInfo = API.baseURL + "/rooms/main/"
+     }
+    
+    enum RoomLike {
+        static let likeList = API.baseURL + "/members/likes/"
+    }
 }
