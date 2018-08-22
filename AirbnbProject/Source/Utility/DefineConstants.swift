@@ -23,5 +23,12 @@ enum API {
     enum UserInfo {
         static let fetchProfile = API.baseURL + "/members/profile/"
     }
-    
+ 
+    enum MainPage {
+        static let getRoomList = API.baseURL + "/rooms/main/"
+        static let getTotalRoomList = API.baseURL + "/rooms/list?address_city="
+        static let getTotalRoomListInKorea = API.baseURL + "/rooms/list/"
+        static let getSearchResultByKeyword = API.baseURL + "/rooms/list?search="
+    }
+
 }

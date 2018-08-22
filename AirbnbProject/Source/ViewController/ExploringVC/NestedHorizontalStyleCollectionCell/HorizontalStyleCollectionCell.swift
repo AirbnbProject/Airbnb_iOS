@@ -12,7 +12,6 @@ class HorizontalStyleCollectionCell: UICollectionViewCell {
 
     @IBOutlet weak var horizontalStyleCollectionView: UICollectionView!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -33,6 +32,8 @@ extension HorizontalStyleCollectionCell: UICollectionViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: UICollectionViewCell
         cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NestedHorizontalStyleCollectionCell", for: indexPath) as! NestedHorizontalStyleCollectionCell
+        
+        
         return cell
     }
     

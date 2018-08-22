@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HouseListCell" id="gTV-IL-0wX" customClass="HouseListCollectionCell" customModule="AirbnbProject" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HouseListCollectionCell" id="gTV-IL-0wX" customClass="HouseListCollectionCell" customModule="AirbnbProject" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="196" height="185"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -43,15 +43,15 @@
                             <constraint firstAttribute="height" constant="100" id="mlD-jK-K1s"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평점 별" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77O-Pm-3FT">
-                        <rect key="frame" x="0.0" y="167" width="29" height="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★★★★★" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77O-Pm-3FT">
+                        <rect key="frame" x="0.0" y="167" width="43.5" height="12"/>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="10"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="0.047058823529411764" green="0.51372549019607838" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="참여 인원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXV-c2-Wv9">
-                        <rect key="frame" x="34" y="167" width="38" height="12"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXV-c2-Wv9">
+                        <rect key="frame" x="45.5" y="167" width="11.5" height="12"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="10"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -111,7 +111,7 @@
                 <constraint firstItem="HO4-mO-Zqb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ETb-se-SPw"/>
                 <constraint firstItem="L9U-br-80H" firstAttribute="leading" secondItem="HO4-mO-Zqb" secondAttribute="leading" id="F3c-vR-iyY"/>
                 <constraint firstItem="4kg-J8-X72" firstAttribute="bottom" secondItem="HO4-mO-Zqb" secondAttribute="bottom" id="HFW-6E-6TH"/>
-                <constraint firstItem="kXV-c2-Wv9" firstAttribute="leading" secondItem="77O-Pm-3FT" secondAttribute="trailing" constant="5" id="JmF-o9-GHr"/>
+                <constraint firstItem="kXV-c2-Wv9" firstAttribute="leading" secondItem="77O-Pm-3FT" secondAttribute="trailing" constant="2" id="JmF-o9-GHr"/>
                 <constraint firstItem="F4w-Nr-GvF" firstAttribute="leading" secondItem="PHc-Mi-b3H" secondAttribute="trailing" constant="2" id="Ur4-uj-t6d"/>
                 <constraint firstItem="PHc-Mi-b3H" firstAttribute="top" secondItem="HO4-mO-Zqb" secondAttribute="bottom" constant="5" id="YS0-Hi-8y5"/>
                 <constraint firstItem="4kg-J8-X72" firstAttribute="top" secondItem="HO4-mO-Zqb" secondAttribute="top" id="ZdB-uE-0cg"/>

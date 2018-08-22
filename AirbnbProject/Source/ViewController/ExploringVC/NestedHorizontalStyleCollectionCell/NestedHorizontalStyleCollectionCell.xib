@@ -37,7 +37,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="familytrip" translatesAutoresizingMaskIntoConstraints="NO" id="kfa-Vg-DKh">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="familyTrip" translatesAutoresizingMaskIntoConstraints="NO" id="kfa-Vg-DKh">
                         <rect key="frame" x="0.0" y="0.0" width="299" height="200"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="200" id="QwQ-ja-imm"/>
@@ -60,7 +60,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="299" height="290"/>
             <connections>
-                <outlet property="horizontalStyleFistTitle" destination="CC8-Gk-Fay" id="m0H-jV-gH1"/>
+                <outlet property="horizontalStyleFirstTitle" destination="CC8-Gk-Fay" id="Ks6-AX-YZc"/>
                 <outlet property="horizontalStyleImage" destination="kfa-Vg-DKh" id="8qP-xB-RPo"/>
                 <outlet property="horizontalStyleSecondTitle" destination="NBV-BU-a3A" id="i8c-Cj-YVg"/>
                 <outlet property="horizontalStyleSubTitle" destination="pBt-MX-lEZ" id="yhQ-By-ayV"/>
@@ -69,6 +69,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="familytrip" width="512" height="341"/>
+        <image name="familyTrip" width="512" height="341"/>
     </resources>
 </document>

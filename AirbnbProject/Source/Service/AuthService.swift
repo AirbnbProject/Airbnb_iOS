@@ -25,6 +25,8 @@ struct AuthService: AuthServiceType {
         let parameter: Parameters = [ "username" : email,
                                       "password": password ]
         
+        
+        
         Alamofire.request(API.Auth.login, method: .post, parameters: parameter)
             .validate()
             .responseData { (response) in
