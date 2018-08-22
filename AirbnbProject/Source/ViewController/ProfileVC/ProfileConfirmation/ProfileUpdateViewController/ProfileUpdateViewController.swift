@@ -18,15 +18,25 @@ class ProfileUpdateViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
+    let pickerView = UIPickerView()
+    let datePicker = UIDatePicker()
+    let dateFormatter = DateFormatter()
     
     var userDetailInfo: [String:Any] = [:]
+    var pickerSelectInfo = ""
     let titleData = [["","이름","성"],
                      ["성별","생년월일","이메일"]]
+    let sexInfo = ["남성","여성"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupInitialize()
+        setupDatePicker()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(noti:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(noti:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,10 +45,13 @@ class ProfileUpdateViewController: UIViewController {
     }
     
     private func setupInitialize() {
-
+        
         tableView.dataSource = self
         tableView.delegate = self
-
+        
+        self.pickerView.delegate = self
+        self.pickerView.dataSource = self
+        self.pickerView.backgroundColor = .white
         self.saveButton.setTitleTextAttributes([NSAttributedStringKey.font : UIFont(name: "HelveticaNeue", size: 13)!], for: .normal)
 
     }
@@ -70,12 +83,55 @@ class ProfileUpdateViewController: UIViewController {
 //        let profileUpdateVC = MoveStoryboard.toVC(storybardName: "Profile", identifier: "ProfileUpdateViewController") as! ProfileUpdateViewController
 //        profileUpdateVC.userDetailInfo = userDetailInfo
 //        present(profileUpdateVC, animated: true, completion: nil)
+        
+        
+        self.dismiss(animated: true, completion: nil)
+    
+    }
+    
+    @objc private func keyboardWillShow(noti: Notification) {
+        
+        let notiInfo = noti.userInfo! as Dictionary
+        let keyboardFrame = notiInfo[UIKeyboardFrameEndUserInfoKey] as! CGRect
+        let keyboardHeight = keyboardFrame.size.height
+        self.tableViewHeight.constant = keyboardHeight
+
+        UIView.animate(withDuration: notiInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc private func keyboardWillHide(noti: Notification) {
+        
+        let notiInfo = noti.userInfo! as Dictionary
+        
+        self.tableViewHeight.constant = 0
+        UIView.animate(withDuration: notiInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func setupDatePicker() {
+        
+        datePicker.backgroundColor = .white
+        datePicker.datePickerMode = .date
+        datePicker.locale = Locale.init(identifier: "ko_KR")
+        datePicker.addTarget(self, action: #selector(dateChanged(datePicker:)), for: UIControlEvents.valueChanged)
+    }
+    
+    @objc private func dateChanged(datePicker: UIDatePicker) {
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        self.tableView.reloadData()
     }
     
     @IBAction func closeButton(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.tableView.endEditing(true)
+        tableView.reloadData()
+    }
     
 }
 
@@ -111,6 +167,8 @@ extension ProfileUpdateViewController: UITableViewDataSource {
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextFieldCell", for: indexPath) as! ProfileTextFieldCell
+                
+
                 cell.title.text = titleData[indexPath.section][indexPath.row]
                 cell.detailInfo.text = self.userDetailInfo["firstName"] as? String
                 return cell
@@ -127,18 +185,36 @@ extension ProfileUpdateViewController: UITableViewDataSource {
             switch indexPath.row {
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextFieldCell", for: indexPath) as! ProfileTextFieldCell
-                cell.detailInfo.text = self.userDetailInfo["createDate"] as? String
+                cell.detailInfo.placeholder = "성별 선택"
+                cell.detailInfo.inputView = pickerView
+                if self.userDetailInfo["gender"] as? String != "N" {
+                    cell.detailInfo.text = pickerSelectInfo
+                }
                 cell.title.text = titleData[indexPath.section][indexPath.row]
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextFieldCell", for: indexPath) as! ProfileTextFieldCell
-                cell.detailInfo.text = self.userDetailInfo["createDate"] as? String
+                cell.detailInfo.placeholder = "생일 선택"
+                cell.detailInfo.inputView = datePicker
+                
+                if ((self.userDetailInfo["birthday"] as? String)?.contains(""))! {
+                    cell.detailInfo.text = self.userDetailInfo["birthday"] as? String
+                } else {
+                    cell.detailInfo.text = dateFormatter.string(from: datePicker.date)
+                }
+                
+
                 cell.title.text = titleData[indexPath.section][indexPath.row]
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextFieldCell", for: indexPath) as! ProfileTextFieldCell
-                cell.detailInfo.text = self.userDetailInfo["createDate"] as? String
-                cell.title.text = titleData[indexPath.section][indexPath.row]
+
+                cell.detailInfo.text = self.userDetailInfo["email"] as? String
+                if self.userDetailInfo["email"] as? String != nil {
+                    cell.detailInfo.text = self.userDetailInfo["email"] as? String
+                } else {
+//                    cell.detailInfo.text = self.userd
+                }
                 return cell
             default:
                 return UITableViewCell()
@@ -188,6 +264,7 @@ extension ProfileUpdateViewController: UITableViewDelegate {
         
         return 0
     }
+    
 }
 
 
@@ -197,16 +274,23 @@ extension ProfileUpdateViewController: ProfileImageCellDelegate {
     }
 }
 
+extension ProfileUpdateViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return sexInfo.count
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
+extension ProfileUpdateViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return sexInfo[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.pickerSelectInfo = sexInfo[row]
+    }
+}
 

@@ -124,8 +124,8 @@ class SignInViewController: UIViewController {
                         "isHost":value.user.isHost,
                         "createDate":value.user.createDate])
                     
-//                    let mainVC = MoveStoryboard.toVC(storybardName: "Main", identifier: "ExploringViewController")
-//                    self.navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
+                    let mainVC = MoveStoryboard.toVC(storybardName: "Main", identifier: "MainExploring")
+                    self.show(mainVC, sender: nil)
                     
                     
                 case .failure(let response, let error):
