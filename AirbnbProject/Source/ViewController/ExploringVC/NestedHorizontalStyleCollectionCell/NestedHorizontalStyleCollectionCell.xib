@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NestedHorizontalStyleCollectionCell" id="gTV-IL-0wX" customClass="NestedHorizontalStyleCollectionCell" customModule="AirbnbProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="299" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="299" height="300"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2,000개 이상의 숙소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CC8-Gk-Fay">
+                        <rect key="frame" x="0.0" y="210" width="101.5" height="15"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="12"/>
+                        <color key="textColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가족 여행" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBV-BU-a3A">
+                        <rect key="frame" x="0.0" y="229" width="63" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가족 여행에 딱 맞는 숙소를 찾아보세요. 우리 가족만의 공간에서 편안한 시간을 보내세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pBt-MX-lEZ">
+                        <rect key="frame" x="0.0" y="254" width="294" height="33.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="familyTrip" translatesAutoresizingMaskIntoConstraints="NO" id="kfa-Vg-DKh">
+                        <rect key="frame" x="0.0" y="0.0" width="299" height="200"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="QwQ-ja-imm"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="CC8-Gk-Fay" firstAttribute="top" secondItem="kfa-Vg-DKh" secondAttribute="bottom" constant="10" id="8Ij-vL-wyJ"/>
+                <constraint firstItem="NBV-BU-a3A" firstAttribute="leading" secondItem="kfa-Vg-DKh" secondAttribute="leading" id="8hU-Ny-ptn"/>
+                <constraint firstItem="pBt-MX-lEZ" firstAttribute="leading" secondItem="kfa-Vg-DKh" secondAttribute="leading" id="DWw-Bi-Rwl"/>
+                <constraint firstItem="NBV-BU-a3A" firstAttribute="top" secondItem="CC8-Gk-Fay" secondAttribute="bottom" constant="4" id="F7j-RJ-T1Y"/>
+                <constraint firstItem="kfa-Vg-DKh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="MmD-6i-x2u"/>
+                <constraint firstItem="pBt-MX-lEZ" firstAttribute="top" secondItem="NBV-BU-a3A" secondAttribute="bottom" constant="4" id="YOs-Uh-M0b"/>
+                <constraint firstAttribute="trailing" secondItem="pBt-MX-lEZ" secondAttribute="trailing" constant="5" id="ZrC-Uy-bla"/>
+                <constraint firstItem="CC8-Gk-Fay" firstAttribute="leading" secondItem="kfa-Vg-DKh" secondAttribute="leading" id="c0W-9I-AId"/>
+                <constraint firstAttribute="trailing" secondItem="kfa-Vg-DKh" secondAttribute="trailing" id="qJD-Lv-pch"/>
+                <constraint firstItem="kfa-Vg-DKh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ym5-N8-iRm"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="299" height="290"/>
+            <connections>
+                <outlet property="horizontalStyleFirstTitle" destination="CC8-Gk-Fay" id="Ks6-AX-YZc"/>
+                <outlet property="horizontalStyleImage" destination="kfa-Vg-DKh" id="8qP-xB-RPo"/>
+                <outlet property="horizontalStyleSecondTitle" destination="NBV-BU-a3A" id="i8c-Cj-YVg"/>
+                <outlet property="horizontalStyleSubTitle" destination="pBt-MX-lEZ" id="yhQ-By-ayV"/>
+            </connections>
+            <point key="canvasLocation" x="4.5" y="44"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="familyTrip" width="512" height="341"/>
+    </resources>
+</document>

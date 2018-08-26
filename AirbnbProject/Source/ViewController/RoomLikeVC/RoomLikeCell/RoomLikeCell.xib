@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RoomLikeCell" id="gTV-IL-0wX" customClass="RoomLikeCell" customModule="AirbnbProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="383" height="424"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="383" height="424"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="egm-tM-ZQ2">
+                        <rect key="frame" x="20" y="0.0" width="343" height="200"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="tZT-nu-sbR"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="주택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KU-Ue-dqe">
+                        <rect key="frame" x="20" y="210" width="343" height="15.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                        <color key="textColor" red="0.85098039219999999" green="0.21176470589999999" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forest-and-Heaven Themed Apartment Close to the" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0L-jw-aav">
+                        <rect key="frame" x="20" y="230.5" width="343" height="60"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="106,051 /박" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7w-an-q0I">
+                        <rect key="frame" x="20" y="295.5" width="343" height="19"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="a7w-an-q0I" firstAttribute="top" secondItem="h0L-jw-aav" secondAttribute="bottom" constant="5" id="0gB-2p-Br9"/>
+                <constraint firstAttribute="trailing" secondItem="3KU-Ue-dqe" secondAttribute="trailing" constant="20" id="5lG-tu-iEK"/>
+                <constraint firstItem="h0L-jw-aav" firstAttribute="leading" secondItem="3KU-Ue-dqe" secondAttribute="leading" id="Co5-tV-JNa"/>
+                <constraint firstItem="a7w-an-q0I" firstAttribute="trailing" secondItem="3KU-Ue-dqe" secondAttribute="trailing" id="EkX-BQ-Xm9"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="a7w-an-q0I" secondAttribute="bottom" constant="10" id="L4y-VM-egW"/>
+                <constraint firstItem="a7w-an-q0I" firstAttribute="leading" secondItem="h0L-jw-aav" secondAttribute="leading" id="SF3-Hq-U8i"/>
+                <constraint firstItem="3KU-Ue-dqe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="UzF-d0-2fy"/>
+                <constraint firstAttribute="trailing" secondItem="egm-tM-ZQ2" secondAttribute="trailing" constant="20" id="WzE-hK-Yfv"/>
+                <constraint firstItem="egm-tM-ZQ2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="e9N-Fw-nST"/>
+                <constraint firstItem="h0L-jw-aav" firstAttribute="trailing" secondItem="3KU-Ue-dqe" secondAttribute="trailing" id="frz-0H-QCO"/>
+                <constraint firstItem="egm-tM-ZQ2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="ior-8c-h2G"/>
+                <constraint firstItem="h0L-jw-aav" firstAttribute="top" secondItem="3KU-Ue-dqe" secondAttribute="bottom" constant="5" id="j2q-uU-vJt"/>
+                <constraint firstItem="3KU-Ue-dqe" firstAttribute="top" secondItem="egm-tM-ZQ2" secondAttribute="bottom" constant="10" id="pa8-mf-Agj"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="383" height="424"/>
+            <connections>
+                <outlet property="imageView" destination="egm-tM-ZQ2" id="M6v-Af-63P"/>
+                <outlet property="roomInfo" destination="3KU-Ue-dqe" id="a3P-nI-Beb"/>
+                <outlet property="roomName" destination="h0L-jw-aav" id="Qx1-H1-hnH"/>
+                <outlet property="roomPrice" destination="a7w-an-q0I" id="beX-s4-B6g"/>
+            </connections>
+            <point key="canvasLocation" x="20.5" y="86"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TwoLineHeaderCRV" id="U6b-Vx-4bR" customClass="TwoLineHeaderCollectionReusableView" customModule="AirbnbProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="355" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="에어비앤비 플러스를 만나보세요!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EYP-Ru-scK">
+                    <rect key="frame" x="25" y="18" width="305" height="28"/>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="23"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dnr-sc-hYF">
+                    <rect key="frame" x="25" y="50" width="305" height="0.0"/>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                    <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="dnr-sc-hYF" secondAttribute="trailing" constant="25" id="0IH-Fe-JVB"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="dnr-sc-hYF" secondAttribute="bottom" id="6Bs-kp-MIK"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="EYP-Ru-scK" secondAttribute="trailing" constant="25" id="FqW-P6-Joz"/>
+                <constraint firstItem="dnr-sc-hYF" firstAttribute="top" secondItem="EYP-Ru-scK" secondAttribute="bottom" constant="4" id="M6h-JY-VWd"/>
+                <constraint firstItem="EYP-Ru-scK" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="25" id="T0q-2y-2JH"/>
+                <constraint firstItem="dnr-sc-hYF" firstAttribute="leading" secondItem="EYP-Ru-scK" secondAttribute="leading" id="fIQ-Wh-iBO"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="twoLineHeaderSubtitle" destination="dnr-sc-hYF" id="tHT-cm-J0A"/>
+                <outlet property="twoLineHeaderTitle" destination="EYP-Ru-scK" id="W6I-qS-lS4"/>
+            </connections>
+            <point key="canvasLocation" x="435.5" y="148.5"/>
+        </collectionReusableView>
+    </objects>
+</document>

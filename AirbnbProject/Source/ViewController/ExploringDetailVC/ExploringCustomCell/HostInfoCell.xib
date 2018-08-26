@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HostInfoCell" id="gTV-IL-0wX" customClass="HostInfoCell" customModule="AirbnbProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="373" height="89"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="373" height="89"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ECP-VU-dMt">
+                        <rect key="frame" x="263" y="9" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="8Zy-Cx-gsH"/>
+                            <constraint firstAttribute="width" secondItem="ECP-VU-dMt" secondAttribute="height" multiplier="1:1" id="mmP-nU-o3J"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aON-Yb-oBY">
+                        <rect key="frame" x="20" y="10" width="223" height="19"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndv-pH-ZKn">
+                        <rect key="frame" x="76" y="39" width="39.5" height="19"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="호스트:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6D-Bf-Bay">
+                        <rect key="frame" x="20" y="39" width="46" height="19"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="L6D-Bf-Bay" firstAttribute="leading" secondItem="aON-Yb-oBY" secondAttribute="leading" id="0Q2-wS-iQg"/>
+                <constraint firstItem="ndv-pH-ZKn" firstAttribute="leading" secondItem="L6D-Bf-Bay" secondAttribute="trailing" constant="10" id="1SV-7G-7X6"/>
+                <constraint firstItem="ndv-pH-ZKn" firstAttribute="centerY" secondItem="L6D-Bf-Bay" secondAttribute="centerY" id="4gV-xW-L0O"/>
+                <constraint firstItem="aON-Yb-oBY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="Ahy-6g-ZRW"/>
+                <constraint firstItem="ECP-VU-dMt" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="OKn-J7-ebE"/>
+                <constraint firstAttribute="trailing" secondItem="ECP-VU-dMt" secondAttribute="trailing" constant="40" id="PBC-0R-ze8"/>
+                <constraint firstItem="aON-Yb-oBY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="R2b-s3-M6p"/>
+                <constraint firstItem="L6D-Bf-Bay" firstAttribute="top" secondItem="aON-Yb-oBY" secondAttribute="bottom" constant="10" id="RDN-LU-d0L"/>
+                <constraint firstItem="ECP-VU-dMt" firstAttribute="leading" secondItem="aON-Yb-oBY" secondAttribute="trailing" constant="20" id="hqM-1f-R6r"/>
+                <constraint firstItem="ECP-VU-dMt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ndv-pH-ZKn" secondAttribute="trailing" constant="20" id="wTw-og-Z4D"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="373" height="89"/>
+            <connections>
+                <outlet property="hostLocation" destination="aON-Yb-oBY" id="7PG-hQ-MNC"/>
+                <outlet property="hostName" destination="ndv-pH-ZKn" id="6XI-Jw-3LX"/>
+                <outlet property="hostProfile" destination="ECP-VU-dMt" id="sWF-1l-jQD"/>
+            </connections>
+            <point key="canvasLocation" x="32.5" y="-56.5"/>
+        </collectionViewCell>
+    </objects>
+</document>
