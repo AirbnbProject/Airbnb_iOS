@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hNH-hc-9TW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--여행-->
+        <scene sceneID="lWB-Sh-eGN">
+            <objects>
+                <viewController storyboardIdentifier="Travel" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hNH-hc-9TW" customClass="TravelViewController" customModule="AirbnbProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fRQ-9A-tqE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O1d-iZ-Xn9">
+                                <rect key="frame" x="112" y="258.5" width="150" height="150"/>
+                                <color key="backgroundColor" red="0.047058823530000002" green="0.51372549020000002" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="O1d-iZ-Xn9" secondAttribute="height" multiplier="1:1" id="CGH-Ts-FXy"/>
+                                    <constraint firstAttribute="width" constant="150" id="Es3-zb-p8g"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원님의 첫 여행지는 어디 인가요?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5i-7f-x5d">
+                                <rect key="frame" x="94.5" y="186.5" width="186.5" height="42"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXp-bh-n8N">
+                                <rect key="frame" x="122" y="438.5" width="130" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="HeE-Ko-9lc"/>
+                                    <constraint firstAttribute="width" constant="130" id="y82-83-pXv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="둘러보기">
+                                    <color key="titleColor" red="0.21960784310000001" green="0.50980392159999999" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToExploring:" destination="hNH-hc-9TW" eventType="touchUpInside" id="gQb-xZ-Fip"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_flight" translatesAutoresizingMaskIntoConstraints="NO" id="8ja-ZZ-oOp">
+                                <rect key="frame" x="162" y="308.5" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="S6U-ka-GyL"/>
+                                    <constraint firstAttribute="height" constant="50" id="uF6-QE-bzm"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8ja-ZZ-oOp" firstAttribute="centerX" secondItem="O1d-iZ-Xn9" secondAttribute="centerX" id="0Se-22-Of1"/>
+                            <constraint firstItem="EXp-bh-n8N" firstAttribute="centerX" secondItem="fRQ-9A-tqE" secondAttribute="centerX" id="4mC-7t-Km7"/>
+                            <constraint firstItem="O1d-iZ-Xn9" firstAttribute="top" secondItem="R5i-7f-x5d" secondAttribute="bottom" constant="30" id="PjU-Pp-D7U"/>
+                            <constraint firstItem="R5i-7f-x5d" firstAttribute="centerX" secondItem="fRQ-9A-tqE" secondAttribute="centerX" id="T6v-mV-Bb5"/>
+                            <constraint firstItem="O1d-iZ-Xn9" firstAttribute="centerY" secondItem="fRQ-9A-tqE" secondAttribute="centerY" id="cRQ-QU-DaT"/>
+                            <constraint firstItem="8ja-ZZ-oOp" firstAttribute="centerY" secondItem="O1d-iZ-Xn9" secondAttribute="centerY" id="dvc-fr-Juo"/>
+                            <constraint firstItem="EXp-bh-n8N" firstAttribute="top" secondItem="O1d-iZ-Xn9" secondAttribute="bottom" constant="30" id="i9u-OS-xub"/>
+                            <constraint firstItem="O1d-iZ-Xn9" firstAttribute="centerX" secondItem="fRQ-9A-tqE" secondAttribute="centerX" id="lcI-5P-WLY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="niR-kW-o0d"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="여행" image="Logo" id="aM6-aK-2gL"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="circleView" destination="O1d-iZ-Xn9" id="O0B-mR-yjH"/>
+                        <outlet property="tourButton" destination="EXp-bh-n8N" id="HHg-3H-Icu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jES-cp-W9F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-87.200000000000003" y="186.65667166416793"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo" width="25" height="25"/>
+        <image name="ic_flight" width="36" height="37"/>
+    </resources>
+</document>

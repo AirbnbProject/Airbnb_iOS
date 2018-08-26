@@ -30,20 +30,21 @@ class ExploringDetailViewController: UIViewController {
         
         static let numberOfItem: CGFloat = 2
         
-        static let leftPadding: CGFloat = 10.0
-        static let rightPadding: CGFloat = 10.0
+        static let leftPadding: CGFloat = 0.0
+        static let rightPadding: CGFloat = 0.0
         static let topPadding: CGFloat = 10.0
         static let bottomPadding: CGFloat = 10.0
     }
     
-    var tripImages = UIImage(named: "views")
+    var tripImages = ["https://a0.muscache.com/im/pictures/4230043/7e9a64d3_original.jpg?aki_policy=xx_large","https://a0.muscache.com/im/pictures/66411338/d54f9bb4_original.jpg?aki_policy=xx_large","https://a0.muscache.com/im/pictures/6d17b555-d878-43e8-8c8b-bde4ee457591.jpg?aki_policy=xx_large","https://a0.muscache.com/im/pictures/b4066637-a13d-4a2f-801b-0d4d8551d719.jpg?aki_policy=xx_large"]
     var tripInfo = ["아파트 전체, 침대 1개", "아파트 전체, 침대 1개", "아파트 전체, 침대 3개", "아파트 전체, 침대 1개"]
-    var tripName = ["Mouzinho 134 - Hist Center - Yellow", "Vitoria 392 - Central Loft", "Mouzinho 134 - Hist Center - Brown", "Lada River House - with fantastic RIVER VIEW!"]
+    var tripName = ["(독채) 경복궁과 청와대 5분거리 리노베이션 한옥", "서귀포시 조용하고 한적한 시루네펜션^^(203호)", "#201 커플룸, 이호해수욕장, 공항근처", "Dwyane's luxury house (中文ok)"]
     var tripPrice = ["87,055 /박", "129,933 /박", "116,940 /박", "10,000 /박"]
     var tripGrade = ["★★★★★ 111", "★★★★ 234", "★★★★★ 98", "★★★ 123"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("INTTTTTTTTT : ", deliveriedPK)
         settingInfo()
         self.navigationController?.navigationBar.isHidden = true
         //register xib
@@ -138,6 +139,7 @@ class ExploringDetailViewController: UIViewController {
     @IBAction func goback(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    
     func settingInfo() {
         detailService.searchRoomDetailInfo(pk: deliveriedPK) { (result) in
             switch result {
@@ -151,24 +153,24 @@ class ExploringDetailViewController: UIViewController {
         }
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let contY = collectionView.contentOffset.y
-        let index = IndexPath(item: 0, section: 0)
-        let cells = collectionView.cellForItem(at: index)
-        var cellY = cells?.frame.maxY
-        guard cellY == nil else {
-            if Float(contY) <= Float(cellY!) {
-//                self.navigationController?.navigationBar.alpha = 0
-                                self.navigationController?.isNavigationBarHidden = true
-                backBtn.isHidden = false
-            }else {
-//                self.navigationController?.navigationBar.alpha = 1
-                                self.navigationController?.isNavigationBarHidden = false
-                backBtn.isHidden = true
-            }
-            return
-        }
-    }
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let contY = collectionView.contentOffset.y
+//        let index = IndexPath(item: 0, section: 0)
+//        let cells = collectionView.cellForItem(at: index)
+//        var cellY = cells?.frame.maxY
+//        guard cellY == nil else {
+//            if Float(contY) <= Float(cellY!) {
+////                self.navigationController?.navigationBar.alpha = 0
+//                                self.navigationController?.isNavigationBarHidden = true
+//                backBtn.isHidden = false
+//            }else {
+////                self.navigationController?.navigationBar.alpha = 1
+//                                self.navigationController?.isNavigationBarHidden = false
+//                backBtn.isHidden = true
+//            }
+//            return
+//        }
+//    }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
@@ -206,7 +208,6 @@ class ExploringDetailViewController: UIViewController {
             
             cell.scrollView.scrollRectToVisible(CGRect(x:slideToX, y:0, width:pageWidth, height:cell.scrollView.frame.height), animated: true)
             var pageNumber = cell.scrollView.contentOffset.x / cell.scrollView.frame.size.width + 1
-            print(pageNumber)
             if Int(pageNumber) < imageArr.count {
                 cell.pageControl.currentPage = Int(pageNumber)
             }else {
@@ -281,8 +282,8 @@ extension ExploringDetailViewController: UICollectionViewDataSource {
                     for i in 0..<roomRule.count {
                         roomRuleArr.append(roomRule[i]["rule_list"] as! String)
                     }
-                    footer.checkIn.text = "\(roomRuleArr[roomRuleArr.count - 3])"
-                    footer.checkOut.text = "\(roomRuleArr[roomRuleArr.count - 2])"
+//                    footer.checkIn.text = "\(roomRuleArr[roomRuleArr.count - 3])"
+//                    footer.checkOut.text = "\(roomRuleArr[roomRuleArr.count - 2])"
                 return footer
             }else {
                 let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ThirdFooter", for: indexPath) as! ThirdFooter
@@ -304,7 +305,8 @@ extension ExploringDetailViewController: UICollectionViewDataSource {
         }else if section == 4{//section 5
             return CGSize(width: self.collectionView.frame.width, height: 60)
         }else {
-            return CGSize(width: self.collectionView.frame.width, height: 100)
+//            return CGSize(width: self.collectionView.frame.width, height: 100)
+            return CGSize(width: self.collectionView.frame.width, height: 0)
         }
     }
     
@@ -361,7 +363,6 @@ extension ExploringDetailViewController: UICollectionViewDataSource {
             let new = MoveStoryboard.toVC(storybardName: "Main", identifier: "HomeReportViewController")
             self.present(new, animated: true)
         }else if indexPath == IndexPath(item: 3, section: 1) {
-            moreText = true
             collectionView.reloadItems(at: [IndexPath(item: 3, section: 1)])
         }
         print(indexPath)
@@ -411,7 +412,7 @@ extension ExploringDetailViewController: UICollectionViewDataSource {
         }else if indexPath.section == 1 {
             switch indexPath.row {
             case 0:
-                var roomType = String()
+                
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeWhereCell", for: indexPath) as! HomeWhereCell
                 guard (allInfo?.count)! > 0 else { return cell }
                     cell.homeLocation.text = allInfo![0].roomsType
@@ -440,23 +441,24 @@ extension ExploringDetailViewController: UICollectionViewDataSource {
                     cell.bedCount.text = "침대 \(allInfo![0].roomsBed)개"
                     cell.washCount.text = "욕실 \(allInfo![0].roomsBathroom)개"
                 
-                cell.addBorderBottom(size: 1.0, color: .gray)
+                cell.addBorderBottom(size: 1.0, color: UIColor(red: 200/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1))
                 return cell
             case 3:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeDetailInfoCell", for: indexPath) as! HomeDetailInfoCell
                 guard (allInfo?.count)! > 0 else { return cell }
-                cell.homeDetail.text = allInfo![0].roomsDescription
-                var text = cell.homeDetail.text
-                if moreText == false {
-                    if (text?.count)! >= 200 {
-                        cell.homeDetail.text = (text?.substring(to: (text?.index((text?.startIndex)!, offsetBy: 200))!))! + "...더보기"
+
+//                    moreText = true
+                    cell.homeDetail.text = allInfo![0].roomsDescription
+                    let text = cell.homeDetail.text
+                    if (text?.count)! >= 100 {
+                        cell.homeDetail.text = (text?.substring(to: (text?.index((text?.startIndex)!, offsetBy: 100))!))! + "...더보기"
                     }
-                }
-                cell.addBorderBottom(size: 1.0, color: .gray)
+                    cell.addBorderBottom(size: 1.0, color: UIColor(red: 200/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1))
+                
                 return cell
             case 4:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BedRoomInfoCell", for: indexPath) as! BedRoomInfoCell
-                cell.addBorderBottom(size: 1.0, color: .gray)
+                cell.addBorderBottom(size: 1.0, color: UIColor(red: 200/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1))
                 return cell
             case 5:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExploringPublicCell", for: indexPath) as! ExploringPublicCell
@@ -464,7 +466,7 @@ extension ExploringDetailViewController: UICollectionViewDataSource {
                 
                     cell.publicLabel.text = "최소 \(allInfo![0].checkInMinimum)박"
                 
-                cell.addBorderBottom(size: 1.0, color: .gray)
+                cell.addBorderBottom(size: 1.0, color: UIColor(red: 200/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1))
                 return cell
             default:
                 break
@@ -472,8 +474,9 @@ extension ExploringDetailViewController: UICollectionViewDataSource {
         }else if indexPath.section == 2 {
             switch indexPath.row {
             case 0:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExploringPublicCell", for: indexPath) as! ExploringPublicCell
-                cell.publicLabel.text = "편의시설"
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FacilitiesCell", for: indexPath) as! FacilitiesCell
+            
+//                cell.publicLabel.text = "편의시설"
                 return cell
             case 1:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MapCell", for: indexPath) as! MapCell
@@ -492,12 +495,12 @@ extension ExploringDetailViewController: UICollectionViewDataSource {
                 //
                 let reviewCell = HomeReviewViewController()
                 let reviewCount = reviewCell.reviewDates.count
-                let reviewFirstMent = reviewCell.reviewMent
+                let reviewFirstMent = reviewCell.reviewMent[0]
                 let reviewFirstName = reviewCell.reviewNames[0]
                 let reviewFirstDate = reviewCell.reviewDates[0]
                 let reviewFirstProfile = reviewCell.reviewImages[0]
                 //
-                cell.reviewImageView.image = UIImage(named: reviewFirstProfile)
+                cell.reviewImageView.kf.setImage(with: URL(string: reviewFirstProfile), placeholder: UIImage(named: "profile"))
                 cell.reviewName.text = reviewFirstName
                 cell.reviewDate.text = reviewFirstDate
                 cell.reviewMent.text = reviewFirstMent
@@ -508,45 +511,45 @@ extension ExploringDetailViewController: UICollectionViewDataSource {
                 
                 cell.reviewCount.text = "후기 \(reviewCount)개 읽기"
                 cell.reviewGrade.text = "★★★★"
-                cell.addBorderBottom(size: 1.0, color: .gray)
+                cell.addBorderBottom(size: 1.0, color: UIColor(red: 200/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1))
                 return cell
             case 1:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExploringPublicCell", for: indexPath) as! ExploringPublicCell
                 cell.publicLabel.text = "숙소 이용규칙"
-                cell.addBorderBottom(size: 1.0, color: .gray)
+                cell.addBorderBottom(size: 1.0, color: UIColor(red: 200/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1))
                 return cell
             case 2:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExploringPublicCell", for: indexPath) as! ExploringPublicCell
                 cell.publicLabel.text = "일반 환불 정책"
-                cell.addBorderBottom(size: 1.0, color: .gray)
+                cell.addBorderBottom(size: 1.0, color: UIColor(red: 200/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1))
                 return cell
             case 3:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PerfectRefundCell", for: indexPath) as! PerfectRefundCell
-                cell.addBorderBottom(size: 1.0, color: .gray)
+                cell.addBorderBottom(size: 1.0, color: UIColor(red: 200/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1))
                 return cell
             case 4:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExploringPublicCell", for: indexPath) as! ExploringPublicCell
                 cell.publicLabel.text = "추가 요금"
-                cell.addBorderBottom(size: 1.0, color: .gray)
+                cell.addBorderBottom(size: 1.0, color: UIColor(red: 200/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1))
                 return cell
             case 5:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExploringPublicCell", for: indexPath) as! ExploringPublicCell
                 cell.publicLabel.text = "예약 가능일"
-                cell.addBorderBottom(size: 1.0, color: .gray)
+                cell.addBorderBottom(size: 1.0, color: UIColor(red: 200/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1))
                 return cell
             case 6:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExploringPublicCell", for: indexPath) as! ExploringPublicCell
                 cell.publicLabel.text = "호스트에게 연락하기"
-                cell.addBorderBottom(size: 1.0, color: .gray)
+                cell.addBorderBottom(size: 1.0, color: UIColor(red: 200/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1))
                 return cell
             case 7:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PerfectPaymentCell", for: indexPath) as! PerfectPaymentCell
-                cell.addBorderBottom(size: 1.0, color: .gray)
+                cell.addBorderBottom(size: 1.0, color: UIColor(red: 200/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1))
                 return cell
             case 8:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExploringPublicCell", for: indexPath) as! ExploringPublicCell
                 cell.publicLabel.text = "신고하기"
-                cell.addBorderBottom(size: 1.0, color: .gray)
+                cell.addBorderBottom(size: 1.0, color: UIColor(red: 200/255.0, green: 200/255.0, blue: 200/255.0, alpha: 1))
                 return cell
             default:
                 break
@@ -555,18 +558,19 @@ extension ExploringDetailViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SimilarHome", for: indexPath) as! SimilarHome
             return cell
         }else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularTrip", for: indexPath) as! PopularTrip
-            cell.tripImageView.image = tripImages
-            cell.tripInfo.text = tripInfo[indexPath.row]
-            cell.tripName.text = tripName[indexPath.row]
-            cell.tripPrice.text = tripPrice[indexPath.row]
-            cell.tripGrade.text = tripGrade[indexPath.row]
-            
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularTrip", for: indexPath) as! PopularTrip
+//            cell.tripImageView.kf.setImage(with: URL(string: tripImages[indexPath.row]))
+//            cell.tripInfo.text = tripInfo[indexPath.row]
+//            cell.tripName.text = tripName[indexPath.row]
+//            cell.tripPrice.text = tripPrice[indexPath.row]
+//            cell.tripGrade.text = tripGrade[indexPath.row]
+//
+//            return cell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "swipeImageCell", for: indexPath) as! swipeImageCell
             return cell
         }
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "swipeImageCell", for: indexPath) as! swipeImageCell
-        return cell
+        return UICollectionViewCell()
     }
     
 }
@@ -580,7 +584,7 @@ extension ExploringDetailViewController: UICollectionViewDelegateFlowLayout {
         if indexPath.section == 0 {
             switch indexPath.row {
             case 0:
-                return CGSize(width: view.frame.width, height: 240)
+                return CGSize(width: view.frame.width, height: 300)
             default:
                 break
             }
@@ -591,24 +595,24 @@ extension ExploringDetailViewController: UICollectionViewDelegateFlowLayout {
             case 1:
                 return CGSize(width: view.frame.width, height: 80)
             case 2:
-                return CGSize(width: view.frame.width, height: 130)
+                return CGSize(width: view.frame.width, height: 100) // HomeInfoCell
             case 3:
                 if moreText == false {
-                    return CGSize(width: view.frame.width, height: 200)
+                    return CGSize(width: view.frame.width, height: 100)
                 }else {
                    return CGSize(width: view.frame.width, height: 400)
                 }
             case 4:
                 return CGSize(width: view.frame.width, height: 0)
             case 5:
-                return CGSize(width: view.frame.width, height: 80)
+                return CGSize(width: view.frame.width, height: 50)
             default:
                 break
             }
         }else if indexPath.section == 2 {
             switch indexPath.row {
             case 0:
-              return CGSize(width: view.frame.width, height: 50)
+              return CGSize(width: view.frame.width, height: 100)
             case 1:
               return CGSize(width: view.frame.width, height: 370)
             default:

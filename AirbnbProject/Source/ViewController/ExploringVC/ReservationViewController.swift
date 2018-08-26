@@ -65,6 +65,7 @@ class ReservationViewController: UIViewController {
         default: return "토"
         }
     }
+    
     @IBAction func saveReservation(_ sender: UIButton) {
         if isSelectedStartDay == false {
             self.dismiss(animated: true, completion: nil)
@@ -73,6 +74,11 @@ class ReservationViewController: UIViewController {
             
         }
     }
+    
+    @IBAction func dismissBtn(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
 }
 
@@ -157,8 +163,6 @@ extension ReservationViewController: CVCalendarViewDelegate, CVCalendarMenuViewD
         guard isSelectedEndDay != true else { return isSelectedEndDay = false}
         
         isSelectedStartDay = true
-        self.reservationSaveButton.isHighlighted = true
-        self.reservationSaveButton.isEnabled = false
         
         let placeholdStr = NSMutableAttributedString(string: "종료\n날짜")
         let placeholdStrstyle = NSMutableParagraphStyle()

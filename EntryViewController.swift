@@ -33,7 +33,8 @@ class EntryViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        UIApplication.shared.statusBarStyle = .lightContent
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     deinit {
@@ -109,6 +110,7 @@ class EntryViewController: UIViewController {
                             print(value)
                             
                             UserDefaults.standard.set(value.token, forKey: "CurrentUserToken")
+                            print("CurrentUserToken : ",UserDefaults.standard.string(forKey: "CurrentUserToken")!)
                             //파이어베이스에 Token 저장.
                             let currenUserToken = self.ref.child("Users")
                             let userDetailInfo = currenUserToken.child(value.token)
@@ -121,11 +123,10 @@ class EntryViewController: UIViewController {
                                 "isHost":value.user.isHost,
                                 "createDate":value.user.createDate])
                             
-                            //TODO: - POST로 User Facebook 정보 보내기
                             //성공 -> 메인페이지 이동
-                            
-                            
-                            
+                            let mainVC = MoveStoryboard.toVC(storybardName: "Main", identifier: "MainExploring")
+                            self.show(mainVC, sender: nil)
+                
                         case .failure(let error):
                             print(error)
                         }

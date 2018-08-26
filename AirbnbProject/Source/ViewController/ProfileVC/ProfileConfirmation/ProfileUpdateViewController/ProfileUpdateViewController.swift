@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 private enum Constraint {
     static let profileImageHeight: CGFloat = 250.0
     static let ProfileTextFieldCell: CGFloat = 95.0
     static let DetailUserInfoHeaderHeight: CGFloat = 60.0
 }
+
+var userDetailInfo: [String:Any] = [:]
 
 class ProfileUpdateViewController: UIViewController {
 
@@ -22,6 +25,7 @@ class ProfileUpdateViewController: UIViewController {
     let pickerView = UIPickerView()
     let datePicker = UIDatePicker()
     let dateFormatter = DateFormatter()
+    var deliveriedImage = UIImage()
     
     var userDetailInfo: [String:Any] = [:]
     var pickerSelectInfo = ""
@@ -29,11 +33,19 @@ class ProfileUpdateViewController: UIViewController {
                      ["성별","생년월일","이메일"]]
     let sexInfo = ["남성","여성"]
     
+    private let profileService: ProfileServiceType = ProfileService()
+    private var activityView: NVActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupInitialize()
         setupDatePicker()
+        setupActivityIndicator()
+        
+        activityView.startAnimating()
+        
+        fetchProfile()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(noti:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(noti:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -61,7 +73,6 @@ class ProfileUpdateViewController: UIViewController {
         let leftButton = UIButton(type: UIButtonType.custom)
         leftButton.setImage(UIImage(named: "close_black"), for: .normal)
         leftButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        leftButton.addTarget(self, action: #selector(backButtonAction), for: UIControlEvents.touchUpInside)
         let leftItem = UIBarButtonItem(customView: leftButton)
         navigationItem.setLeftBarButton(leftItem, animated: true)
         
@@ -69,25 +80,49 @@ class ProfileUpdateViewController: UIViewController {
         updateButton.setAttributedTitle(NSAttributedString(string: "저장", attributes: [NSAttributedStringKey.font : UIFont(name: "HelveticaNeue", size: 13)!]), for: .normal)
         updateButton.setTitleColor(.black, for: .normal)
         updateButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        updateButton.addTarget(self, action: #selector(updateProfileAction), for: UIControlEvents.touchUpInside)
         let rightItem = UIBarButtonItem(customView: updateButton)
         navigationItem.setRightBarButton(rightItem, animated: true)
         
     }
+    
+    private func setupActivityIndicator() {
+        activityView = NVActivityIndicatorView(frame: CGRect(x: self.view.center.x - 50, y: self.view.center.y - 50, width: 100, height: 100), type: NVActivityIndicatorType.ballBeat, color: UIColor(red: 0/255.0, green: 132/255.0, blue: 137/255.0, alpha: 1), padding: 25)
+        
+        activityView.backgroundColor = .white
+        activityView.layer.cornerRadius = 10
+        self.view.addSubview(activityView)
+    }
+    
+    private func fetchProfile() {
+        profileService.fetchProfile(token: UserDefaults.standard.string(forKey: "CurrentUserToken")!) { (result) in
+            switch result {
+            case .success(let userInfo):
+                self.activityView.stopAnimating()
+                
+                print(userInfo)
+                self.userDetailInfo["profileImage"] = userInfo.profileImage
+                self.userDetailInfo["phoneNumber"] = userInfo.phoneNumber
+                self.userDetailInfo["birthday"] = userInfo.birthday
+                self.userDetailInfo["firstName"] = userInfo.firstName
+                self.userDetailInfo["lastName"] = userInfo.lastName
+                self.tableView.reloadData()
+               
+            case .failure(let error):
+                self.activityView.stopAnimating()
+                print(error)
+            }
+        }
+    }
+    
     
     @objc private func backButtonAction() {
         self.dismiss(animated: true, completion: nil)
     }
     
     @objc private func updateProfileAction() {
-//        let profileUpdateVC = MoveStoryboard.toVC(storybardName: "Profile", identifier: "ProfileUpdateViewController") as! ProfileUpdateViewController
-//        profileUpdateVC.userDetailInfo = userDetailInfo
-//        present(profileUpdateVC, animated: true, completion: nil)
         
-        
-        self.dismiss(animated: true, completion: nil)
-    
     }
+
     
     @objc private func keyboardWillShow(noti: Notification) {
         
@@ -126,6 +161,34 @@ class ProfileUpdateViewController: UIViewController {
     
     @IBAction func closeButton(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func updateProfile(_ sender: UIBarButtonItem) {
+        self.activityView.startAnimating()
+        
+        profileService.patchProfile(token: UserDefaults.standard.string(forKey: "CurrentUserToken")!, profileImage: self.deliveriedImage, phoneNumber: "test", birthDay: "test", email: "test") { (result) in
+                
+                switch result {
+                case .success(let userInfo):
+                    self.activityView.stopAnimating()
+                    
+                    print(userInfo)
+//                    self.userDetailInfo["profileImage"] = userInfo.profileImage
+//                    self.userDetailInfo["phoneNumber"] = userInfo.phoneNumber
+//                    self.userDetailInfo["birthday"] = userInfo.birthday
+//                    self.userDetailInfo["firstName"] = userInfo.firstName
+//                    self.userDetailInfo["lastName"] = userInfo.lastName
+//                    self.tableView.reloadData()
+                    
+                    self.dismiss(animated: true, completion: nil)
+                    
+                case .failure(let error):
+                    self.activityView.stopAnimating()
+                    print(error)
+                }
+                
+            }
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -185,36 +248,35 @@ extension ProfileUpdateViewController: UITableViewDataSource {
             switch indexPath.row {
             case 0:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextFieldCell", for: indexPath) as! ProfileTextFieldCell
+                cell.title.text = titleData[indexPath.section][indexPath.row]
                 cell.detailInfo.placeholder = "성별 선택"
                 cell.detailInfo.inputView = pickerView
-                if self.userDetailInfo["gender"] as? String != "N" {
-                    cell.detailInfo.text = pickerSelectInfo
-                }
-                cell.title.text = titleData[indexPath.section][indexPath.row]
+                cell.detailInfo.text = "남성"
+                
+                //백엔드에서 성별 빠짐
+//                if let sex = self.userDetailInfo["gender"] as? String {
+//                    cell.detailInfo.text = sex
+//                }
+                
                 return cell
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextFieldCell", for: indexPath) as! ProfileTextFieldCell
                 cell.detailInfo.placeholder = "생일 선택"
                 cell.detailInfo.inputView = datePicker
-                
-                if ((self.userDetailInfo["birthday"] as? String)?.contains(""))! {
-                    cell.detailInfo.text = self.userDetailInfo["birthday"] as? String
-                } else {
-                    cell.detailInfo.text = dateFormatter.string(from: datePicker.date)
+                if let birthday = self.userDetailInfo["birthday"] as? String {
+                    cell.detailInfo.text = birthday
                 }
                 
-
                 cell.title.text = titleData[indexPath.section][indexPath.row]
                 return cell
             case 2:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTextFieldCell", for: indexPath) as! ProfileTextFieldCell
 
                 cell.detailInfo.text = self.userDetailInfo["email"] as? String
-                if self.userDetailInfo["email"] as? String != nil {
-                    cell.detailInfo.text = self.userDetailInfo["email"] as? String
-                } else {
-//                    cell.detailInfo.text = self.userd
+                if let email = self.userDetailInfo["email"] as? String {
+                    cell.detailInfo.text = email
                 }
+                cell.title.text = titleData[indexPath.section][indexPath.row]
                 return cell
             default:
                 return UITableViewCell()
@@ -269,6 +331,11 @@ extension ProfileUpdateViewController: UITableViewDelegate {
 
 
 extension ProfileUpdateViewController: ProfileImageCellDelegate {
+    func profileImageDelivery(profileImage: UIImage) {
+        self.deliveriedImage = profileImage
+        print("set Image")
+    }
+    
     func presentViewController(viewController: UIViewController) {
         self.present(viewController, animated: true) {}
     }

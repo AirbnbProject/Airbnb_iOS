@@ -9,6 +9,8 @@
 import UIKit
 import Kingfisher
 import Firebase
+import Alamofire
+import NVActivityIndicatorView
 
 private enum Constraint {
     static let profileUpdateHeight: CGFloat = 110.0
@@ -18,20 +20,25 @@ private enum Constraint {
 
 class ProfileViewController: UIViewController {
 
-    private let oneLineData = ["출장을 떠나시나요?","설정","도움말","호스트가 되어보세요","피드백 남기기"]
-    private let oneLineimage = ["arrow_right","settings","ic_help_outline","home","edit"]
+    private let oneLineData = ["출장을 떠나시나요?","도움말","호스트가 되어보세요","피드백 남기기","설정","로그아웃"]
+    private let oneLineimage = ["arrow_right","ic_help_outline","home","edit","settings",""]
     private let profileService: ProfileServiceType = ProfileService()
     private let userdefault = UserDefaults.standard
     private var userDetailInfo: [String:Any] = [:]
     private var ref: DatabaseReference!
-    
+    private var activityView: NVActivityIndicatorView!
+
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupInitialize()
-        fetchData()
+        setupActivityIndicator()
+        
+        activityView.startAnimating()
+        
+        fetchProfile()
     }
     
     deinit {
@@ -57,17 +64,48 @@ class ProfileViewController: UIViewController {
         tableView.register(UINib(nibName: "DefaultOneLineCell", bundle: nil), forCellReuseIdentifier: "DefaultOneLineCell")
     }
     
-    private func fetchData() {
+    private func setupActivityIndicator() {
+        activityView = NVActivityIndicatorView(frame: CGRect(x: self.view.center.x - 50, y: self.view.center.y - 50, width: 100, height: 100), type: NVActivityIndicatorType.ballBeat, color: UIColor(red: 0/255.0, green: 132/255.0, blue: 137/255.0, alpha: 1), padding: 25)
         
-        if let currentUserToken = userdefault.string(forKey: "CurrentUserToken") {
-            self.ref.child("Users").child(currentUserToken).observe(DataEventType.value, with: { (snapshot) in
-                let userInfo = snapshot.value! as! [String:Any]
-                self.userDetailInfo = userInfo
+        activityView.backgroundColor = .white
+        activityView.layer.cornerRadius = 10
+        self.view.addSubview(activityView)
+    }
+    
+    
+    private func fetchProfile() {
+        profileService.fetchProfile(token: UserDefaults.standard.string(forKey: "CurrentUserToken")!) { (result) in
+            switch result {
+            case .success(let userInfo):
+                self.activityView.stopAnimating()
                 
+                print(userInfo)
+                self.userDetailInfo["profileImage"] = userInfo.profileImage
+                self.userDetailInfo["phoneNumber"] = userInfo.phoneNumber
+                self.userDetailInfo["birthday"] = userInfo.birthday
+                self.userDetailInfo["firstName"] = userInfo.firstName
+                self.userDetailInfo["lastName"] = userInfo.lastName
                 self.tableView.reloadData()
-            })
+                
+            case .failure(let error):
+                self.activityView.stopAnimating()
+                print(error)
+            }
         }
     }
+    //파이어베이스
+//    private func fetchData() {
+//
+//        if let currentUserToken = userdefault.string(forKey: "CurrentUserToken") {
+//            self.ref.child("Users").child(currentUserToken).observe(DataEventType.value, with: { (snapshot) in
+//                self.activityView.stopAnimating()
+//                let userInfo = snapshot.value! as! [String:Any]
+//                self.userDetailInfo = userInfo
+//
+//                self.tableView.reloadData()
+//            })
+//        }
+//    }
 
 }
 
@@ -166,8 +204,25 @@ extension ProfileViewController: UITableViewDelegate {
             }
         case 1:
             switch indexPath.row {
-            case 0..<oneLineData.count:
-                print("asdl;kfadf")
+            case 0:
+                let hostingVC = MoveStoryboard.toVC(storybardName: "Profile", identifier: "HostingViewController") as! HostingViewController
+                self.present(hostingVC, animated: true, completion: nil)
+            case oneLineData.count - 1:
+                
+                activityView.startAnimating()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.activityView.stopAnimating()
+                    
+                    UserDefaults.standard.removeObject(forKey: "CurrentUserToken")
+                    
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    let entryVC = MoveStoryboard.toVC(storybardName: "Login", identifier: "EntryViewController") as! EntryViewController
+                    let navigationController = UINavigationController(rootViewController: entryVC)
+                    appDelegate.window?.rootViewController = navigationController
+                    
+                }
+                
+                
             default:
                 print("asd;flkja;ldkf")
             }

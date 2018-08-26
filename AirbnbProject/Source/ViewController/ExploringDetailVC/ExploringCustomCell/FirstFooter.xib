@@ -20,41 +20,37 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="minus" translatesAutoresizingMaskIntoConstraints="NO" id="VIB-Kz-HXT">
-                        <rect key="frame" x="147" y="23.5" width="78" height="78"/>
+                        <rect key="frame" x="171" y="22.5" width="30" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="BDA-yn-n7Q"/>
+                            <constraint firstAttribute="height" constant="60" id="VNH-pd-MQp"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="체크인" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDh-zI-YH5">
-                        <rect key="frame" x="7" y="11" width="107" height="36"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="체크인 15:00 이후" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="D7t-Ov-7LA">
+                        <rect key="frame" x="20" y="22.5" width="131" height="60"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="23"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="체크아웃" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gId-Wg-SLx">
-                        <rect key="frame" x="258" y="11" width="107" height="36"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="체크인" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7t-Ov-7LA">
-                        <rect key="frame" x="7" y="55" width="132" height="36"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="체크아웃" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmG-Es-xpn">
-                        <rect key="frame" x="233" y="55" width="132" height="36"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="체크아웃 10:00" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="cmG-Es-xpn">
+                        <rect key="frame" x="221" y="22.5" width="131" height="60"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="23"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="VIB-Kz-HXT" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="GFT-Xb-It4"/>
+                <constraint firstItem="cmG-Es-xpn" firstAttribute="bottom" secondItem="VIB-Kz-HXT" secondAttribute="bottom" id="BWq-Au-Q6g"/>
+                <constraint firstItem="VIB-Kz-HXT" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-10" id="GFT-Xb-It4"/>
                 <constraint firstItem="VIB-Kz-HXT" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Jy7-id-iFM"/>
+                <constraint firstItem="D7t-Ov-7LA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="LX7-nc-2Nf"/>
+                <constraint firstItem="VIB-Kz-HXT" firstAttribute="bottom" secondItem="D7t-Ov-7LA" secondAttribute="bottom" id="NC3-fn-NML"/>
+                <constraint firstItem="VIB-Kz-HXT" firstAttribute="top" secondItem="D7t-Ov-7LA" secondAttribute="top" id="jRn-uL-WY5"/>
+                <constraint firstItem="cmG-Es-xpn" firstAttribute="leading" secondItem="VIB-Kz-HXT" secondAttribute="trailing" constant="20" id="uWj-Ed-R17"/>
+                <constraint firstAttribute="trailing" secondItem="cmG-Es-xpn" secondAttribute="trailing" constant="20" id="vNB-iT-hsd"/>
+                <constraint firstItem="VIB-Kz-HXT" firstAttribute="leading" secondItem="D7t-Ov-7LA" secondAttribute="trailing" constant="20" id="y9Q-tc-jrX"/>
+                <constraint firstItem="cmG-Es-xpn" firstAttribute="top" secondItem="VIB-Kz-HXT" secondAttribute="top" id="yxM-Qh-63C"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="372" height="125"/>

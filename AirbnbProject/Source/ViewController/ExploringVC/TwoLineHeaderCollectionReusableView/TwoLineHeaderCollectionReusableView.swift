@@ -16,8 +16,6 @@ class TwoLineHeaderCollectionReusableView: UICollectionReusableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        twoLineHeaderTitle.text = "TwoLineHeaderTitle"
-        twoLineHeaderSubtitle.text = "TwoLineHeaderSubTitle"
     }
     
 }

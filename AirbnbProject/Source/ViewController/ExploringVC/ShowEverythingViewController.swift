@@ -8,22 +8,35 @@
 
 import UIKit
 import Kingfisher
+import NVActivityIndicatorView
 
 class ShowEverythingViewController: UIViewController {
 
     @IBOutlet weak var showEverythingCollectionView: UICollectionView!
     @IBOutlet weak var enterSearchBarTextField: UITextField!
     
+    @IBOutlet weak var numberOfPeopleBtn: UIButton!
+    @IBOutlet weak var calendarBtn: UIButton!
+    @IBOutlet weak var subViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var calendarHeight: NSLayoutConstraint!
+    @IBOutlet weak var numberOfPeopleHeight: NSLayoutConstraint!
+    
+    var activityView: NVActivityIndicatorView!
+    var scrollOffset : CGFloat!
     var regionName = ""                             // ExploringVC의 Footer를 선택했을 때 그에 대한 도시 구분 값이 여기로 넘어오게 된다.
     
     var totalJSONPath = [String : Any]()            // 통신을 통해 가져온 지역별 숙소 리스트를 담기 위한 딕셔너리
     var totalInKoreaJSONPath = [String : Any]()     // 통신을 통해 가져온 대한민국 전체의 숙소 리스트를 담기 위한 딕셔너리
-
+    let roomTotalService: RoomServiceType = RoomService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        setupUI()
+        setupActivityIndicator()
+        activityView.startAnimating()
         
+        print("regionName :",regionName)
         
         // MARK:- TEXT FIELD
         
@@ -43,64 +56,100 @@ class ShowEverythingViewController: UIViewController {
         
         // GET HOUSE LIST AFTER PUSH THIS VIEW CONTROLLER
         
-        let roomTotalService = RoomService()
         
-        if regionName != "" {
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if UserDefaults.standard.object(forKey: "searchResult") != nil {
+            selectedRoomData()
+        } else {
+            fetchRoomData()
+        }
+        
+    }
+    
+    private func setupUI() {
+        self.numberOfPeopleBtn.layer.borderWidth = 0.1
+        //        self.numberOfPeopleBtn.layer.borderColor = airbnbColor
+        self.numberOfPeopleBtn.layer.cornerRadius = 2.0
+        self.numberOfPeopleBtn.layer.masksToBounds = true
+    
+        self.calendarBtn.layer.borderWidth = 0.1
+        self.calendarBtn.layer.cornerRadius = 2.0
+        self.calendarBtn.layer.masksToBounds = true
+    }
+
+    private func setupActivityIndicator() {
+        activityView = NVActivityIndicatorView(frame: CGRect(x: self.view.center.x - 50, y: self.view.center.y - 50, width: 100, height: 100), type: NVActivityIndicatorType.ballBeat, color: UIColor(red: 0/255.0, green: 132/255.0, blue: 137/255.0, alpha: 1), padding: 25)
+        
+        activityView.backgroundColor = .white
+        activityView.layer.cornerRadius = 10
+        self.view.addSubview(activityView)
+    }
+    
+    private func selectedRoomData() {
+        activityView.startAnimating()
+        
+        roomTotalService.getSearchResultByKeyword(inputKeyword: UserDefaults.standard.string(forKey: "searchResult")!) { (result) in
+            switch result {
+            case .success(let value):
+                self.activityView.stopAnimating()
+                
+                print("value",value)
+                if let changeJSON = value as? [String: Any] {
+                    self.totalInKoreaJSONPath = changeJSON
+                    
+                    UserDefaults.standard.removeObject(forKey: "searchResult")
+                    
+                    DispatchQueue.main.async {
+                        self.showEverythingCollectionView.reloadData()
+                    }
+                }
+                
+            case .failure(let error):
+                self.activityView.stopAnimating()
+                print(error)
+            }
+        }
+    }
+    
+    private func fetchRoomData() {
+        
+        if !regionName.isEmpty {
             // 각 도시의 지역에 대한 전체 숙소 리스트를 작업하는 부분
             roomTotalService.getTotalRoomList(region: regionName) { (result) in
                 switch result {
                 case .success(let value):
+                    self.activityView.stopAnimating()
                     if let changeJSON = value as? [String: Any] {
                         self.totalJSONPath = changeJSON
-//                        print("JSON BY REGION : ", self.totalJSONPath)
                         self.showEverythingCollectionView.reloadData()
                     }
                 case .failure(let error):
+                    self.activityView.stopAnimating()
                     print(error)
                 }
             }
             print("region",regionName)
-        
+            
         } else {
             // 대한민국 지역 전체에 대한 숙소 리스트를 작업하는 부분
             roomTotalService.getTotalRoomListInKorea { (result) in
                 switch result {
                 case .success(let value):
+                    self.activityView.stopAnimating()
                     if let changeJSON = value as? [String : Any] {
                         self.totalInKoreaJSONPath = changeJSON
-//                        print("JSON IN KOREA : ", self.totalInKoreaJSONPath)
                         self.showEverythingCollectionView.reloadData()
                     }
                 case .failure(let error):
+                    self.activityView.stopAnimating()
                     print(error)
                 }
             }
         }
-    
-//        if regionName == "서울" {
-//            roomTotalService.getSearchResultByKeyword(inputKeyword: regionName) { (result) in
-//                switch result {
-//                case .success(let value):
-//                    if let changeJSON = value as? [String : Any] {
-//                        self.totalJSONPath = changeJSON
-//                        self.dismiss(animated: true)
-//                    }
-//                case .failure(let error):
-//                    print(error)
-//                }
-//            }
-//
-//            self.showEverythingCollectionView.reloadData()
-//
-//        }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-//        let storyboard = UIStoryboard().instantiateViewController(withIdentifier: "SearchBarViewController") as! SearchBarViewController
-//        self.regionName = storyboard.inputText
-    }
-
-    
     
     @IBAction func backBtnOnTextField(_ sender: UIButton) {
 //        self.totalJSONPath = [:]
@@ -124,12 +173,34 @@ class ShowEverythingViewController: UIViewController {
             .font: UIFont.boldSystemFont(ofSize: 14.0)
             ])
     }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        scrollOffset = scrollView.contentOffset.y;
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y < scrollOffset {
+            self.subViewHeight.constant = 50
+            self.calendarHeight.constant = 35
+            self.numberOfPeopleHeight.constant = 35
+            UIView.animate(withDuration: 0.1, animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        } else {
+            self.subViewHeight.constant = 0
+            self.calendarHeight.constant = 0
+            self.numberOfPeopleHeight.constant = 0
+            UIView.animate(withDuration: 0.1, animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        }
+    }
 }
 
 extension ShowEverythingViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if regionName != "" {
+        if !regionName.isEmpty {
             // 각 지역 별 숙소의 개수를 뿌려줄 부분.
             if let totalNumber = self.totalJSONPath["count"] as? Int {
 //                print("totalNumber : ", totalNumber)
@@ -147,7 +218,8 @@ extension ShowEverythingViewController: UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SingleHouseListCollectionCell", for: indexPath) as! SingleHouseListCollectionCell
-        if regionName != "" {
+        
+        if !regionName.isEmpty {
             // regionName 으로 들어온 값을 기준으로 숙소 리스트 통신을 따로 받아 정의해주는 부분
             if let realTotalJSONPath = totalJSONPath["results"] as? [[String : Any]] {
                 cell.typeTitle.text = realTotalJSONPath[indexPath.row]["rooms_type"] as? String
@@ -181,7 +253,7 @@ extension ShowEverythingViewController: UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch indexPath.section {
         case 0:
-            return CGSize(width: self.showEverythingCollectionView.frame.width, height: self.showEverythingCollectionView.frame.height / 2 + 90)
+            return CGSize(width: self.showEverythingCollectionView.frame.width, height: self.showEverythingCollectionView.frame.height / 2 + 70)
         default:
             return CGSize(width: 0, height: 0)
         }
@@ -228,10 +300,30 @@ extension ShowEverythingViewController: UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ExploringDetailViewController")
-        self.navigationController?.pushViewController(vc, animated: true)
-        
+
+        switch indexPath.section {
+        case 0:
+            
+            if !regionName.isEmpty {
+                // regionName 으로 들어온 값을 기준으로 숙소 리스트 통신을 따로 받아 정의해주는 부분
+                if let realTotalJSONPath = totalJSONPath["results"] as? [[String : Any]] {
+                    let vc = MoveStoryboard.toVC(storybardName: "Main", identifier: "ExploringDetailViewController") as! ExploringDetailViewController
+                    vc.deliveriedPK = realTotalJSONPath[indexPath.row]["pk"] as! Int
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            } else {
+                // 대한민국의 숙소 리스트 통신을 따로 받아 정의해주는 부분
+                if let realTotalInKoreaJSONPath = totalInKoreaJSONPath["results"] as? [[String : Any]] {
+                    let vc = MoveStoryboard.toVC(storybardName: "Main", identifier: "ExploringDetailViewController") as! ExploringDetailViewController
+                    vc.deliveriedPK = realTotalInKoreaJSONPath[indexPath.row]["pk"] as! Int
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+            }
+
+        default:
+            break
+            
+        }
     }
     
     

@@ -13,7 +13,6 @@ class HomeDetailInfoCell: UICollectionViewCell {
     @IBOutlet weak var homeDetail: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
 }

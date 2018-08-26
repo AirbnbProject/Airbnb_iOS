@@ -60,12 +60,12 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UM-R4-Am5">
-                        <rect key="frame" x="171" y="5" width="20" height="20"/>
+                        <rect key="frame" x="172" y="7" width="17" height="15"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="20" id="8y3-gD-Mkh"/>
-                            <constraint firstAttribute="height" constant="20" id="vok-VY-NE9"/>
+                            <constraint firstAttribute="width" constant="17" id="8y3-gD-Mkh"/>
+                            <constraint firstAttribute="height" constant="15" id="vok-VY-NE9"/>
                         </constraints>
-                        <state key="normal" title="Button" image="loveIconDefault"/>
+                        <state key="normal" image="SaveHeart"/>
                         <connections>
                             <action selector="favoriteCheckBtnDidTap:" destination="gTV-IL-0wX" eventType="touchUpInside" id="fIh-5F-5jU"/>
                         </connections>
@@ -117,11 +117,11 @@
                 <constraint firstItem="4kg-J8-X72" firstAttribute="top" secondItem="HO4-mO-Zqb" secondAttribute="top" id="ZdB-uE-0cg"/>
                 <constraint firstItem="Y75-pg-SKZ" firstAttribute="leading" secondItem="HO4-mO-Zqb" secondAttribute="leading" id="byZ-Pl-lHH"/>
                 <constraint firstItem="L9U-br-80H" firstAttribute="top" secondItem="Y75-pg-SKZ" secondAttribute="bottom" constant="5" id="dqp-2d-c1K"/>
-                <constraint firstAttribute="trailing" secondItem="4UM-R4-Am5" secondAttribute="trailing" constant="5" id="fMu-I5-iqj"/>
+                <constraint firstAttribute="trailing" secondItem="4UM-R4-Am5" secondAttribute="trailing" constant="7" id="fMu-I5-iqj"/>
                 <constraint firstItem="Y75-pg-SKZ" firstAttribute="top" secondItem="PHc-Mi-b3H" secondAttribute="bottom" constant="5" id="mOO-6L-PqB"/>
                 <constraint firstAttribute="trailing" secondItem="HO4-mO-Zqb" secondAttribute="trailing" id="nbu-Ob-E3E"/>
                 <constraint firstAttribute="trailing" secondItem="Y75-pg-SKZ" secondAttribute="trailing" id="nsd-VN-87A"/>
-                <constraint firstItem="4UM-R4-Am5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="oPq-pD-TC4"/>
+                <constraint firstItem="4UM-R4-Am5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7" id="oPq-pD-TC4"/>
                 <constraint firstItem="Afx-Nr-Cgd" firstAttribute="leading" secondItem="L9U-br-80H" secondAttribute="trailing" constant="1" id="pAk-ze-NZZ"/>
                 <constraint firstItem="Esg-4f-lNh" firstAttribute="centerY" secondItem="PHc-Mi-b3H" secondAttribute="centerY" id="xQJ-Ym-OMJ"/>
                 <constraint firstItem="77O-Pm-3FT" firstAttribute="top" secondItem="L9U-br-80H" secondAttribute="bottom" constant="5" id="yaS-HK-iNT"/>
@@ -145,7 +145,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="SaveHeart" width="29" height="29"/>
         <image name="house" width="512" height="341"/>
-        <image name="loveIconDefault" width="128" height="128"/>
     </resources>
 </document>

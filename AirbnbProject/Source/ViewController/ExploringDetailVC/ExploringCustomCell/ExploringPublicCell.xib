@@ -19,17 +19,19 @@
                 <rect key="frame" x="0.0" y="0.0" width="355" height="56"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMO-ur-p3B">
-                        <rect key="frame" x="20" y="18" width="90" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oMO-ur-p3B">
+                        <rect key="frame" x="20" y="8.5" width="295" height="20"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
+                        <size key="shadowOffset" width="0.0" height="0.0"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="oMO-ur-p3B" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="M69-7E-RHF"/>
-                <constraint firstItem="oMO-ur-p3B" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="g7A-1v-MlE"/>
+                <constraint firstAttribute="trailing" secondItem="oMO-ur-p3B" secondAttribute="trailing" constant="40" id="0ho-eR-5sQ"/>
+                <constraint firstItem="oMO-ur-p3B" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" constant="-10" id="J8a-Fw-pOj"/>
+                <constraint firstItem="oMO-ur-p3B" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="MR0-2n-DdT"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="355" height="56"/>

@@ -12,6 +12,7 @@ import MobileCoreServices
 import AVKit
 import Firebase
 import FirebaseStorage
+import Alamofire
 import NVActivityIndicatorView
 
 class ChattingViewController: JSQMessagesViewController {
@@ -20,6 +21,7 @@ class ChattingViewController: JSQMessagesViewController {
     var avatarDict: [String: JSQMessagesAvatarImage] = [:]
     var messageRef = Database.database().reference().child("Messages")
     var messages = [JSQMessage]()
+    let profileService: ProfileServiceType = ProfileService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +35,8 @@ class ChattingViewController: JSQMessagesViewController {
         
         setupNavigation()
         setupActivityIndicator()
-        observeUsers()
+//        observeUsers()
+        fetchProfile()
         observeMessage()
         
         activityView.startAnimating()
@@ -85,32 +88,56 @@ class ChattingViewController: JSQMessagesViewController {
         }
     }
     
-    func observeUsers() {
-        let currentUserToken = UserDefaults.standard.string(forKey: "CurrentUserToken")
-        Database.database().reference().child("Users").child(currentUserToken!).observe(DataEventType.value) { (snapshot) in
-            if let dict = snapshot.value as? [String:Any] {
-                let avartarUrl = dict["profileImage"] as! String
-                self.setupAvatar(url: avartarUrl, messageId: currentUserToken!)
+//    func observeUsers() {
+//        let currentUserToken = UserDefaults.standard.string(forKey: "CurrentUserToken")
+//
+//
+//
+//        Database.database().reference().child("Users").child(currentUserToken!).observe(DataEventType.value) { (snapshot) in
+//            if let dict = snapshot.value as? [String:Any] {
+//                let avartarUrl = dict["profileImage"] as! String
+//                self.setupAvatar(url: avartarUrl, messageId: currentUserToken!)
+//
+//                if let currentUser = currentUserToken {
+//                    self.senderId = currentUser
+//                    self.senderDisplayName = "\(dict["firstName"] as! String)"
+//                }
+//            }
+//        }
+//    }
+    
+    private func fetchProfile() {
+        
+        profileService.fetchProfile(token: UserDefaults.standard.string(forKey: "CurrentUserToken")!) { (result) in
+            switch result {
+            case .success(let userInfo):
+                self.activityView.stopAnimating()
                 
-                if let currentUser = currentUserToken {
-                    self.senderId = currentUser
-                    self.senderDisplayName = "\(dict["firstName"] as! String)"
-                }
+                
+                let avartarUrl = userInfo.profileImage
+                self.setupAvatar(url: avartarUrl!, messageId: UserDefaults.standard.string(forKey: "CurrentUserToken")!)
+                
+                self.senderId = UserDefaults.standard.string(forKey: "CurrentUserToken")!
+                self.senderDisplayName = userInfo.firstName
+                
+            case .failure(let error):
+                self.activityView.stopAnimating()
+                print(error)
             }
         }
     }
     
     func setupAvatar(url: String, messageId: String) {
-//        if url != "" {
-//            let fileUrl = URL(string: url)
-//
-//            let data = try? Data(contentsOf: fileUrl!)
-//            let image = UIImage(data: data!)
-//            let userImg = JSQMessagesAvatarImageFactory.avatarImage(with: image, diameter: 30)
-//            avatarDict[messageId] = userImg
-//        } else {
+        if url != "" {
+            let fileUrl = URL(string: url)
+
+            let data = try? Data(contentsOf: fileUrl!)
+            let image = UIImage(data: data!)
+            let userImg = JSQMessagesAvatarImageFactory.avatarImage(with: image, diameter: 30)
+            avatarDict[messageId] = userImg
+        } else {
             avatarDict[messageId] = JSQMessagesAvatarImageFactory.avatarImage(withPlaceholder: UIImage(named: "profile"), diameter: 30)
-//        }
+        }
         
         collectionView.reloadData()
     }

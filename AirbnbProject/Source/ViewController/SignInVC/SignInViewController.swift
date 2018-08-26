@@ -40,7 +40,7 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
 
         setupInitialize()
-        
+        ref = Database.database().reference()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -114,6 +114,7 @@ class SignInViewController: UIViewController {
                     self.activityView.stopAnimating()
                     
                     UserDefaults.standard.set(value.token, forKey: "CurrentUserToken")
+                    print("CurrentUserToken : ",UserDefaults.standard.string(forKey: "CurrentUserToken"))
                     let currentUser = self.ref.child("Users").child(value.token)
                     currentUser.setValue([
                         "token":value.token,

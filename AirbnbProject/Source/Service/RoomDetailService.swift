@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
 
 protocol RoomDetailServiceType {
     func searchRoomDetailInfo(pk: Int, completion: @escaping (Result<[RoomDetail]>) -> ())
@@ -16,7 +15,7 @@ protocol RoomDetailServiceType {
 
 struct RoomDetailService: RoomDetailServiceType {
     func searchRoomDetailInfo(pk: Int, completion: @escaping (Result<[RoomDetail]>) -> ()) {
-//        let parameter: Parameters = [ "pk" : pk]
+
         var api = "\(API.RoomDetail.detailInfo)\(pk)"
         Alamofire
             .request(api, method: .get)

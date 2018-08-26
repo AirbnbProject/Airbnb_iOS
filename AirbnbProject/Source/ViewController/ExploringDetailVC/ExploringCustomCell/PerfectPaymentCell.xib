@@ -19,11 +19,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="369" height="88"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shield" translatesAutoresizingMaskIntoConstraints="NO" id="TLV-Ji-Qe9">
-                        <rect key="frame" x="303" y="23" width="46" height="42"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shield" translatesAutoresizingMaskIntoConstraints="NO" id="TLV-Ji-Qe9">
+                        <rect key="frame" x="313" y="23" width="36" height="42"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안전한 결제를 위해 에어비앤비 웹사이트나 앱 외부에서 송금하거나 대화를 나누지 마세요" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NJ-UL-RSR">
-                        <rect key="frame" x="10" y="25" width="275" height="39"/>
+                        <rect key="frame" x="20" y="25" width="275" height="39"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="275" id="XDv-t4-C1N"/>
                             <constraint firstAttribute="height" constant="39" id="pzW-de-w2W"/>
@@ -38,7 +38,7 @@
                 <constraint firstAttribute="trailing" secondItem="TLV-Ji-Qe9" secondAttribute="trailing" constant="20" id="8Bp-CG-dER"/>
                 <constraint firstItem="TLV-Ji-Qe9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="23" id="DQw-dx-0MK"/>
                 <constraint firstItem="TLV-Ji-Qe9" firstAttribute="leading" secondItem="2NJ-UL-RSR" secondAttribute="trailing" constant="18" id="Ir4-LX-aBd"/>
-                <constraint firstItem="2NJ-UL-RSR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="S7D-No-qPW"/>
+                <constraint firstItem="2NJ-UL-RSR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="S7D-No-qPW"/>
                 <constraint firstAttribute="bottom" secondItem="TLV-Ji-Qe9" secondAttribute="bottom" constant="23" id="VCV-5Z-FPH"/>
                 <constraint firstItem="2NJ-UL-RSR" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="XGz-yr-ARx"/>
                 <constraint firstItem="TLV-Ji-Qe9" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="yrr-r1-Jfw"/>
@@ -49,6 +49,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="shield" width="16" height="16"/>
+        <image name="shield" width="256" height="256"/>
     </resources>
 </document>

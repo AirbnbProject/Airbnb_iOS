@@ -36,7 +36,8 @@ class RoomLikeViewController: UIViewController {
     }
     
     func settingInfo() {
-        roomListService.likeRoomList(token: "b1e4cb34fd7a8bbd4e8ef7a589de9a25aaf3c1e5") { (result) in
+        
+        roomListService.likeRoomList(token: UserDefaults.standard.string(forKey: "CurrentUserToken")!) { (result) in
             switch result {
             case .success(let value):
                 print(value)
@@ -64,6 +65,7 @@ class RoomLikeViewController: UIViewController {
             UINib(nibName: "RoomLikeCell", bundle: nil),
             forCellWithReuseIdentifier: "RoomLikeCell"
         )
+        collectionView.register(UINib(nibName: "OneLineHeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "OneLineHeaderCRV")
         settingInfo()
     }
     
@@ -163,4 +165,20 @@ extension RoomLikeViewController: UICollectionViewDelegateFlowLayout {
         self.navigationController?.pushViewController(homeView, animated: true)
         
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "OneLineHeaderCRV", for: indexPath) as! OneLineHeaderCollectionReusableView
+            header.saveListOneLineHeaderTitle.text = "저장 목록"
+            return header
+        default:
+            return UICollectionReusableView()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: self.collectionView.frame.width - 25, height: 95)
+    }
+    
 }

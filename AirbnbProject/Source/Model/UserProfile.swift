@@ -27,9 +27,9 @@ struct UserInfo: Decodable {
     
     init(from decoder: Decoder) throws {
         let value = try decoder.container(keyedBy: Codingkeys.self)
-        self.profileImage = try value.decode(String.self, forKey: .profileImage)
-        self.phoneNumber = try value.decode(String.self, forKey: .phoneNumber)
-        self.birthday = try value.decode(String.self, forKey: .birthday)
+        self.profileImage = try value.decodeIfPresent(String.self, forKey: .profileImage)
+        self.phoneNumber = try value.decodeIfPresent(String.self, forKey: .phoneNumber)
+        self.birthday = try value.decodeIfPresent(String.self, forKey: .birthday)
         self.firstName = try value.decode(String.self, forKey: .firstName)
         self.lastName = try value.decode(String.self, forKey: .lastName)
         self.isHost = try value.decode(Bool.self, forKey: .isHost)

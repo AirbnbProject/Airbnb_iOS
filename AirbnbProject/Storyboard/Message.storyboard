@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="wHv-XJ-ixq">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -151,15 +151,22 @@
             </objects>
             <point key="canvasLocation" x="1766" y="170"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--메시지-->
         <scene sceneID="al6-mw-n7A">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="eBJ-86-T2r" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Message" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="eBJ-86-T2r" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="메시지" image="Tabbar_Message" selectedImage="Tabbar_Message_Red" id="cw0-go-QUN">
+                        <color key="badgeColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="p42-3H-jVm">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wi0-Ow-bbf">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="tmJ-7c-gUV" kind="relationship" relationship="rootViewController" id="Ulr-OB-Vtm"/>
                     </connections>
@@ -170,6 +177,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Tabbar_Message" width="27" height="27"/>
+        <image name="Tabbar_Message_Red" width="27" height="27"/>
         <image name="profile" width="48" height="48"/>
     </resources>
 </document>

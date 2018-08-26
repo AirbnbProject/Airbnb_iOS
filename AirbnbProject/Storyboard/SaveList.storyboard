@@ -13,7 +13,7 @@
         <!--Save List View Controller-->
         <scene sceneID="y4h-Yd-SDq">
             <objects>
-                <viewController storyboardIdentifier="SaveList" id="eF4-Pq-9mN" customClass="SaveListViewController" customModule="AirbnbProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eF4-Pq-9mN" customClass="SaveListViewController" customModule="AirbnbProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O7p-yH-qEb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,7 +72,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5qd-U2-pL8">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T6D-LF-Y0X">
                                     <size key="itemSize" width="50" height="50"/>
@@ -90,9 +90,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qku-Gv-Seb" firstAttribute="bottom" secondItem="5qd-U2-pL8" secondAttribute="bottom" id="0gK-Tc-MmL"/>
+                            <constraint firstItem="5qd-U2-pL8" firstAttribute="top" secondItem="qku-Gv-Seb" secondAttribute="top" id="7JY-JI-jTh"/>
                             <constraint firstItem="qku-Gv-Seb" firstAttribute="trailing" secondItem="5qd-U2-pL8" secondAttribute="trailing" id="RjK-HA-0gG"/>
                             <constraint firstItem="5qd-U2-pL8" firstAttribute="leading" secondItem="qku-Gv-Seb" secondAttribute="leading" id="dfK-aI-hcy"/>
-                            <constraint firstItem="5qd-U2-pL8" firstAttribute="top" secondItem="qku-Gv-Seb" secondAttribute="top" id="ojE-Pp-Jc2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qku-Gv-Seb"/>
                     </view>
@@ -105,11 +105,11 @@
             </objects>
             <point key="canvasLocation" x="5890.3999999999996" y="-801.0494752623689"/>
         </scene>
-        <!--저장 목록-->
+        <!--Navigation Controller-->
         <scene sceneID="gxi-Vi-2DU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tFa-mg-K2U" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="저장 목록" id="m23-Uv-1WP"/>
+                    <tabBarItem key="tabBarItem" title="" id="m23-Uv-1WP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SqP-My-h3h">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -124,11 +124,13 @@
             </objects>
             <point key="canvasLocation" x="3357.5999999999999" y="-1674.5127436281859"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--저장목록-->
         <scene sceneID="ZEG-Tq-unZ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="1aV-BL-m8R" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SaveList" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="1aV-BL-m8R" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="저장목록" image="Tabbar_SaveList" selectedImage="Tabbar_SaveList_Red" id="Jdw-LC-3gP"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ijS-8e-jVp">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -142,4 +144,8 @@
             <point key="canvasLocation" x="4951.1999999999998" y="-801.0494752623689"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Tabbar_SaveList" width="27" height="27"/>
+        <image name="Tabbar_SaveList_Red" width="27" height="27"/>
+    </resources>
 </document>

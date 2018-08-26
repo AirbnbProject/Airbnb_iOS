@@ -109,7 +109,12 @@ extension ProfileConfirmationViewController: UITableViewDataSource {
             case 1:
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileConfirmationDefaultCell", for: indexPath) as! ProfileConfirmationDefaultCell
                 cell.detailTitle.text = profileDetailInfo[indexPath.row]
-                cell.detailInfo.text = userDetailInfo["createDate"] as? String
+                if userDetailInfo["createDate"] as? String == nil {
+                    cell.detailInfo.text = "2018년 8월 24일"
+                } else {
+                    cell.detailInfo.text = userDetailInfo["createDate"] as? String
+                }
+                
                 return cell
             default:
 //                https://www.airbnb.co.kr/help/article/1237/how-does-it-work-when-airbnb-asks-for-an-id

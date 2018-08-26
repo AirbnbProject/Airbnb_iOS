@@ -12,7 +12,6 @@ target 'AirbnbProject' do
   pod 'NVActivityIndicatorView'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
-
   pod 'Firebase/Storage'
   pod 'CVCalendar', '~> 1.6.1'
   pod 'JSQMessagesViewController'

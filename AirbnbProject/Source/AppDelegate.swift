@@ -19,15 +19,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
         UserDefaults.standard.removeObject(forKey: "numberOfAdultState")
         UserDefaults.standard.removeObject(forKey: "numberOfKidState")
         UserDefaults.standard.removeObject(forKey: "numberOfInfantState")
         FirebaseApp.configure()
         
+        
+        if let token = UserDefaults.standard.string(forKey: "CurrentUserToken") {
+            if token.isEmpty {
+                window?.rootViewController = MoveStoryboard.toVC(storybardName: "Login", identifier: "LoginRootViewController")
+            } else {
+                window?.rootViewController = MoveStoryboard.toVC(storybardName: "Main", identifier: "MainExploring")
+            }
+        }
+        
         return true
     }
-    
+
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
         
         let shouldOpen :Bool = FBSDKApplicationDelegate.sharedInstance().application(app,  open: url, sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String?,annotation: options[UIApplicationOpenURLOptionsKey.annotation])

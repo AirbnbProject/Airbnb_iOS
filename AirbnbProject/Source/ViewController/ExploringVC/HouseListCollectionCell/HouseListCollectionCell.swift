@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PresentVCDelegate: class {
-    func presentVC()
+    func presentVC(itemCell: HouseListCollectionCell, didTapButton: UIButton)
 }
 
 class HouseListCollectionCell: UICollectionViewCell {
@@ -41,11 +41,12 @@ class HouseListCollectionCell: UICollectionViewCell {
         favoriteCheckBtn.isSelected = !favoriteCheckBtn.isSelected
         print("isSelected", favoriteCheckBtn.isSelected)
         
+        delegate?.presentVC(itemCell: self, didTapButton: sender)
+        
         if favoriteCheckBtn.isSelected == true {
-            favoriteCheckBtn.setImage(UIImage(named: "loveIconDidPushed"), for: .normal)
-            delegate?.presentVC()
+            favoriteCheckBtn.setImage(UIImage(named: "SaveHeart_Red"), for: .normal)
         } else {
-            favoriteCheckBtn.setImage(UIImage(named: "loveIconDefault"), for: .normal)
+            favoriteCheckBtn.setImage(UIImage(named: "SaveHeart"), for: .normal)
         }
     }
     

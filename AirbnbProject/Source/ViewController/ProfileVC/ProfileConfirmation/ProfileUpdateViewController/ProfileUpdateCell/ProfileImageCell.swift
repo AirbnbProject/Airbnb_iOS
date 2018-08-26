@@ -10,6 +10,7 @@ import UIKit
 
 protocol ProfileImageCellDelegate: class {
     func presentViewController(viewController: UIViewController)
+    func profileImageDelivery(profileImage: UIImage)
 }
 
 class ProfileImageCell: UITableViewCell {
@@ -73,6 +74,9 @@ extension ProfileImageCell: UIImagePickerControllerDelegate, UINavigationControl
         let selectedImage = originalImage ?? editedImage
         
         self.profileImageView.image = selectedImage
+        
+        delegate?.profileImageDelivery(profileImage: selectedImage!)
+        
         UIImageWriteToSavedPhotosAlbum(selectedImage!, nil, nil, nil)
         picker.dismiss(animated: true, completion: nil)
         

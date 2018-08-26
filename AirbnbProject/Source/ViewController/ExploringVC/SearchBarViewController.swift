@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import NVActivityIndicatorView
 
 class SearchBarViewController: UIViewController {
     
@@ -16,18 +17,19 @@ class SearchBarViewController: UIViewController {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var deletingAllTextButton: UIButton!
     
-    
     // TABLE VIEW PROPERTY
     @IBOutlet weak var tableView: UITableView!
     
-    
     // Data Property
     var inputText: String = ""
-    
+    let roomService: RoomServiceType = RoomService()
+    var activityView: NVActivityIndicatorView!
     
     // VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupActivityIndicator()
         
         self.searchTextField.delegate = self
         self.searchTextField.becomeFirstResponder()
@@ -43,6 +45,13 @@ class SearchBarViewController: UIViewController {
         self.deletingAllTextButton.isHidden = true
     }
     
+    private func setupActivityIndicator() {
+        activityView = NVActivityIndicatorView(frame: CGRect(x: self.view.center.x - 50, y: self.view.center.y - 50, width: 100, height: 100), type: NVActivityIndicatorType.ballBeat, color: UIColor(red: 0/255.0, green: 132/255.0, blue: 137/255.0, alpha: 1), padding: 25)
+        
+        activityView.backgroundColor = .white
+        activityView.layer.cornerRadius = 10
+        self.view.addSubview(activityView)
+    }
     
     @IBAction func closeBtn(_ sender: UIButton) {
         self.dismiss(animated: true)
@@ -67,32 +76,33 @@ extension SearchBarViewController: UITextFieldDelegate {
         searchTextField.resignFirstResponder()
         print("resignFirstResponder 2nd") // 첫번째 출력
         
+        UserDefaults.standard.removeObject(forKey: "searchResult")
+        
+        activityView.startAnimating()
+        
+        roomService.getSearchResultByKeyword(inputKeyword: textField.text!) { (result) in
+            switch result {
+            case .success(let value):
+                self.activityView.stopAnimating()
+                
+                UserDefaults.standard.set(textField.text!, forKey: "searchResult")
+
+                print("value",value)
+                self.dismiss(animated: true, completion: nil)
+                
+            case .failure(let error):
+                self.activityView.stopAnimating()
+                print(error)
+            }
+        }
         return true
     }
-    
-    // 여기에 트루주면 글자를 쓰다가 키보드를 내리고 다시 올릴 경우 글자가 작성중임 상태임에도 삭제 버튼이 사라지는 경우가 발생. 물론 키보드 치면 다시 나타나긴함.
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        self.deletingAllTextButton.isHidden = true
-//        print("textFieldDidBeginEditing")
-//    }
-    
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        self.deletingAllTextButton.isHidden = true
-//        print("textFieldDidEndEditing")
-//    }
-    
+
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         self.deletingAllTextButton.isHidden = true
         print("textFieldShouldClear")
         return true
     }
-    
-    // 여기에 설정하면 빈 부분을 눌러 키보드를 내렸을 때 삭제 버튼도 함께 사라지는 경우가 발생.
-//    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-//        self.deletingAllTextButton.isHidden = true
-//        print("textFieldShouldBeginEditing")
-//        return true
-//    }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // 이 문장에 문제 있음. 왜 자음을 눌렀을 때 사라지냐고!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

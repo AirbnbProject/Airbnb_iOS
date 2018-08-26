@@ -25,7 +25,7 @@ class MapCell: UICollectionViewCell {
         locationManager = CLLocationManager()
         mapView.centerCoordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
         locationManager!.delegate = self as? CLLocationManagerDelegate
-        let region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(lat, lon), MKCoordinateSpanMake(0.3, 0.3))
+        let region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(lat, lon), MKCoordinateSpanMake(0.5, 0.5))
         mapView.setRegion(region, animated: true)
         let center = mapView.centerCoordinate
         let circle = MKCircle(center: CLLocationCoordinate2D(latitude: lat, longitude: lon), radius: 10000)
@@ -41,8 +41,7 @@ extension MapCell: MKMapViewDelegate {
             let renderer = MKCircleRenderer(circle: circle)
             renderer.strokeColor = UIColor(red: 0/255, green: 153/255, blue: 153/255, alpha: 1.0)
             renderer.lineWidth = 2
-            //176,224,230
-            let colors = UIColor(red: 176/255, green: 224/255, blue: 230/255, alpha: 0.5)
+            
             renderer.fillColor = UIColor(red: 176/255, green: 224/255, blue: 230/255, alpha: 0.6)
             
             return renderer

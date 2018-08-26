@@ -20,22 +20,22 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% 환불 가능" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8u-ws-dn8">
-                        <rect key="frame" x="10" y="10" width="110" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="20" y="10" width="114" height="20"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="체크인 5일 전까지 예약을 취소하면 서비스 수수료를 포함한 요금 전액이 환불됩니다." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTh-Kw-P2F">
-                        <rect key="frame" x="10" y="41" width="352" height="36"/>
-                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="15"/>
+                        <rect key="frame" x="20" y="40" width="342" height="40"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="E8u-ws-dn8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="55n-M2-en2"/>
-                <constraint firstItem="LTh-Kw-P2F" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="9ss-Zj-Ox1"/>
+                <constraint firstItem="E8u-ws-dn8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="55n-M2-en2"/>
+                <constraint firstItem="LTh-Kw-P2F" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="9ss-Zj-Ox1"/>
                 <constraint firstItem="LTh-Kw-P2F" firstAttribute="top" secondItem="E8u-ws-dn8" secondAttribute="bottom" constant="10" id="EUd-y0-Z2N"/>
                 <constraint firstItem="E8u-ws-dn8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="Hdg-9H-Z4g"/>
                 <constraint firstAttribute="trailing" secondItem="LTh-Kw-P2F" secondAttribute="trailing" constant="10" id="sQA-co-4h4"/>

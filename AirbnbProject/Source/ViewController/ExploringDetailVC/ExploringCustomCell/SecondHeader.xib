@@ -19,13 +19,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="344" height="72"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="비슷한 숙소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UML-Ri-NB5">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비슷한 숙소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UML-Ri-NB5">
                         <rect key="frame" x="20" y="20" width="190" height="32"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="190" id="MxL-rx-P33"/>
                             <constraint firstAttribute="height" constant="32" id="oWg-IA-GDV"/>
                         </constraints>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -33,6 +33,7 @@
             </view>
             <constraints>
                 <constraint firstItem="UML-Ri-NB5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="CYV-Ay-tyQ"/>
+                <constraint firstItem="UML-Ri-NB5" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="QzC-rM-alD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="344" height="72"/>

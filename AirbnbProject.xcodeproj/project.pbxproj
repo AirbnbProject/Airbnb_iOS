@@ -49,6 +49,9 @@
 		15C28BF82125BF8A007E9F45 /* MessageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C28BF72125BF8A007E9F45 /* MessageHeaderView.swift */; };
 		15C28BFA2125D018007E9F45 /* MessageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C28BF92125D018007E9F45 /* MessageListCell.swift */; };
 		15C28BFF2125DF21007E9F45 /* ChattingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C28BFE2125DF21007E9F45 /* ChattingViewController.swift */; };
+		15E2EE44212ED46300B2EFAC /* Travel.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15E2EE43212ED46300B2EFAC /* Travel.storyboard */; };
+		15E2EE47212ED78700B2EFAC /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2EE46212ED78700B2EFAC /* TravelViewController.swift */; };
+		15E2EE4A212EDC9400B2EFAC /* HostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E2EE49212EDC9400B2EFAC /* HostingViewController.swift */; };
 		15FF4FF0211D823C003DE812 /* ProfileUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF4FEF211D823C003DE812 /* ProfileUpdateViewController.swift */; };
 		15FF4FF4211D8318003DE812 /* ProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF4FF3211D8318003DE812 /* ProfileImageCell.swift */; };
 		15FF4FF7211D8366003DE812 /* ProfileTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF4FF6211D8366003DE812 /* ProfileTextFieldCell.swift */; };
@@ -154,7 +157,6 @@
 		F99F74FE21246FE1002B8169 /* ShowEverythingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99F74FD21246FE1002B8169 /* ShowEverythingViewController.swift */; };
 		F99F75022124707D002B8169 /* SingleHouseListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99F75002124707D002B8169 /* SingleHouseListCollectionCell.swift */; };
 		F99F75032124707D002B8169 /* SingleHouseListCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F99F75012124707D002B8169 /* SingleHouseListCollectionCell.xib */; };
-		F99F752A2128321E002B8169 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871AEA60211C24F80055FA9C /* EntryViewController.swift */; };
 		F9BCD810212A9A3A0059A568 /* RoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BCD80F212A9A3A0059A568 /* RoomService.swift */; };
 		F9C3AC332122A57700D8F82D /* RoomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C3AC322122A57700D8F82D /* RoomInfo.swift */; };
 		F9D22C06211C8EAA00BA2C49 /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -216,15 +218,15 @@
 		15C28BF72125BF8A007E9F45 /* MessageHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHeaderView.swift; sourceTree = "<group>"; };
 		15C28BF92125D018007E9F45 /* MessageListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListCell.swift; sourceTree = "<group>"; };
 		15C28BFE2125DF21007E9F45 /* ChattingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingViewController.swift; sourceTree = "<group>"; };
-		15FD62C2211C219B00B9A4BB /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntryViewController.swift; path = ../../../../../../../Desktop/Airbnb_iOS/AirbnbProject/Source/ViewController/SignUp/EntryViewController.swift; sourceTree = "<group>"; };
-
+		15E2EE43212ED46300B2EFAC /* Travel.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Travel.storyboard; sourceTree = "<group>"; };
+		15E2EE46212ED78700B2EFAC /* TravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
+		15E2EE49212EDC9400B2EFAC /* HostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingViewController.swift; sourceTree = "<group>"; };
 		15FF4FEF211D823C003DE812 /* ProfileUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUpdateViewController.swift; sourceTree = "<group>"; };
 		15FF4FF3211D8318003DE812 /* ProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCell.swift; sourceTree = "<group>"; };
 		15FF4FF6211D8366003DE812 /* ProfileTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextFieldCell.swift; sourceTree = "<group>"; };
 		15FF4FFE211D94B0003DE812 /* DetailUserInfoHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUserInfoHeaderCell.swift; sourceTree = "<group>"; };
 		38310991B84D0E2221F076C0 /* Pods-AirbnbProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirbnbProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject.release.xcconfig"; sourceTree = "<group>"; };
 		66F552965419A8DFCC187B4A /* Pods_AirbnbProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirbnbProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		871AEA60211C24F80055FA9C /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		871AEA67211C72050055FA9C /* ReviewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListCell.swift; sourceTree = "<group>"; };
 		871AEA68211C72050055FA9C /* ReviewListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewListCell.xib; sourceTree = "<group>"; };
 		871AEA6C211D24430055FA9C /* ExploringDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploringDetailViewController.swift; sourceTree = "<group>"; };
@@ -358,7 +360,6 @@
 		152D7888210EFA3C0060BF9B /* SignUpVC */ = {
 			isa = PBXGroup;
 			children = (
-
 				87A51CAC21268C4100771063 /* EntryViewController.swift */,
 				152D7889210EFA530060BF9B /* MoreOptionsViewController.swift */,
 				152D788B210F054C0060BF9B /* SignUpNameViewController.swift */,
@@ -568,8 +569,9 @@
 				1566287E210EE41B003B0338 /* Login.storyboard */,
 				15662880210EE4CF003B0338 /* Main.storyboard */,
 				F9D22C17211D77E900BA2C49 /* SaveList.storyboard */,
-				157A70DC21204E58002910CB /* Profile.storyboard */,
+				15E2EE43212ED46300B2EFAC /* Travel.storyboard */,
 				154F5A7A212564B8008960DE /* Message.storyboard */,
+				157A70DC21204E58002910CB /* Profile.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -577,11 +579,9 @@
 		1566287B210EE385003B0338 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-
+				15E2EE45212ED75C00B2EFAC /* TravelVC */,
 				87A51CD2212C034300771063 /* RoomLikeVC */,
-
 				15C28BF42125BE76007E9F45 /* MessageVC */,
-
 				1568A4E52112F5EA00FA1223 /* ProfileVC */,
 				1568A4E02111DA4300FA1223 /* SignInVC */,
 				152D7888210EFA3C0060BF9B /* SignUpVC */,
@@ -616,6 +616,7 @@
 			children = (
 				1568A4E62112F60200FA1223 /* ProfileViewController.swift */,
 				1568A4E82112F61800FA1223 /* ProfileViewCell */,
+				15E2EE48212EDC6900B2EFAC /* HostingVC */,
 				1542333D211C8CFA0076D1AB /* ProfileConfirmation */,
 			);
 			path = ProfileVC;
@@ -650,11 +651,9 @@
 				1589C47D2119B83E003F224D /* ServiceResult.swift */,
 				1589C4822119C095003F224D /* AuthService.swift */,
 				159262252122F1260089C77B /* ProfileService.swift */,
-
 				F9BCD80F212A9A3A0059A568 /* RoomService.swift */,
 				87A51CB2212A679C00771063 /* RoomDetailService.swift */,
 				87A51CDC212C637C00771063 /* LikeListService.swift */,
-
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -702,6 +701,22 @@
 				15C28BFB2125D01B007E9F45 /* MessageCell */,
 			);
 			path = MessageConfirmVC;
+			sourceTree = "<group>";
+		};
+		15E2EE45212ED75C00B2EFAC /* TravelVC */ = {
+			isa = PBXGroup;
+			children = (
+				15E2EE46212ED78700B2EFAC /* TravelViewController.swift */,
+			);
+			path = TravelVC;
+			sourceTree = "<group>";
+		};
+		15E2EE48212EDC6900B2EFAC /* HostingVC */ = {
+			isa = PBXGroup;
+			children = (
+				15E2EE49212EDC9400B2EFAC /* HostingViewController.swift */,
+			);
+			path = HostingVC;
 			sourceTree = "<group>";
 		};
 		15FF4FEE211D8149003DE812 /* ProfileUpdateViewController */ = {
@@ -983,7 +998,7 @@
 				1566285D210ED4AD003B0338 /* Sources */,
 				1566285E210ED4AD003B0338 /* Frameworks */,
 				1566285F210ED4AD003B0338 /* Resources */,
-				99C1D8B81C3A56EAED18C80A /* [CP] Embed Pods Frameworks */,
+				58CFA6FF67AFD4248D2A98DE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1046,6 +1061,7 @@
 				F9D8AE482111DE1800AF9AD5 /* NestedHorizontalStyleCollectionCell.xib in Resources */,
 				F90BA79F2110A2EC0030926A /* HouseListCollectionCell.xib in Resources */,
 				1566287F210EE41B003B0338 /* Login.storyboard in Resources */,
+				15E2EE44212ED46300B2EFAC /* Travel.storyboard in Resources */,
 				8739D9092119452F001998F5 /* PopularTrip.xib in Resources */,
 				8739D8ED21187D00001998F5 /* PerfectRefundCell.xib in Resources */,
 				F99F75032124707D002B8169 /* SingleHouseListCollectionCell.xib in Resources */,
@@ -1093,6 +1109,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		58CFA6FF67AFD4248D2A98DE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CVCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		96F95E19BAB9E421A6DA5C83 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1111,50 +1169,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		99C1D8B81C3A56EAED18C80A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/CVCalendar/CVCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
-				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CVCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AirbnbProject/Pods-AirbnbProject-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1162,7 +1176,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				87A51CAD21268C4100771063 /* EntryViewController.swift in Sources */,
 				154F5A9421258C7C008960DE /* AirbnbPlusCollectionCell.swift in Sources */,
 				154F5A9521258C7C008960DE /* AirbnbPlusCollectionCell.xib in Sources */,
@@ -1201,6 +1214,7 @@
 				8739D8DC21181EBD001998F5 /* FacilitiesCell.swift in Sources */,
 				8739D921211B1536001998F5 /* FacilitiesTwoLineCell.swift in Sources */,
 				8739D8D421181ABA001998F5 /* ExploringPublicCell.swift in Sources */,
+				15E2EE47212ED78700B2EFAC /* TravelViewController.swift in Sources */,
 				8739D8E4211828CA001998F5 /* FirstFooter.swift in Sources */,
 				8739D912211ACAD2001998F5 /* FacilitiesDetailViewController.swift in Sources */,
 				8739D8C821181006001998F5 /* HomeDetailInfoCell.swift in Sources */,
@@ -1215,6 +1229,7 @@
 				F9D22C11211D74AD00BA2C49 /* SaveListViewController.swift in Sources */,
 				F99F74FE21246FE1002B8169 /* ShowEverythingViewController.swift in Sources */,
 				F9D22C1C211D9AA800BA2C49 /* OneLineHeaderCollectionReusableView.swift in Sources */,
+				15E2EE4A212EDC9400B2EFAC /* HostingViewController.swift in Sources */,
 				8739D9082119452F001998F5 /* PopularTrip.swift in Sources */,
 				154F5A57212482B8008960DE /* AuthenticatedInfoViewController.swift in Sources */,
 				8739D915211ACFD7001998F5 /* FacilitiesHeader.swift in Sources */,
@@ -1406,8 +1421,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-
-				DEVELOPMENT_TEAM = 9UT8US6W3V;
+				DEVELOPMENT_TEAM = CNMQE42DQF;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/AirbnbProject/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1417,7 +1431,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = kr.Inswag.AirbnbProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JinTonic.AirbnbProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1431,8 +1445,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-
-				DEVELOPMENT_TEAM = 9UT8US6W3V;
+				DEVELOPMENT_TEAM = CNMQE42DQF;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/AirbnbProject/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1442,7 +1455,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = kr.Inswag.AirbnbProject;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JinTonic.AirbnbProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.0;

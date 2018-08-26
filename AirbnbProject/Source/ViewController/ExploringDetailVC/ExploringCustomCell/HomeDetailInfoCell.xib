@@ -20,8 +20,8 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqH-Cu-ws4">
-                        <rect key="frame" x="10" y="0.0" width="341" height="193"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="20" y="0.0" width="316" height="193"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -29,8 +29,8 @@
             </view>
             <constraints>
                 <constraint firstItem="FqH-Cu-ws4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="EOv-Ql-x4i"/>
-                <constraint firstAttribute="trailing" secondItem="FqH-Cu-ws4" secondAttribute="trailing" constant="25" id="PpN-mG-DJB"/>
-                <constraint firstItem="FqH-Cu-ws4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="R5I-TZ-IcE"/>
+                <constraint firstAttribute="trailing" secondItem="FqH-Cu-ws4" secondAttribute="trailing" constant="40" id="PpN-mG-DJB"/>
+                <constraint firstItem="FqH-Cu-ws4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="R5I-TZ-IcE"/>
                 <constraint firstAttribute="bottom" secondItem="FqH-Cu-ws4" secondAttribute="bottom" id="fz8-La-WvZ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>

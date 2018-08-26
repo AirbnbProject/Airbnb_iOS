@@ -15,6 +15,7 @@ protocol AuthServiceType {
     func facebookSignIn(email: String, id: String, firstName: String, lastName: String, url: String, completion: @escaping (Result<UserLogin>) -> ())
     func emailCheck(email: String, completion: @escaping (Result<EmailCheck>) -> ())
     func findPassword(email: String, completion: @escaping (Result<FindPassword>) -> ())
+    func logout(completion: @escaping (Result<Any>) -> ())
 }
 
 struct AuthService: AuthServiceType {
@@ -146,6 +147,25 @@ struct AuthService: AuthServiceType {
                         let decodeValue = try JSONDecoder().decode(FindPassword.self, from: value)
                         print("Decodable:",decodeValue)
                         completion(.success(decodeValue))
+                    } catch {
+                        completion(Result.failure(nil, error))
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+        }
+    }
+    
+    func logout(completion: @escaping (Result<Any>) -> ()) {
+        Alamofire
+            .request(API.Auth.findPassword)
+            .validate()
+            .responseData { (response) in
+                switch response.result {
+                case .success(let value):
+                    do {
+                        let data = try JSONSerialization.jsonObject(with: value, options: JSONSerialization.ReadingOptions.allowFragments)
+                        completion(Result.success(data))
                     } catch {
                         completion(Result.failure(nil, error))
                     }

@@ -70,7 +70,6 @@ class swipeImageCell: UICollectionViewCell {
         
         self.scrollView.scrollRectToVisible(CGRect(x:slideToX, y:0, width:pageWidth, height:self.scrollView.frame.height), animated: true)
         var pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width + 1
-        print(pageNumber)
         if Int(pageNumber) < imageList.count {
             pageControl.currentPage = Int(pageNumber)
         }else {

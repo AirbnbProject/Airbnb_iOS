@@ -19,22 +19,28 @@
                 <rect key="frame" x="0.0" y="0.0" width="379" height="204"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvo-00-X1e">
-                        <rect key="frame" x="0.0" y="15" width="283" height="119"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klR-hV-Tel">
+                        <rect key="frame" x="20" y="0.0" width="339" height="14.5"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="12"/>
+                        <color key="textColor" red="0.85098039219999999" green="0.21176470589999999" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klR-hV-Tel">
-                        <rect key="frame" x="0.0" y="20" width="111" height="20"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kvo-00-X1e">
+                        <rect key="frame" x="20" y="22.5" width="339" height="33.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
+            <constraints>
+                <constraint firstItem="kvo-00-X1e" firstAttribute="top" secondItem="klR-hV-Tel" secondAttribute="bottom" constant="8" id="7YY-wt-ED8"/>
+                <constraint firstItem="klR-hV-Tel" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Hlx-df-89H"/>
+                <constraint firstItem="klR-hV-Tel" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="XDO-fB-Bvg"/>
+                <constraint firstItem="kvo-00-X1e" firstAttribute="leading" secondItem="klR-hV-Tel" secondAttribute="leading" id="aEE-yp-zPe"/>
+                <constraint firstItem="kvo-00-X1e" firstAttribute="trailing" secondItem="klR-hV-Tel" secondAttribute="trailing" id="mGF-xx-kb6"/>
+                <constraint firstAttribute="trailing" secondItem="klR-hV-Tel" secondAttribute="trailing" constant="20" id="mrX-Y2-NDA"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="379" height="204"/>
             <connections>

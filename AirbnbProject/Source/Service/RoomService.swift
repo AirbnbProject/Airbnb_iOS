@@ -13,6 +13,7 @@ protocol RoomServiceType {
     func getRoomList(completion: @escaping (Result<Any>) -> ())
     func getTotalRoomList(region: String, completion: @escaping (Result<Any>) -> ())
     func getTotalRoomListInKorea(completion: @escaping (Result<Any>) -> ())
+    func getSearchResultByKeyword(inputKeyword: String, completion: @escaping (Result<Any>) -> ())
 }
 
 struct RoomService: RoomServiceType {
